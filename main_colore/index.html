@@ -4,58 +4,66 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="8074n4c483c4.css">
-    <script text="text/javascript" src="91r4nh4.js"></script>
+    <link rel="stylesheet" href="./arquivos/8074n4c483c4.css">
     <title>COLORE</title>
     <!-- referencias: https://colorable.jxnblk.com/ ; https://monkepo.online/custom ; https://contexto.me/ ; https://term.ooo/ -->
 </head>
 <body>
     <!--<div id="root"></div>-->
-	<header class="hdr">
-		<div class="letreiro">COLORE</div>
+	<header>
+		<div class="titulo">COLORE</div>
 	</header>
-	<section id="app">
-		<!-- escopo da cor atual -->
-		<div class="escopo-cor">
-			<button id="botao-gerar-cor" class="botao" type="button" onclick="gerarHex()">Nova cor</button>
-			<div id="cor"></div>
-		</div>
-		
-		<!-- sessão para enviar a cor -->
-		<div class="escopo-inputCor">
-			<!-- botão para chamar uma lista com as opções de código para cor -->
-			<div class="escopo-HEX">
-				<input id="input-HEX" class="input-cor codeHEX" type="text" minlength="6" maxlength="6">
-				<button id="enviar-HEX" class="" type="button" onclick="criarTentativa()">enviar</button>
+	<div id="app">
+		<div id="escopoConfiguracao">
+			<div id="escopoSelecionacaoModo" class="configuracao">
+				<!-- Por enquanto o primeiro não aparece hehe preguiça de mexer nisso agora, então nem quero ver -->
+				<p class="opcaoTipoModo"></p>
+				<p class="opcaoTipoModo"></p>
+				<label class="chave">
+					<input type="radio">
+					<span class="selecao"></span>
+				</label>
 			</div>
-			<!-- deixar pra depois isso aqui... -->
-			<div class="escopoRGB" style="display:none">
-				<input type="text" id="inputRGB" class="inputCor codeRGB " minlength="9" maxlength="9">
-				<button id="enviarRGB" class="" type="button">enviar</button>
+			<div id="escopoSelecaoTipoCod" class="configuracao">
+				<p class="opcaoTipoCod"></p>
+				<label id="selecaoTipoCod" class="chave">
+  					<input type="checkbox">
+  					<span class="deslizar"></span>
+				</label>
+				<p class="opcaoTipoCod"></p>
 			</div>
 		</div>
-		
-		<ul id="tentativas"></ul>
-	</section>
-</body>
-<!-- 
-	PAREI DAQUI:
-olha em ordem ↓
--= Pantone - Color of The Years =-
-https://www.meutedio.com/2005/12/tabela-de-cores.html
--= Gerar um código hexadecimal aleatório em JS =-
-https://dev.to/toluagboola/build-a-random-hex-color-generator-with-vanilla-javascript-3382
--= Converter RGB e HEX =-
-https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb
--=  =-
-https://stackoverflow.com/questions/38076985/format-number-in-an-html5-input-tag
--= Ativar o botão a partir do ENTER =-
-https://www.w3schools.com/howto/howto_js_trigger_button_enter.asp
--= Como usar o comando "createElement()" =-
-https://www.w3schools.com/jsref/met_document_createelement.asp
-17/08
--= Como pegar um valor de um input =-
-https://horadecodar.com.br/como-pegar-valor-de-input-com-javascript/
- -->
-</html>
 
+		<!-- Escopo que vai mostrar as cores -->
+		<div class="escopoCores">
+			<button id="botaoGerarCor" type="button">NOVA COR</button>
+
+			<div id="cor"><div id="vetorCores">
+				<div id="vermelhoNoVetor" class="corNoVetor"></div>
+
+				<div id="verdeNoVetor" 	  class="corNoVetor"></div>
+				
+				<div id="azulNoVetor"     class="corNoVetor"></div>
+				
+				<div id="pretoNoVetor" 	  class="corNoVetor"></div>
+				
+				<div id="brancoNoVetor"   class="corNoVetor"></div>	
+			</div></div>
+		</div>
+		
+		<!-- Sessão para tentar uma cor -->
+		<form id="formTentarCor">
+
+			<input id="entradaCor" type="text" minlength="6" maxlength="8">
+
+			<!--<button id="botaoTentarCor" type="button">TENTAR</button>-->
+
+			<input type="submit" value="TENTAR" id="botaoTentarCor">
+		</form>
+		
+		<!-- Sessão de tentativas -->
+		<ul id="escopoTentativas"></ul>
+	</div>
+	<script type="module" src="./arquivos/91r4nh4.js"></script>
+</body>
+</html>

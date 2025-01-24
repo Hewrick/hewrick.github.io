@@ -1,0 +1,211 @@
+*{box-sizing:border-box; appearance:none; font-family:sans-serif, monospace, Arial; /*border: solid 1px #0001*/}
+body{margin:0; padding:0; position: relative; background: #fff}
+
+/* === Cabeçalho === */
+header{
+	display: flex;
+	background-color: transparent;
+	justify-content: center;
+}
+
+
+/* === Parte principal === */
+#app{
+	margin: 50px; 
+	padding: auto;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Início - chave */
+.chave {
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 34px;
+}
+
+.chave input { 
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 26px;
+	width: 26px;
+	left: 4px;
+	bottom: 4px;
+	background-color: white;
+	-webkit-transition: 2s;
+	transition: 2s;
+}
+
+input:checked + .slider {
+	background-color: #2196F3;
+}
+
+input:focus + .slider {
+	box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+	-webkit-transform: translateX(26px);
+	-ms-transform: translateX(26px);
+	transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+	border-radius: 34px;
+}
+
+.slider.round:before {
+	border-radius: 50%;
+}
+/* Fim - chave */
+
+
+/* === Escopo Cores === */
+/* Arrumar: deixa todas as cores em um escopo flex que fica bem mais fácil de configurar */
+.escopoCores{
+	display: flex;
+	flex-direction: column;
+    align-items: center;
+}
+
+.escopCores button{
+	margin-bottom: 30px;
+	border: solid 2px inherit;
+	border-radius: 20px;
+}
+
+#cor{
+	height: 200px; width: 200px;
+	margin-bottom: 10px;
+	border: solid 1px #000;
+}
+
+#vetorCores{
+	position: sticky;
+	right: 0px;
+	width: 40px;
+	height: 100%;
+	display: flex;
+    flex-direction: column;
+}
+
+/* INICIO - Vetor de cores */
+.corNoVetor{
+	z-index: 1;
+	width: inherit;
+	height: 20%;
+	border: solid 1px black;
+}
+
+#vermelhoNoVetor{
+	background-color: #f00;
+}
+
+#verdeNoVetor{
+	background-color: #0f0;
+}
+
+#azulNoVetor{
+	background-color: #00f;
+}
+
+#pretoNoVetor{
+	background-color: #000;
+}
+
+#brancoNoVetor{
+	background-color: #fff;
+}
+/* FIM - Vetor de cores */
+
+/* === Escopo Entrada da Cor === */
+#entradaCor{
+	height: 24px; width: 200px;
+	background: inherit;
+	border: 1px #000;
+	border-style: hidden hidden solid hidden;
+}
+#entradaCor:focus{
+	border: 3px;
+	background: #8a8a8a4d
+}
+
+/* Configuração apenas para o input RGB */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none;
+}
+
+
+/* === Escopo Tentativas === */
+#escopoTentativas{
+	display: flex;
+	width: 200px;
+	flex-direction: column;
+	padding: 0;
+}
+
+#objetoTentativa{
+	display: flex;
+	width: inherit; height: 70px;
+	padding: 10px;
+	margin-bottom: 15px;
+	background-color: white;
+	border: solid 1px #000;
+	border-radius: 50px;
+	box-shadow: -2px 5px;
+}
+
+#objetoTentativa .itemTentativa {
+	margin-right: 10px;
+}
+
+#objetoTentativa .cor{
+	position: relative;
+	width: 50px; height: 50px;
+	margin: none;
+	border-radius: 50px;
+}
+
+.seta {
+	position: relative;
+	width: 30px; height: 30px;
+	/* testar sem isso */
+	filter: grayscale(100%); /* filtro que deixa a imagem preto e branco */
+}
+
+.seta #setaVermelha::after {
+	background-color: #f00;
+	mix-blend-mode: screen; /* aqui vc pode testar outrs filtros para ver o que da o melhor resultado para sua imagem*/
+}
+
+.seta #setaVerde::after {
+	background-color: #0f0;
+	mix-blend-mode: overlay;
+}
+
+.seta #setaAzul::after {
+	background-color: #00f;
+	mix-blend-mode: multiply;
+}

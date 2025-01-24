@@ -1,0 +1,23 @@
+Referencias: https://colorable.jxnblk.com/ ; https://monkepo.online/custom ; https://contexto.me/ ; https://term.ooo/
+...
+
+
+ === Conceitos essenciais ===
+
+  Os valores variam entre 00 (mais escuro) até FF (mais claro), mas também podem ser interpretados por apenas um caracteres. 
+  Em Javascript, para adicionar opacidade (transparência) no padrão RBG, um quarto parâmetro é configurado dentro dos parâmetros.
+Ex.: "rgb(255, 0, 255, 147);".
+  Para fazer o mesmo com o padrão hexadecimal, é adicionado um quarto conjunto de caracteres com a mesma quantidade que os outros valores tem. 
+Exs.: "#f0f5;", "#ff00ff5E;".
+...
+
+
+ === Outros modos === 
+identificar a cor que falta: 
+- opacidade entre 40% à 100%; 
+- número limite de tentativas; 
+- sequência análoga; 
+- complementar; 
+- sequência tríade; 
+- sequência quadrado 
+... 
