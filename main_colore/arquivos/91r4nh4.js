@@ -4,9 +4,9 @@ Ideias:
 - O input de cor sempre vai comparar com 8 caracteres. Faz com que consiga comparar com, no mínimo 4. Ou melhor, faz com que ele identifique o padrão no texto (como um regex), onde está cada cor e quais informações estão no input. 
 */
 
-//import gerarTentativa from "./funcoes/tentativas.js";
-//import gerarHex from "./funcoes/codigoHEX.js";
-//import gerarRGB from "./funcoes/codigoRGB.js";
+//import gerarTentativa from "./modulos/tentativas.js";
+//import gerarHex from "./fmodulos/codigoHEX.js";
+//import gerarRGB from "./modulos/codigoRGB.js";
 
 
 // === Variáveis ===
@@ -22,12 +22,11 @@ const formTentarCor = document.getElementById("formTentarCor");
 const entradaCor = document.getElementById("entradaCor");
 const botaoTentarCor = document.getElementById("botaoTentarCor");
 const escopoTentativas = document.getElementById("escopoTentativas");
-// exemplo pra função "onclick": element.onclick = function (event) {}
 
 
 // === Funções genéricas ===
 
-// Funcao para todos botões funcionarem com enter
+// Funcao para o botão de tentar cor funcionar com a tecla enter
 entradaCor.addEventListener("keypress", function(event) {
   // se o usuario pressionar a tecla "Enter" 
   if (event.key === "Enter") {
@@ -45,7 +44,7 @@ const hexCaracs = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F'];
 
 
 
-// Função que gera um cor hex aleatoria 
+// Função que gera uma cor aleatória com o código hexadecimal 
 botaoGerarCor.onclick = function gerarHEX() {
   // Coloca # antes do codigo da cor hexadecimal
   let hexCod = ['#'];    
@@ -66,8 +65,7 @@ botaoGerarCor.onclick = function gerarHEX() {
   // Coloca a matriz hexValue "dentro" de um string (texto) 
   hexCod = hexCod.join("");
   
-  // Define o codigo de cor hexagonal, gerado aleatoriamente, como cor de fundo do elemento 'cor' 
-  console.log(hexCod);
+  // Define o codigo de cor hexadecimal, gerado aleatoriamente, como cor de fundo do elemento 'cor' 
   return cor.style.backgroundColor = hexCod;
 }
 
@@ -78,6 +76,8 @@ botaoGerarCor.onclick = function gerarHEX() {
 
 // Código para verificar tentativa
 
+
+// Função para criar o objeto DOM para as tentativas
 formTentarCor.addEventListener('submit', function(e) {
   // Criação dos objetos para as tentativas
   const objetoTentativa = document.createElement("li");
@@ -119,6 +119,6 @@ formTentarCor.addEventListener('submit', function(e) {
   // Adiciona uma tentativo ao histórico
   escopoTentativas.appendChild(objetoTentativa);
 
-  // impede o envio do form
+  // Impede o envio do form
   e.preventDefault();
 });

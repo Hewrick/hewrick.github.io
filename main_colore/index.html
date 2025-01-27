@@ -14,6 +14,7 @@
 		<div class="titulo">COLORE</div>
 	</header>
 	<div id="app">
+		<!-- Configuração de modo de jogo -->
 		<div id="escopoConfiguracao">
 			<div id="escopoSelecionacaoModo" class="configuracao">
 				<!-- Por enquanto o primeiro não aparece hehe preguiça de mexer nisso agora, então nem quero ver -->
@@ -34,7 +35,7 @@
 			</div>
 		</div>
 
-		<!-- Escopo que vai mostrar as cores -->
+		<!-- Escopo para mostrar as cores -->
 		<div class="escopoCores">
 			<button id="botaoGerarCor" type="button">NOVA COR</button>
 
@@ -54,11 +55,12 @@
 		<!-- Sessão para tentar uma cor -->
 		<form id="formTentarCor">
 
-			<input id="entradaCor" type="text" minlength="6" maxlength="8">
+			<div>
+			<svg></svg>
+			<input id="entradaCor" type="text" value="000000" minlength="6" maxlength="8" >
+			</div>
 
-			<!--<button id="botaoTentarCor" type="button">TENTAR</button>-->
-
-			<input type="submit" value="TENTAR" id="botaoTentarCor">
+			<input type="submit" value="TENTAR COR" id="botaoTentarCor">
 		</form>
 		
 		<!-- Sessão de tentativas -->

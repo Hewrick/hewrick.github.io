@@ -1,6 +1,7 @@
 *{box-sizing:border-box; appearance:none; font-family:sans-serif, monospace, Arial; /*border: solid 1px #0001*/}
 body{margin:0; padding:0; position: relative; background: #fff}
 
+
 /* === Cabeçalho === */
 header{
 	display: flex;
@@ -18,7 +19,8 @@ header{
     align-items: center;
 }
 
-/* Início - chave */
+
+/* === Chave === */
 .chave {
 	position: relative;
 	display: inline-block;
@@ -78,7 +80,6 @@ input:checked + .slider:before {
 .slider.round:before {
 	border-radius: 50%;
 }
-/* Fim - chave */
 
 
 /* === Escopo Cores === */
@@ -101,20 +102,21 @@ input:checked + .slider:before {
 	border: solid 1px #000;
 }
 
+
+/* === Vetor de cores === */
 #vetorCores{
-	position: sticky;
-	right: 0px;
+	position: relative;
+	left: -40px;
 	width: 40px;
 	height: 100%;
 	display: flex;
     flex-direction: column;
 }
 
-/* INICIO - Vetor de cores */
 .corNoVetor{
 	z-index: 1;
 	width: inherit;
-	height: 20%;
+	height: 50%;
 	border: solid 1px black;
 }
 
@@ -137,18 +139,29 @@ input:checked + .slider:before {
 #brancoNoVetor{
 	background-color: #fff;
 }
-/* FIM - Vetor de cores */
+
+
 
 /* === Escopo Entrada da Cor === */
-#entradaCor{
+#formTentarCor {
+	display: grid;
+}
+
+#formTentarCor svg {
+	width: 20px; height: 20px;
+}
+
+#entradaCor {
 	height: 24px; width: 200px;
 	background: inherit;
 	border: 1px #000;
 	border-style: hidden hidden solid hidden;
 }
-#entradaCor:focus{
+#entradaCor:focus {
 	border: 3px;
-	background: #8a8a8a4d
+	background: #8a8a8a4d;
+	border: 1px #000;
+	border-style: hidden hidden solid hidden;
 }
 
 /* Configuração apenas para o input RGB */
@@ -159,14 +172,14 @@ input[type=number]::-webkit-outer-spin-button {
 
 
 /* === Escopo Tentativas === */
-#escopoTentativas{
+#escopoTentativas {
 	display: flex;
 	width: 200px;
-	flex-direction: column;
+	flex-direction: column-reverse;
 	padding: 0;
 }
 
-#objetoTentativa{
+#objetoTentativa {
 	display: flex;
 	width: inherit; height: 70px;
 	padding: 10px;
@@ -181,7 +194,7 @@ input[type=number]::-webkit-outer-spin-button {
 	margin-right: 10px;
 }
 
-#objetoTentativa .cor{
+#objetoTentativa .cor {
 	position: relative;
 	width: 50px; height: 50px;
 	margin: none;
