@@ -6,18 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./arquivos/8074n4c483c4.css">
     <title>COLORE</title>
-    <!-- referencias: https://colorable.jxnblk.com/ ; https://monkepo.online/custom ; https://contexto.me/ ; https://term.ooo/ -->
+    <!-- referencias: https://colorable.jxnblk.com/ ; https://monkepo.online/custom ; https://contexto.me/ ; https://term.ooo/ ; https://angle.wtf/ -->
 </head>
 <body>
-    <!--<div id="root"></div>-->
 	<header>
 		<div class="titulo">COLORE</div>
 	</header>
 	<div id="app">
-		<!-- Configuração de modo de jogo -->
+		<!-- Configuração de modo de jogo (MUDAR "escopoConfiguracao" PARA FORMULÁRIO)-->
 		<div id="escopoConfiguracao">
-			<div id="escopoSelecionacaoModo" class="configuracao">
-				<!-- Por enquanto o primeiro não aparece hehe preguiça de mexer nisso agora, então nem quero ver -->
+			<!-- Seleção do modo de jogo (terão outros) -->
+			<div id="escopoSelecaoModo" class="configuracao">
+				<!-- Essas coisas estão estranhas, em relação de label principalmente -->
 				<p class="opcaoTipoModo"></p>
 				<p class="opcaoTipoModo"></p>
 				<label class="chave">
@@ -25,6 +25,8 @@
 					<span class="selecao"></span>
 				</label>
 			</div>
+
+			<!-- Seleção do tipo de código -->
 			<div id="escopoSelecaoTipoCod" class="configuracao">
 				<p class="opcaoTipoCod"></p>
 				<label id="selecaoTipoCod" class="chave">
@@ -36,9 +38,9 @@
 		</div>
 
 		<!-- Escopo para mostrar as cores -->
+		<button id="botaoGerarCor" type="button">NOVA COR</button>
+		
 		<div class="escopoCores">
-			<button id="botaoGerarCor" type="button">NOVA COR</button>
-
 			<div id="cor"><div id="vetorCores">
 				<div id="vermelhoNoVetor" class="corNoVetor"></div>
 
@@ -57,10 +59,10 @@
 
 			<div>
 			<svg></svg>
-			<input id="entradaCor" type="text" value="000000" minlength="6" maxlength="8" >
+			<input id="entradaCor" type="text" placeholder="000000" minlength="3" maxlength="8">
 			</div>
 
-			<input type="submit" value="TENTAR COR" id="botaoTentarCor">
+			<input type="submit" value="Tentar cor!" id="botaoTentarCor">
 		</form>
 		
 		<!-- Sessão de tentativas -->
