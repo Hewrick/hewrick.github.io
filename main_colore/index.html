@@ -13,8 +13,8 @@
 		<div class="titulo">COLORE</div>
 	</header>
 	<div id="app">
-		<!-- Configuração de modo de jogo (MUDAR "escopoConfiguracao" PARA FORMULÁRIO)-->
-		<div id="escopoConfiguracao">
+		<!-- Configuração de modo de jogo -->
+		<form id="escopoConfiguracao">
 			<!-- Seleção do modo de jogo (terão outros) -->
 			<div id="escopoSelecaoModo" class="configuracao">
 				<!-- Essas coisas estão estranhas, em relação de label principalmente -->
@@ -35,31 +35,32 @@
 				</label>
 				<p class="opcaoTipoCod"></p>
 			</div>
-		</div>
+		</form>
 
+
+		<container>
 		<!-- Escopo para mostrar as cores -->
-		<button id="botaoGerarCor" type="button">NOVA COR</button>
-		
-		<div class="escopoCores">
-			<div id="cor"><div id="vetorCores">
-				<div id="vermelhoNoVetor" class="corNoVetor"></div>
+		<div class='escopoCores margin-bottom-10'>
+			<button id="botaoGerarCor" class="margin-bottom-10" type="button">NOVA COR</button>
+			
+			<div class="quadrado">
+				<div id="cor"></div>
 
-				<div id="verdeNoVetor" 	  class="corNoVetor"></div>
+				<div id="vermelhoNoVetor" class="corNoVetor"></div>
 				
-				<div id="azulNoVetor"     class="corNoVetor"></div>
+				<div id="verdeNoVetor" class="corNoVetor"></div>
 				
-				<div id="pretoNoVetor" 	  class="corNoVetor"></div>
+				<div id="azulNoVetor" class="corNoVetor"></div>
 				
-				<div id="brancoNoVetor"   class="corNoVetor"></div>	
-			</div></div>
+				<div id="pretoNoVetor" class="corNoVetor"></div>
+				
+				<div id="brancoNoVetor" class="corNoVetor"></div>
+			</div>
 		</div>
 		
 		<!-- Sessão para tentar uma cor -->
 		<form id="formTentarCor">
-
-			<div>
-			<svg></svg>
-			<input id="entradaCor" type="text" placeholder="000000" minlength="3" maxlength="8">
+			<div><svg></svg><input id="entradaCor" type="text" placeholder="000000" minlength="3" maxlength="8">
 			</div>
 
 			<input type="submit" value="Tentar cor!" id="botaoTentarCor">
@@ -67,6 +68,7 @@
 		
 		<!-- Sessão de tentativas -->
 		<ul id="escopoTentativas"></ul>
+		</container>
 	</div>
 	<script type="module" src="./arquivos/91r4nh4.js"></script>
 </body>

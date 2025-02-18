@@ -1,26 +1,43 @@
-*{box-sizing:border-box; /* appearance:none; */ font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; border: solid 1px #0001}
+*{box-sizing:border-box; appearance:none; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; /* teste com borda aqui */border: solid 1px #0001}
 body{margin:0; padding:0; position: relative; background: #fff}
 
+
+/* === Gerias === */
+.margin-bottom-10 { margin-bottom: 10px; }
 
 /* === Cabeçalho === */
 header{
 	display: flex;
-	background-color: transparent;
 	justify-content: center;
+	margin-bottom: 40px;
+	background-color: transparent;
 }
 
 
 /* === Parte principal === */
+/* Ainda é preciso organizar como esse display grid está funcionando */
 #app{
-	margin: 50px; 
-	padding: auto;
+	display: grid;
+	grid-template-areas: "container config";
+}
+
+#app container{
+	width: 400px;
+	margin: 50px;
+	grid-area: container;
 	display: flex;
-    flex-direction: column;
-    align-items: center;
+	flex-direction: column;
+	align-items: center;
 }
 
 
-/* === Chave === */
+/* === Escopo Configuração === */
+#escopoConfiguracao {
+	grid-area: config;
+	display: grid;
+}
+
+/* === Chaves === */
 .chave {
 	position: relative;
 	display: inline-block;
@@ -87,59 +104,68 @@ input:checked + .slider:before {
 .escopoCores{
 	display: flex;
 	flex-direction: column;
-    align-items: center;
+	align-items: center;
 }
 
-.escopCores button{
-	margin-bottom: 30px;
+.escopoCores button{
 	border: solid 2px inherit;
-	border-radius: 20px;
+	border-radius: 5px;
+}
+
+.quadrado{
+	display: grid;
+	grid-template-areas: 
+	"vermelho cor"
+	"verde cor"
+	"azul cor"
+	"preto cor"
+	"branco cor";
+	
+	border: solid 1px #000;
+	border-radius: 10px;
 }
 
 #cor{
+	grid-area: cor;
 	height: 200px; width: 240px;
-	margin-bottom: 10px;
-	border: solid 1px #000;
+	background-color: #fff;
+	border-radius: 0 10px 10px 0;
 }
 
-
-/* === Vetor de cores === */
-#vetorCores{
-	position: relative;
-	left: 0px;
-	width: 40px;
-	height: 100%;
-	display: flex;
-    flex-direction: column;
-}
 
 .corNoVetor{
 	z-index: 1;
-	width: inherit;
-	height: 50%;
+	left: 0px;
+	width: 40px;
 	/*border: solid 1px black;*/
 }
 
 #vermelhoNoVetor{
+	grid-area: vermelho;
 	background-color: #f00;
+	border-radius: 10px 0 0 0;
 }
 
 #verdeNoVetor{
+	grid-area: verde;
 	background-color: #0f0;
 }
 
 #azulNoVetor{
+	grid-area: azul;
 	background-color: #00f;
 }
 
 #pretoNoVetor{
+	grid-area: preto;
 	background-color: #000;
 }
 
 #brancoNoVetor{
+	grid-area: branco;
 	background-color: #fff;
+	border-radius: 0 0 0 10px;
 }
-
 
 
 /* === Escopo Entrada da Cor === */
@@ -147,7 +173,7 @@ input:checked + .slider:before {
 	display: grid;
 }
 
-#formTentarCor svg {
+#formTentarCor  svg {
 	width: 20px; height: 20px;
 }
 
@@ -204,21 +230,16 @@ input[type=number]::-webkit-outer-spin-button {
 .seta {
 	margin-top: 10px;
 	width: 30px; height: 30px;
-	/* testar sem isso */
-	filter: grayscale(100%); /* filtro que deixa a imagem preto e branco */
 }
 
-.seta #setaVermelha::after {
-	background-color: #f00;
-	mix-blend-mode: screen; /* aqui vc pode testar outrs filtros para ver o que da o melhor resultado para sua imagem*/
+.seta #setaVermelha {
+	fill: #f00;
 }
 
-.seta #setaVerde::after {
-	background-color: #0f0;
-	mix-blend-mode: overlay;
+.seta #setaVerde {
+	fill: #0f0;
 }
 
-.seta #setaAzul::after {
-	background-color: #00f;
-	mix-blend-mode: multiply;
+.seta #setaAzul {
+	fill: #00f;
 }

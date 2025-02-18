@@ -4,10 +4,10 @@ Referencias: https://colorable.jxnblk.com/ ; https://monkepo.online/custom ; htt
 
  === Conceitos essenciais ===
 
-  Os valores variam entre 00 (mais escuro) até FF (mais claro), mas também podem ser interpretados por apenas um caracteres. 
+  Os valores (ou código) de cores em hexadecimal, variam entre 00 que é mais escuro, até FF que é mais claro, os valores também podem ser interpretados (pelo compilador de código) em apenas um caracteres.
   Em Javascript, para adicionar opacidade (transparência) no padrão RBG, um quarto parâmetro é configurado dentro dos parâmetros.
 Ex.: "rgb(255, 0, 255, 147);".
-  Para fazer o mesmo com o padrão hexadecimal, é adicionado um quarto conjunto de caracteres com a mesma quantidade que os outros valores tem. 
+  Para fazer o mesmo com o padrão hexadecimal, é adicionado um quarto conjunto de caracteres que aumentam a opacidade conforme o valor cresce. 
 Exs.: "#f0f5;", "#ff00ff5E;".
 ...
 

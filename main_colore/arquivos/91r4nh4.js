@@ -38,14 +38,15 @@ entradaCor.addEventListener("keypress", function(event) {
 });
 
 
+
 // === HEX ===
 
 const hexCaracs = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F']; 
 
-
-
 // Função que gera uma cor aleatória com o código hexadecimal 
 botaoGerarCor.onclick = function gerarHEX() {
+  // Tentar fazer hexCod ser string sempre
+  
   // Coloca # antes do codigo da cor hexadecimal
   let hexCod = ['#'];    
   
@@ -70,36 +71,55 @@ botaoGerarCor.onclick = function gerarHEX() {
 }
 
 
+
 // === Tentativas ===
 
+//Função para verificar compatibiliade de cada tentativa
+function compTentativa() {
+  let chave = true;
+  let tentativa;
 
-
-// Código para verificar tentativa
-
+  // Os módulos de cores são definidos
+  if(chave == true) {
+    const mVermelho = 1;
+    const mVerde = 1;
+    const mAzul = 1;
+  } else {
+    const mVermelho = 1;
+    const mVerde = 1;
+    const mAzul = 1;
+  }
+}
 
 // Função para criar o objeto DOM para as tentativas
 formTentarCor.addEventListener('submit', function(e) {
-  // Criação dos objetos para as tentativas
+  //Substituir por: tudoIsso.innerHTML = [tags];
+
+  /* // Criação dos objetos para as tentativas
   const objetoTentativa = document.createElement("li");
   const corTentativa = document.createElement("div");
   const setaVermelha = document.createElement("img");
   const setaVerde = document.createElement("img");
   const setaAzul = document.createElement("img");
-  // const setaOpacidade = document.createElement("img");
+  // const setaOpacidade = document.createElement("img"); 
 
   // Atribuindo ID e Classes aos objetos criados
   objetoTentativa.setAttribute("id", "objetoTentativa");
   corTentativa.classList.add("itemTentativa");
   corTentativa.classList.add("cor");
+
   setaVermelha.classList.add("itemTentativa");
   setaVermelha.classList.add("seta");
   setaVermelha.setAttribute("id", "setaVermelha");
+
   setaVerde.classList.add("itemTentativa");
   setaVerde.classList.add("seta");
   setaVerde.setAttribute("id", "setaVerde");
+
   setaAzul.classList.add("itemTentativa");
   setaAzul.classList.add("seta");
   setaAzul.setAttribute("id", "setaAzul");
+
   // setaOpacidade.classList.add("seta");
   // setaOpacidade.setAttribute("id", "setaOpacidade");
 
@@ -114,11 +134,26 @@ formTentarCor.addEventListener('submit', function(e) {
   setaVermelha.setAttribute("src", "./arquivos/imgs/seta.png");
   setaVerde.setAttribute("src", "./arquivos/imgs/seta.png");
   setaAzul.setAttribute("src", "./arquivos/imgs/seta.png");
+
   corTentativa.style.backgroundColor = "#" + entradaCor.value;
   
   // Adiciona uma tentativo ao histórico
   escopoTentativas.appendChild(objetoTentativa);
+  */
 
-  // Impede o envio do form
+  escopoTentativas.innerHTML += 
+  " <li id='objetoTentativa'> \n" +
+  "   <div class='cor itemTentativa'></div> \n" +
+  "   <img id='setaVermelha' class='seta itemTentativa'> \n" +
+  "   <img id='setaVerde' class='seta itemTentativa'> \n" +
+  "   <img id='setaAzul' class='seta itemTentativa'> \n" +
+  "   <img id='setaTransparente' class='seta itemTentativa' style='display: none'> \n" +
+  " </li>";
+
+  //document.getElementById("objetoTentativa").classList.add("margin-bottom-10");
+
+  //document.getElementsByClassName("cor").style.backgroundColor = "#" + entradaCor.value;
+
+  // Impede a ação padrão do botão, nesse caso é o de envio de formulário, até onde eu entendi
   e.preventDefault();
 });
