@@ -13,8 +13,42 @@
 		<div class="titulo">COLORE</div>
 	</header>
 	<div id="app">
+		<!--  -->
+		<container>
+		<!-- Escopo para mostrar as cores -->
+		<div class='escopoCores margin-bottom-15'>
+			<button id="botaoGerarCor" class="margin-bottom-15" type="button">NOVA COR</button>
+			
+			<div class="quadrado">
+				<div id="cor"></div>
+
+				<div id="vermelhoNoVetor" class="corNoVetor"></div>
+				
+				<div id="verdeNoVetor" class="corNoVetor"></div>
+				
+				<div id="azulNoVetor" class="corNoVetor"></div>
+				
+				<div id="pretoNoVetor" class="corNoVetor"></div>
+				
+				<div id="brancoNoVetor" class="corNoVetor"></div>
+			</div>
+		</div>
+		
+		<!-- Sessão para tentar uma cor -->
+		<form id="formTentarCor" class="formulario">
+			<div><svg></svg><input id="entradaCor" type="text" placeholder="FFFFFF" minlength="3" maxlength="8">
+			</div>
+
+			<input id="botaoTentarCor" type="submit" value="TENTAR COR!">
+		</form>
+		
+		<!-- Sessão de tentativas -->
+		<ul id="escopoTentativas"></ul>
+		</container>
+		
+		
 		<!-- Configuração de modo de jogo -->
-		<form id="escopoConfiguracao">
+		<form id="formConfig" class="formulario">
 			<!-- Seleção do modo de jogo (terão outros) -->
 			<div id="escopoSelecaoModo" class="configuracao">
 				<!-- Essas coisas estão estranhas, em relação de label principalmente -->
@@ -35,40 +69,10 @@
 				</label>
 				<p class="opcaoTipoCod"></p>
 			</div>
+
+			<!-- Botão para confirmar, e em seguida, alterar o que foi configurado -->
+			<input id="botaoConfirmarConfig" class="botao" type="submit" value="CONFIRMAR CONFIGURAÇÃO">
 		</form>
-
-
-		<container>
-		<!-- Escopo para mostrar as cores -->
-		<div class='escopoCores margin-bottom-10'>
-			<button id="botaoGerarCor" class="margin-bottom-10" type="button">NOVA COR</button>
-			
-			<div class="quadrado">
-				<div id="cor"></div>
-
-				<div id="vermelhoNoVetor" class="corNoVetor"></div>
-				
-				<div id="verdeNoVetor" class="corNoVetor"></div>
-				
-				<div id="azulNoVetor" class="corNoVetor"></div>
-				
-				<div id="pretoNoVetor" class="corNoVetor"></div>
-				
-				<div id="brancoNoVetor" class="corNoVetor"></div>
-			</div>
-		</div>
-		
-		<!-- Sessão para tentar uma cor -->
-		<form id="formTentarCor">
-			<div><svg></svg><input id="entradaCor" type="text" placeholder="000000" minlength="3" maxlength="8">
-			</div>
-
-			<input type="submit" value="Tentar cor!" id="botaoTentarCor">
-		</form>
-		
-		<!-- Sessão de tentativas -->
-		<ul id="escopoTentativas"></ul>
-		</container>
 	</div>
 	<script type="module" src="./arquivos/91r4nh4.js"></script>
 </body>

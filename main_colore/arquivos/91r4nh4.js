@@ -14,34 +14,69 @@ Ideias:
 
 
 
-// === Tags ===
+// === Tags para Objetos ===
 
-const cor = document.getElementById("cor");
 const botaoGerarCor = document.getElementById("botaoGerarCor");
-const formTentarCor = document.getElementById("formTentarCor");
+const cor = document.getElementById("cor");
 const entradaCor = document.getElementById("entradaCor");
+
+const formTentarCor = document.getElementById("formTentarCor");
 const botaoTentarCor = document.getElementById("botaoTentarCor");
 const escopoTentativas = document.getElementById("escopoTentativas");
+
+const formConfig = document.getElementById("formConfig");
 
 
 // === Funções genéricas ===
 
-// Funcao para o botão de tentar cor funcionar com a tecla enter
-entradaCor.addEventListener("keypress", function(event) {
-  // se o usuario pressionar a tecla "Enter" 
-  if (event.key === "Enter") {
-    // cancela a acao padrao, se for preciso 
-    event.preventDefault();
-    // aciona o elemento botao com um clique 
+// Função inútil, mas quero saber se vale a pena fazer funcionar
+// Função para prevenir ação padrão
+function prevenirPadrao(e) {
+  e.preventDefault();
+}
+
+
+// Talvez essa função seja bem da inútil...
+// Funçãoo para o "botaoTentarCor" funcionar com a tecla enter
+entradaCor.addEventListener("keypress", function(e) {
+  // se a tecla pressionada for "Enter" 
+  if (e.key === "Enter") {
+    // cancela a ação padrão 
+    e.preventDefault();
+    
+    // aciona o objeto "botaoTentarCor" como se fosse um clique 
     botaoTentarCor.click();
   }
 });
 
 
 
+// === Configuração ===
+
+//
+function alterarModo() {
+
+}
+
+
+// 
+function alterarCod() {
+
+}
+
+
+// Sessão do que acontecer quando as configurações forem confirmadas
+formConfig.addEventListener("submit", function(e) {
+  e.preventDefault();
+  alterarModo();
+  alterarCod();
+});
+
+
 // === HEX ===
 
 const hexCaracs = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F']; 
+
 
 // Função que gera uma cor aleatória com o código hexadecimal 
 botaoGerarCor.onclick = function gerarHEX() {
@@ -91,8 +126,9 @@ function compTentativa() {
   }
 }
 
+
 // Função para criar o objeto DOM para as tentativas
-formTentarCor.addEventListener('submit', function(e) {
+formTentarCor.addEventListener("submit", function(e) {
   //Substituir por: tudoIsso.innerHTML = [tags];
 
   /* // Criação dos objetos para as tentativas
@@ -150,10 +186,8 @@ formTentarCor.addEventListener('submit', function(e) {
   "   <img id='setaTransparente' class='seta itemTentativa' style='display: none'> \n" +
   " </li>";
 
-  //document.getElementById("objetoTentativa").classList.add("margin-bottom-10");
+  document.getElementById("objetoTentativa").classList.add("margin-bottom-15");
 
   //document.getElementsByClassName("cor").style.backgroundColor = "#" + entradaCor.value;
-
-  // Impede a ação padrão do botão, nesse caso é o de envio de formulário, até onde eu entendi
   e.preventDefault();
 });

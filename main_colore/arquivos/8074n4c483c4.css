@@ -3,7 +3,9 @@ body{margin:0; padding:0; position: relative; background: #fff}
 
 
 /* === Gerias === */
-.margin-bottom-10 { margin-bottom: 10px; }
+.margin-bottom-15 { margin-bottom: 15px; }
+
+button {  }
 
 /* === Cabeçalho === */
 header{
@@ -17,13 +19,13 @@ header{
 /* === Parte principal === */
 /* Ainda é preciso organizar como esse display grid está funcionando */
 #app{
-	display: grid;
-	grid-template-areas: "container config";
+	display: flex;
+	align-items: start;
 }
 
 #app container{
 	width: 400px;
-	margin: 50px;
+	margin: 0 50px;
 	grid-area: container;
 	display: flex;
 	flex-direction: column;
@@ -32,7 +34,7 @@ header{
 
 
 /* === Escopo Configuração === */
-#escopoConfiguracao {
+#formConfig {
 	grid-area: config;
 	display: grid;
 }
@@ -120,14 +122,13 @@ input:checked + .slider:before {
 	"azul cor"
 	"preto cor"
 	"branco cor";
-	
 	border: solid 1px #000;
 	border-radius: 10px;
 }
 
 #cor{
 	grid-area: cor;
-	height: 200px; width: 240px;
+	height: 200px; width: 220px;
 	background-color: #fff;
 	border-radius: 0 10px 10px 0;
 }
@@ -137,7 +138,6 @@ input:checked + .slider:before {
 	z-index: 1;
 	left: 0px;
 	width: 40px;
-	/*border: solid 1px black;*/
 }
 
 #vermelhoNoVetor{
@@ -145,22 +145,18 @@ input:checked + .slider:before {
 	background-color: #f00;
 	border-radius: 10px 0 0 0;
 }
-
 #verdeNoVetor{
 	grid-area: verde;
 	background-color: #0f0;
 }
-
 #azulNoVetor{
 	grid-area: azul;
 	background-color: #00f;
 }
-
 #pretoNoVetor{
 	grid-area: preto;
 	background-color: #000;
 }
-
 #brancoNoVetor{
 	grid-area: branco;
 	background-color: #fff;
