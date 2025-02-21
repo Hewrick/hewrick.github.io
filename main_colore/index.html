@@ -4,18 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="./arquivos/imgs/foguinho.png">
     <link rel="stylesheet" href="./arquivos/8074n4c483c4.css">
     <title>COLORE</title>
     <!-- referencias: https://colorable.jxnblk.com/ ; https://monkepo.online/custom ; https://contexto.me/ ; https://term.ooo/ ; https://angle.wtf/ -->
 </head>
 <body>
 	<header>
-		<div class="titulo">COLORE</div>
+		<div id="titulo">COLORE</div>
 	</header>
 	<div id="app">
-		<!--  -->
+		<!-- Container que separa componentes principais dos componentes do escopo de configuração -->
 		<container>
-		<!-- Escopo para mostrar as cores -->
+		<!-- Escopo principal para as cores -->
 		<div class='escopoCores margin-bottom-15'>
 			<button id="botaoGerarCor" class="margin-bottom-15" type="button">NOVA COR</button>
 			
@@ -35,8 +36,13 @@
 		</div>
 		
 		<!-- Sessão para tentar uma cor -->
-		<form id="formTentarCor" class="formulario">
-			<div><svg></svg><input id="entradaCor" type="text" placeholder="FFFFFF" minlength="3" maxlength="8">
+		<form id="formTentarCor" class="formulario margin-bottom-15">
+			<div>
+				<svg>
+
+				</svg>
+				
+				<input id="entradaCor" type="text" placeholder="FFFFFF" minlength="3" maxlength="8">
 			</div>
 
 			<input id="botaoTentarCor" type="submit" value="TENTAR COR!">
@@ -49,26 +55,28 @@
 		
 		<!-- Configuração de modo de jogo -->
 		<form id="formConfig" class="formulario">
-			<!-- Seleção do modo de jogo (terão outros) -->
-			<div id="escopoSelecaoModo" class="configuracao">
-				<!-- Essas coisas estão estranhas, em relação de label principalmente -->
-				<p class="opcaoTipoModo"></p>
-				<p class="opcaoTipoModo"></p>
-				<label class="chave">
-					<input type="radio">
-					<span class="selecao"></span>
-				</label>
-			</div>
-
-			<!-- Seleção do tipo de código -->
-			<div id="escopoSelecaoTipoCod" class="configuracao">
-				<p class="opcaoTipoCod"></p>
-				<label id="selecaoTipoCod" class="chave">
-  					<input type="checkbox">
-  					<span class="deslizar"></span>
-				</label>
-				<p class="opcaoTipoCod"></p>
-			</div>
+			<ul>
+				<!-- Seleção do tipo de código -->
+				<div id="selecaoCod" class="configuracao">
+					<p class="opcaoTipoCod"></p>
+					<label id="selecaoTipoCod" class="chave">
+						<input type="checkbox">
+						<span class="deslizar"></span>
+					</label>
+					<p class="opcaoTipoCod"></p>
+				</div>
+				
+				<!-- Seleção do modo de jogo (terão outros) -->
+				<div id="selecaoModo" class="configuracao">
+					<!-- Essas coisas estão estranhas, em relação de label principalmente -->
+					<p class="opcaoTipoModo"></p>
+					<p class="opcaoTipoModo"></p>
+					<label class="chave">
+						<input type="radio">
+						<span class="selecao"></span>
+					</label>
+				</div>
+			</ul>
 
 			<!-- Botão para confirmar, e em seguida, alterar o que foi configurado -->
 			<input id="botaoConfirmarConfig" class="botao" type="submit" value="CONFIRMAR CONFIGURAÇÃO">

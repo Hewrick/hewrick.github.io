@@ -2,14 +2,25 @@
 Ideias:
 - Adicionar o modo (normal) sem transparência
 - O input de cor sempre vai comparar com 8 caracteres. Faz com que consiga comparar com, no mínimo 4. Ou melhor, faz com que ele identifique o padrão no texto (como um regex), onde está cada cor e quais informações estão no input. 
+  Solução: Usar "length" para saber a quantidade de caracteres e assim saber o padrão de cores que foi inserido, mas introduz isso na parte do "formTentarCor". Então seria chamada uma função, como "identificarCorTentativa()" (ou algo assim), logo nas primeiras linhas da função.
+- Usar SVG para substituir as imagens que aparecem nos objetos de tentativa
 */
+
+// === Arquivos Importados ===
+/* Como importar:
+ * const { objetoTentativa } = require("./91r4nh4");
+ * No outro arquivo, onde está o componente, basta um "export" (nesse caso) antes do componente "objetoTentativa". 
+ * Agora você sabe o que fazer, bonitão
+*/ 
 
 //import gerarTentativa from "./modulos/tentativas.js";
 //import gerarHex from "./fmodulos/codigoHEX.js";
 //import gerarRGB from "./modulos/codigoRGB.js";
 
 
+
 // === Variáveis ===
+
 
 
 
@@ -27,6 +38,7 @@ const escopoTentativas = document.getElementById("escopoTentativas");
 const formConfig = document.getElementById("formConfig");
 
 
+
 // === Funções genéricas ===
 
 // Função inútil, mas quero saber se vale a pena fazer funcionar
@@ -36,31 +48,17 @@ function prevenirPadrao(e) {
 }
 
 
-// Talvez essa função seja bem da inútil...
-// Funçãoo para o "botaoTentarCor" funcionar com a tecla enter
-entradaCor.addEventListener("keypress", function(e) {
-  // se a tecla pressionada for "Enter" 
-  if (e.key === "Enter") {
-    // cancela a ação padrão 
-    e.preventDefault();
-    
-    // aciona o objeto "botaoTentarCor" como se fosse um clique 
-    botaoTentarCor.click();
-  }
-});
-
-
 
 // === Configuração ===
 
 //
-function alterarModo() {
+function alterarModo(modo) {
 
 }
 
 
 // 
-function alterarCod() {
+function alterarCod(cod) {
 
 }
 
@@ -71,6 +69,13 @@ formConfig.addEventListener("submit", function(e) {
   alterarModo();
   alterarCod();
 });
+
+
+
+// === Escopo Cores ===
+
+
+
 
 
 // === HEX ===
@@ -109,6 +114,44 @@ botaoGerarCor.onclick = function gerarHEX() {
 
 // === Tentativas ===
 
+// Código de cada tentativa, passado para HTML
+{const objetoTentativa = 
+" <li id='objetoTentativa'> " +
+"   <div id='corTentativa' class='itemTentativa'></div> " +
+"   <img id='setaVermelha' class='seta itemTentativa' src='./arquivos/imgs/seta.png'> " +
+"   <img id='setaVerde' class='seta itemTentativa' src='./arquivos/imgs/seta.png'> " +
+"   <img id='setaAzul' class='seta itemTentativa' src='./arquivos/imgs/seta.png'> " +
+"   <img id='setaTransparente' class='seta itemTentativa' style='display: none' src='./arquivos/imgs/seta.png'> " +
+" </li>";}
+
+// Atribuição de objetos às tags (relacionadas ao escopo de tentativas)
+const corTentativa = document.getElementById("corTentativa");
+const setaVermelha = document.getElementById("setaVermelha");
+const setaVerde = document.getElementById("setaVerde");
+const setaAzul = document.getElementById("setaAzul");
+const setaTransparente = document.getElementById("setaTransparente");
+
+// Atribuição de Classes
+objetoTentativa.classList.add("margin-bottom-15");
+
+
+// Função para fazer uma verificação geral de cada tentativa (talvez usar esta função para verificar ambos os tipos de código)
+/* Verificar :
+ * Input vázio;
+ * Padrão inserido (aceito apenas 3, 4, 6 ou 8 caracteres)
+ */
+function verTentativa() {
+  if(entradaCor != null) {
+    escopoTentativas.innerHTML += 
+    "<span>Sem cor não da né chefe</span>";
+    // adicionar animação pro texto tremer e desaparecer depois de 5 segundos
+    
+    escopoTentativas.removeChild(span);
+  } else {
+
+  }
+}
+
 //Função para verificar compatibiliade de cada tentativa
 function compTentativa() {
   let chave = true;
@@ -129,65 +172,11 @@ function compTentativa() {
 
 // Função para criar o objeto DOM para as tentativas
 formTentarCor.addEventListener("submit", function(e) {
-  //Substituir por: tudoIsso.innerHTML = [tags];
-
-  /* // Criação dos objetos para as tentativas
-  const objetoTentativa = document.createElement("li");
-  const corTentativa = document.createElement("div");
-  const setaVermelha = document.createElement("img");
-  const setaVerde = document.createElement("img");
-  const setaAzul = document.createElement("img");
-  // const setaOpacidade = document.createElement("img"); 
-
-  // Atribuindo ID e Classes aos objetos criados
-  objetoTentativa.setAttribute("id", "objetoTentativa");
-  corTentativa.classList.add("itemTentativa");
-  corTentativa.classList.add("cor");
-
-  setaVermelha.classList.add("itemTentativa");
-  setaVermelha.classList.add("seta");
-  setaVermelha.setAttribute("id", "setaVermelha");
-
-  setaVerde.classList.add("itemTentativa");
-  setaVerde.classList.add("seta");
-  setaVerde.setAttribute("id", "setaVerde");
-
-  setaAzul.classList.add("itemTentativa");
-  setaAzul.classList.add("seta");
-  setaAzul.setAttribute("id", "setaAzul");
-
-  // setaOpacidade.classList.add("seta");
-  // setaOpacidade.setAttribute("id", "setaOpacidade");
-
-  // Atribuindo objetos à cada tentativa
-  objetoTentativa.appendChild(corTentativa);
-  objetoTentativa.appendChild(setaVermelha);
-  objetoTentativa.appendChild(setaVerde);
-  objetoTentativa.appendChild(setaAzul);
-  // objetoTentativa.appendChild(setaOpacidade);
-
-  // Atribui características às setas de comparação de cor
-  setaVermelha.setAttribute("src", "./arquivos/imgs/seta.png");
-  setaVerde.setAttribute("src", "./arquivos/imgs/seta.png");
-  setaAzul.setAttribute("src", "./arquivos/imgs/seta.png");
-
-  corTentativa.style.backgroundColor = "#" + entradaCor.value;
-  
-  // Adiciona uma tentativo ao histórico
-  escopoTentativas.appendChild(objetoTentativa);
-  */
-
-  escopoTentativas.innerHTML += 
-  " <li id='objetoTentativa'> \n" +
-  "   <div class='cor itemTentativa'></div> \n" +
-  "   <img id='setaVermelha' class='seta itemTentativa'> \n" +
-  "   <img id='setaVerde' class='seta itemTentativa'> \n" +
-  "   <img id='setaAzul' class='seta itemTentativa'> \n" +
-  "   <img id='setaTransparente' class='seta itemTentativa' style='display: none'> \n" +
-  " </li>";
-
-  document.getElementById("objetoTentativa").classList.add("margin-bottom-15");
-
-  //document.getElementsByClassName("cor").style.backgroundColor = "#" + entradaCor.value;
+  // SEMPRE USE "preventDefault()" NA PRIMEIRA LINHA (acho que isso ajuda um bucado kk...)
   e.preventDefault();
+
+  // Atribui cor da tentativa ao escopo da tentativa
+  corTentativa.style.backgroundColor = "#" + entradaCor.value;
+
+  console.log(entradaCor.value);
 });
