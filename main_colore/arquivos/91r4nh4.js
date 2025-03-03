@@ -19,12 +19,6 @@ Ideias:
 
 
 
-// === Variáveis ===
-
-
-
-
-
 // === Tags para Objetos ===
 
 const botaoGerarCor = document.getElementById("botaoGerarCor");
@@ -36,6 +30,21 @@ const botaoTentarCor = document.getElementById("botaoTentarCor");
 const escopoTentativas = document.getElementById("escopoTentativas");
 
 const formConfig = document.getElementById("formConfig");
+const selecaoCod = document.getElementById("");
+const selecaoModo = document.getElementById("");
+
+
+
+// === Variáveis ===
+
+// Valor da entrada de tentativa 
+let valorEntrada = entradaCor.value;
+// Tamanho do valor da entrada de tentativa
+let tamanhoEntrada = entradaCor.value.length();
+// Valor da seleção do tipo de código
+let valorSelecaoCod = selecaoCod.value;
+// Valor da seleção do modo de jogo
+let valorSelecaoModo = selecaoModo.value;
 
 
 
@@ -46,6 +55,14 @@ const formConfig = document.getElementById("formConfig");
 function prevenirPadrao(e) {
   e.preventDefault();
 }
+
+/* 
+Pensei em fazer uma função teste que vai substituir 
+tudo dentro do "submit" do botão "TENTAR COR!" e vai 
+comparar o texto da tentativa (depois de passar pelo 
+processamento de ficar dentro do padrão) diretamente 
+com o background-color da cor certa (resposta) 
+*/
 
 
 
@@ -115,14 +132,14 @@ botaoGerarCor.onclick = function gerarHEX() {
 // === Tentativas ===
 
 // Código de cada tentativa, passado para HTML
-{const objetoTentativa = 
+const objetoTentativa = 
 " <li id='objetoTentativa'> " +
 "   <div id='corTentativa' class='itemTentativa'></div> " +
 "   <img id='setaVermelha' class='seta itemTentativa' src='./arquivos/imgs/seta.png'> " +
 "   <img id='setaVerde' class='seta itemTentativa' src='./arquivos/imgs/seta.png'> " +
 "   <img id='setaAzul' class='seta itemTentativa' src='./arquivos/imgs/seta.png'> " +
 "   <img id='setaTransparente' class='seta itemTentativa' style='display: none' src='./arquivos/imgs/seta.png'> " +
-" </li>";}
+" </li>";
 
 // Atribuição de objetos às tags (relacionadas ao escopo de tentativas)
 const corTentativa = document.getElementById("corTentativa");
@@ -131,52 +148,57 @@ const setaVerde = document.getElementById("setaVerde");
 const setaAzul = document.getElementById("setaAzul");
 const setaTransparente = document.getElementById("setaTransparente");
 
-// Atribuição de Classes
-objetoTentativa.classList.add("margin-bottom-15");
 
-
-// Função para fazer uma verificação geral de cada tentativa (talvez usar esta função para verificar ambos os tipos de código)
+// Função para fazer uma verificação geral de cada tentativa (é interessante usar esta função para verificar ambos os tipos de código)
+// Será que eu faço um função para cada tipo de verificação?
 /* Verificar :
  * Input vázio;
  * Padrão inserido (aceito apenas 3, 4, 6 ou 8 caracteres)
+ * Se os caracteres realmente são 
  */
 function verTentativa() {
-  if(entradaCor != null) {
-    escopoTentativas.innerHTML += 
-    "<span>Sem cor não da né chefe</span>";
-    // adicionar animação pro texto tremer e desaparecer depois de 5 segundos
-    
-    escopoTentativas.removeChild(span);
-  } else {
 
+  if(tamanhoEntrada != 3 || tamanhoEntrada != 4 || tamanhoEntrada != 6 || tamanhoEntrada != 8) {
+    console.log(valorEntrada.typeOf());
+
+    escopoTentativas.innerHTML += 
+    "<span>Padrão de código inválido!</span>";
+    
+    // adicionar animação pro texto tremer e desaparecer depois de 5 segundos
+    //escopoTentativas.removeChild(span);
+  }
+  else { 
+    // Talvez mudar um desses dois fatores por uma só variável (ou constante)
+    corTentativa.style.backgroundColor = "#" + entradaCor.value; 
   }
 }
 
-//Função para verificar compatibiliade de cada tentativa
+
+//Função para comparar tentativa com resposta E ajustar o estado das dicas (que são as setas etc)
 function compTentativa() {
-  let chave = true;
-  let tentativa;
 
   // Os módulos de cores são definidos
   if(chave == true) {
-    const mVermelho = 1;
-    const mVerde = 1;
-    const mAzul = 1;
+    let mVermelho;
+    let mVerde;
+    let mAzul;
   } else {
-    const mVermelho = 1;
-    const mVerde = 1;
-    const mAzul = 1;
+    let mVermelho;
+    let mVerde;
+    let mAzul;
   }
 }
 
 
-// Função para criar o objeto DOM para as tentativas
+// Quando clicar em "TENTAR COR!"
 formTentarCor.addEventListener("submit", function(e) {
   // SEMPRE USE "preventDefault()" NA PRIMEIRA LINHA (acho que isso ajuda um bucado kk...)
   e.preventDefault();
 
+  verTentativa();
+
   // Atribui cor da tentativa ao escopo da tentativa
-  corTentativa.style.backgroundColor = "#" + entradaCor.value;
+  
 
   console.log(entradaCor.value);
 });

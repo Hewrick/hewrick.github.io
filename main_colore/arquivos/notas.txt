@@ -1,19 +1,45 @@
-Referencias: https://colorable.jxnblk.com/ ; https://monkepo.online/custom ; https://contexto.me/ ; https://term.ooo/
+ === Referencias ===
+https://colorable.jxnblk.com/ ; 
+https://monkepo.online/custom ; 
+https://contexto.me/ ; 
+https://term.ooo/
 ...
+
 
 
  === Conceitos essenciais ===
 
-  Os valores (ou código) de cores em hexadecimal, variam entre 00 que é mais escuro, até FF que é mais claro, os valores também podem ser interpretados (pelo compilador de código) em apenas um caracteres.
+  • Um pouco de explicação para colocar no manual (?):
+  Ambos os códigos de cores são separados em 3 partes obrigatoriamente (RGB - vermelho, verde e azul), 
+mas pode ter uma quarta parte para opacidade (transparência). 
+
   Em Javascript, para adicionar opacidade (transparência) no padrão RBG, um quarto parâmetro é configurado dentro dos parâmetros.
-Ex.: "rgb(255, 0, 255, 147);".
-  Para fazer o mesmo com o padrão hexadecimal, é adicionado um quarto conjunto de caracteres que aumentam a opacidade conforme o valor cresce. 
-Exs.: "#f0f5;", "#ff00ff5E;".
+Exemplo: "rgb(255, 0, 255)"; "rgb(255, 0, 255, 147) ".
+
+  O código hexadecimal varia entre 0 1 2 3 4 5 6 7 8 9 A B C D E F.
+Cada parte do código de cores em hexadecimal pode ser interpretado em 1 ou 2 caracteres, normalmente 2.
+  # (1ª parte) 0F (Vermelho) | (2ª parte) 0F (Verde) | (3ª parte) 0F (Azul) | (Última parte (opicional)) 0F (Opacidade)
+  Então o valor do código vai de 0 (mais escuro) até F (mais claro). 
+A opacidade aumenta conforme o valor cresce e diminui conforme o valor desce. 
+Exemplos: "#f0f5"; "#ff00ff5E"; "#0ABFF0".
+
+  Componentes do código HSL 
+- Matiz: Representa a cor básica e é medida em graus (0° a 360°) no círculo cromático. Por exemplo, 0° é vermelho, 120° é verde, 240° é azul.
+- Saturação: Mede a pureza da cor, variando de 0% (cinza, sem cor) a 100% (cor totalmente vibrante).
+- Luminosidade: Também é uma porcentagem; 0% é preto, 100% é branco.
+Exemplo: "hsl(279, 88.20%, 50.00%)".
+
+
+  • Filtragem da entrada de dados (tentativas):
+- Verificar o tipo de código e o modo de jogo;
+- Verificar se o valor da tentativa está dentro do padrão;
+- Verificar compatibilidade da tentativa com a resposta
 ...
 
 
+
  === Outros modos === 
-identificar a cor que falta: 
+- identificar a cor que falta;
 - opacidade entre 40% à 100%; 
 - número limite de tentativas; 
 - sequência análoga; 
@@ -21,3 +47,10 @@ identificar a cor que falta:
 - sequência tríade; 
 - sequência quadrado 
 ... 
+
+
+
+ === Notas mentais ===
+  Ter que ficar reavaliando o objetivo final do projeto, e os meios para alcança-lo, atrapalha muito no desenvolvimento, 
+ou seja, todo planejamento é pouco antes de botar a mão na massa.
+  E eu estou falando de parar para reescrever o texto de "Conceitos essenciais" enquanto estou escrevendo código.

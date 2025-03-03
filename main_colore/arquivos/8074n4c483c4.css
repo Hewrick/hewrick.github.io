@@ -19,7 +19,7 @@ header{
 	background-color: transparent;
 }
 
-#titulo { margin: 8px; }
+#titulo { margin: 8px 0; }
 
 
 
@@ -224,10 +224,17 @@ input[type=number]::-webkit-outer-spin-button {
 	flex-direction: column-reverse;
 }
 
+/* Aviso de input invalido */
+#escopoTentativa span {
+	color: #f00;
+}
+
+/* Tudo sobre "objetoTentativa" */
 #objetoTentativa {
 	display: flex;
 	height: 70px;
 	padding: 10px;
+	margin-bottom: 15px;
 	margin-bottom: 15px;
 	background-color: white;
 	border: solid 1px #000;
