@@ -1,9 +1,53 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36" version="26.1.0">
   <diagram name="Página-1" id="KNFP3O0pJ1xYnGjdNYIP">
-    <mxGraphModel>
+    <mxGraphModel dx="880" dy="444" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="GDHccZViMmIjYzwi17ae-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="GDHccZViMmIjYzwi17ae-1" target="GDHccZViMmIjYzwi17ae-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GDHccZViMmIjYzwi17ae-1" value="Receber Tentativa da Resposta" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="30" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="GDHccZViMmIjYzwi17ae-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="GDHccZViMmIjYzwi17ae-4" target="GDHccZViMmIjYzwi17ae-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GDHccZViMmIjYzwi17ae-12" value="Não está dentro&lt;div&gt;dos padrões&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="GDHccZViMmIjYzwi17ae-10">
+          <mxGeometry x="-0.15" relative="1" as="geometry">
+            <mxPoint x="9" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GDHccZViMmIjYzwi17ae-19" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="GDHccZViMmIjYzwi17ae-4" target="GDHccZViMmIjYzwi17ae-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GDHccZViMmIjYzwi17ae-4" value="Verificar se a resposta está dentro dos padrões (tamanho = 3 ou 4 ou 6 ou 8)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="120" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="GDHccZViMmIjYzwi17ae-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="GDHccZViMmIjYzwi17ae-8" target="GDHccZViMmIjYzwi17ae-1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="505" y="55" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GDHccZViMmIjYzwi17ae-8" value="Instanciar mensagem temporária &quot;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="130" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GDHccZViMmIjYzwi17ae-21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="GDHccZViMmIjYzwi17ae-18" target="GDHccZViMmIjYzwi17ae-20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="GDHccZViMmIjYzwi17ae-23" value="Resposta errada" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="GDHccZViMmIjYzwi17ae-21">
+          <mxGeometry x="0.0167" y="-2" relative="1" as="geometry">
+            <mxPoint x="-1" y="-2" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GDHccZViMmIjYzwi17ae-18" value="Comparar tentativa com a resposta" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="200" y="240" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="GDHccZViMmIjYzwi17ae-20" value="In" style="whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="440" y="240" width="120" height="60" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
