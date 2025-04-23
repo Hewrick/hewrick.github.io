@@ -40,7 +40,7 @@ Exemplo: "hsl(279, 88.20%, 50.00%)".
 
  === Outros modos === 
 - identificar a cor que falta;
-- opacidade entre 40% à 100%; 
+- Modo difícil: opacidade entre 40% à 100%; 
 - número limite de tentativas; 
 - sequência análoga; 
 - complementar; 
@@ -50,7 +50,16 @@ Exemplo: "hsl(279, 88.20%, 50.00%)".
 
 
 
+ === Ideias ===
+- É interessante trocar o "objetoTentativa" para algo como "const objetoTentativa = () => escopoTentativas += '...'";
+...
+
+
+
  === Notas mentais ===
   Ter que ficar reavaliando o objetivo final do projeto, e os meios para alcança-lo, atrapalha muito no desenvolvimento, 
 ou seja, todo planejamento é pouco antes de botar a mão na massa.
   E eu estou falando de parar para reescrever o texto de "Conceitos essenciais" enquanto estou escrevendo código.
+  
+  [11/03/2025 - 16:57]
+  Quase toda vez que eu vou mexer nesse código eu fico parado olhando pra tela e pensando no próximo passo ou tentando imaginar um fluxograma pra me ajudar a estruturar o código, em vez de fazer logo um fluxograma.

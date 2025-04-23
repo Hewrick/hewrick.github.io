@@ -1,9 +1,8 @@
 /* 
 Ideias:
-- Adicionar o modo (normal) sem transparência
-- O input de cor sempre vai comparar com 8 caracteres. Faz com que consiga comparar com, no mínimo 4. Ou melhor, faz com que ele identifique o padrão no texto (como um regex), onde está cada cor e quais informações estão no input. 
+- Faz com que a função  "compTentativa" identifique o padrão no texto (como um regex), onde está cada cor e quais informações estão no input. 
   Solução: Usar "length" para saber a quantidade de caracteres e assim saber o padrão de cores que foi inserido, mas introduz isso na parte do "formTentarCor". Então seria chamada uma função, como "identificarCorTentativa()" (ou algo assim), logo nas primeiras linhas da função.
-- Usar SVG para substituir as imagens que aparecem nos objetos de tentativa
+- Usar SVG para substituir as imagens que aparecem como dicas para as tentativa
 */
 
 // === Arquivos Importados ===
@@ -40,11 +39,11 @@ const selecaoModo = document.getElementById("");
 // Valor da entrada de tentativa 
 let valorEntrada = entradaCor.value;
 // Tamanho do valor da entrada de tentativa
-let tamanhoEntrada = entradaCor.value.length();
+let tamanhoEntrada = entradaCor.length;
 // Valor da seleção do tipo de código
-let valorSelecaoCod = selecaoCod.value;
+//let valorSelecaoCod = selecaoCod.value;
 // Valor da seleção do modo de jogo
-let valorSelecaoModo = selecaoModo.value;
+//let valorSelecaoModo = selecaoModo.value;
 
 
 
@@ -52,7 +51,7 @@ let valorSelecaoModo = selecaoModo.value;
 
 // Função inútil, mas quero saber se vale a pena fazer funcionar
 // Função para prevenir ação padrão
-function prevenirPadrao(e) {
+function prevPadrao(e) {
   e.preventDefault();
 }
 
@@ -61,7 +60,7 @@ Pensei em fazer uma função teste que vai substituir
 tudo dentro do "submit" do botão "TENTAR COR!" e vai 
 comparar o texto da tentativa (depois de passar pelo 
 processamento de ficar dentro do padrão) diretamente 
-com o background-color da cor certa (resposta) 
+com o background-color da cor certa (resposta). Por exemplo, em um if.
 */
 
 
@@ -90,10 +89,6 @@ formConfig.addEventListener("submit", function(e) {
 
 
 // === Escopo Cores ===
-
-
-
-
 
 // === HEX ===
 
@@ -149,27 +144,35 @@ const setaAzul = document.getElementById("setaAzul");
 const setaTransparente = document.getElementById("setaTransparente");
 
 
-// Função para fazer uma verificação geral de cada tentativa (é interessante usar esta função para verificar ambos os tipos de código)
+// Função para instanciar "objetoTentativa" com suas características já configuradas 
+function instanciarTentativa() {
+  corTentativa.style.backgroundColor = "#" + entradaCor.value; 
+  escopoTentativas.innerHTML = objetoTentativa;
+}
+
+// Função para fazer uma verificação geral de cada tentativa 
+// É interessante usar esta função para verificar ambos os tipos de código)
 // Será que eu faço um função para cada tipo de verificação?
 /* Verificar :
- * Input vázio;
  * Padrão inserido (aceito apenas 3, 4, 6 ou 8 caracteres)
- * Se os caracteres realmente são 
+ * Se os caracteres realmente estão entre os válidos (Hexadecimal: 1 à F; RGB: 0.0 à 255.0; HSL: ;)
  */
 function verTentativa() {
 
-  if(tamanhoEntrada != 3 || tamanhoEntrada != 4 || tamanhoEntrada != 6 || tamanhoEntrada != 8) {
-    console.log(valorEntrada.typeOf());
+  if(tamanhoEntrada != 3 || tamanhoEntrada != 4 || tamanhoEntrada != 6 || tamanhoEntrada != 8 || tamanhoEntrada == 0) {
+    console.log(tamanhoEntrada);
 
     escopoTentativas.innerHTML += 
     "<span>Padrão de código inválido!</span>";
     
-    // adicionar animação pro texto tremer e desaparecer depois de 5 segundos
-    //escopoTentativas.removeChild(span);
+    delay(5000);
+    escopoTentativas.removeChild(span);
   }
   else { 
+
+    instanciarTentativa();
     // Talvez mudar um desses dois fatores por uma só variável (ou constante)
-    corTentativa.style.backgroundColor = "#" + entradaCor.value; 
+    
   }
 }
 
@@ -199,6 +202,6 @@ formTentarCor.addEventListener("submit", function(e) {
 
   // Atribui cor da tentativa ao escopo da tentativa
   
-
+  console.log(tamanhoEntrada);
   console.log(entradaCor.value);
 });
