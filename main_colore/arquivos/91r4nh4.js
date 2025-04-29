@@ -29,8 +29,12 @@ const botaoTentarCor = document.getElementById("botaoTentarCor");
 const escopoTentativas = document.getElementById("escopoTentativas");
 
 const formConfig = document.getElementById("formConfig");
-const selecaoCod = document.getElementById("");
-const selecaoModo = document.getElementById("");
+
+const opcaoHEX = document.getElementById("opcaoHEX");
+const opcaoRGB = document.getElementById("opcaoRGB");
+const entradaSwitch = document.getElementById("switch");
+
+const entradaRadio = document.getElementById("");
 
 
 
@@ -48,6 +52,13 @@ let tamanhoEntrada = entradaCor.length;
 
 
 // === Funções genéricas ===
+
+document.getElementById("teste").onclick  = function teste() {
+  console.log(entradaCor.length);
+  console.log(entradaCor.value);
+  console.log(entradaSwitch.checked);
+  console.log(entradaRadio.value)
+}
 
 // Função inútil, mas quero saber se vale a pena fazer funcionar
 // Função para prevenir ação padrão
@@ -159,8 +170,8 @@ function instanciarTentativa() {
  */
 function verTentativa() {
 
-  if(tamanhoEntrada != 3 || tamanhoEntrada != 4 || tamanhoEntrada != 6 || tamanhoEntrada != 8 || tamanhoEntrada == 0) {
-    console.log(tamanhoEntrada);
+  if(entradaCor.length != 3 || entradaCor.length != 4 || entradaCor.length != 6 || entradaCor.length != 8 || entradaCor.length == 0) {
+    console.log(entradaCor.length);
 
     escopoTentativas.innerHTML += 
     "<span>Padrão de código inválido!</span>";
@@ -198,10 +209,7 @@ formTentarCor.addEventListener("submit", function(e) {
   // SEMPRE USE "preventDefault()" NA PRIMEIRA LINHA (acho que isso ajuda um bucado kk...)
   e.preventDefault();
 
-  verTentativa();
+  //verTentativa();
 
   // Atribui cor da tentativa ao escopo da tentativa
-  
-  console.log(tamanhoEntrada);
-  console.log(entradaCor.value);
 });

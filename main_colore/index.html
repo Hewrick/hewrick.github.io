@@ -13,12 +13,14 @@
 	<header>
 		<div id="titulo">COLORE</div>
 	</header>
+	
 	<div id="app">
+
 		<!-- Container que separa componentes principais dos componentes do escopo de configuração -->
 		<container>
 		<!-- Escopo principal para as cores -->
-		<div class='escopoCores margin-bottom-15'>
-			<button id="botaoGerarCor" class="margin-bottom-15" type="button">NOVA COR</button>
+		<div class='escopoCores margin-bottom-15px'>
+			<button id="botaoGerarCor" class="margin-bottom-15px" type="button">NOVA COR</button>
 			
 			<div class="quadrado">
 				<div id="cor"></div>
@@ -36,12 +38,9 @@
 		</div>
 		
 		<!-- Sessão para tentar uma cor -->
-		<form id="formTentarCor" class="formulario margin-bottom-15">
+		<form id="formTentarCor" class="formulario margin-bottom-15px">
 			<div>
-				<svg>
-
-				</svg>
-				
+				<svg></svg>
 				<input id="entradaCor" type="text" placeholder="FFFFFF" minlength="3" maxlength="6">
 			</div>
 
@@ -52,36 +51,45 @@
 		<ul id="escopoTentativas"></ul>
 		</container>
 		
-		
-		<!-- Configuração de modo de jogo -->
+		<!-- Configuração de modo de jogo --> 
+		<!-- Pesquisar para entender: 
+    		 https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#form_enctype 
+		     https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio#attr-checked 
+		-->
 		<form id="formConfig" class="formulario">
-			<ul>
-				<!-- Seleção do tipo de código -->
-				<div id="selecaoCod" class="configuracao">
-					<p class="opcaoTipoCod"></p>
-					<label id="selecaoTipoCod" class="chave">
-						<input type="checkbox">
-						<span class="deslizar"></span>
-					</label>
-					<p class="opcaoTipoCod"></p>
-				</div>
-				
-				<!-- Seleção do modo de jogo (terão outros) -->
-				<div id="selecaoModo" class="configuracao">
-					<!-- Essas coisas estão estranhas, em relação de label principalmente -->
-					<p class="opcaoTipoModo"></p>
-					<p class="opcaoTipoModo"></p>
-					<label class="chave">
-						<input type="radio">
-						<span class="selecao"></span>
-					</label>
-				</div>
-			</ul>
+			
+			<!-- Seleção do tipo de código -->
+			<p class="legenda-form">Escolha um tipo de código para as cores:</p>
+			<div id="selecaoCod" class="configuracao margin-bottom-15px">	
+				<label id="opcaoHEX" class="opcao" for="switch">HEX</label>
+				<label class="switch" for="switch">
+					<input type="checkbox" id="switch" name="switch">
+					<span class="slider"></span>
+				</label>
+				<label id="opcaoHEX" class="opcao" for="switch">RGB</label>
+			</div>
+			
+			<!-- Seleção do modo de jogo (terão outros) -->
+			<p class="legenda-form">Escolha um modo de jogo:</p>
+			<div id="selecaoModo" class="configuracao">
+				<!-- Essas coisas estão estranhas, em relação de label principalmente -->
+				<label id="opcao1">
+					<input type="radio" name="radioOptions" value="dificil">Até 25 tentativas
+				</label><br>
+				<label id="opcao2">
+					<input type="radio" name="radioOptions" value="opacidade">Opacidade
+				</label><br>
+				<label id="opcao3">
+					<input type="radio" name="radioOptions" value="degrade">Falta um no degradê
+				</label>
+			</div>
+			
 
 			<!-- Botão para confirmar, e em seguida, alterar o que foi configurado -->
 			<input id="botaoConfirmarConfig" class="botao" type="submit" value="CONFIRMAR CONFIGURAÇÃO">
 		</form>
 	</div>
+	<button id="teste" onclick="teste()">teste</button>
 	<script type="module" src="./arquivos/91r4nh4.js"></script>
 </body>
 </html>
