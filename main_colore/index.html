@@ -10,8 +10,9 @@
     <!-- referencias: https://colorable.jxnblk.com/ ; https://monkepo.online/custom ; https://contexto.me/ ; https://term.ooo/ ; https://angle.wtf/ -->
 </head>
 <body>
-	<header>
+	<header >
 		<div id="titulo">COLORE</div>
+		<button id="teste" >teste</button>
 	</header>
 	
 	<div id="app">
@@ -44,7 +45,7 @@
 				<input id="entradaCor" type="text" placeholder="FFFFFF" minlength="3" maxlength="6">
 			</div>
 
-			<input id="botaoTentarCor" type="submit" value="TENTAR COR!">
+			<button id="botaoTentarCor" type="submit">TENTAR COR!</button>
 		</form>
 		
 		<!-- Sessão de tentativas -->
@@ -54,13 +55,12 @@
 		<!-- Configuração de modo de jogo --> 
 		<!-- Pesquisar para entender: 
     		 https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#form_enctype 
-		     https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio#attr-checked 
 		-->
 		<form id="formConfig" class="formulario">
 			
-			<!-- Seleção do tipo de código -->
-			<p class="legenda-form">Escolha um tipo de código para as cores:</p>
-			<div id="selecaoCod" class="configuracao margin-bottom-15px">	
+			<!-- Seleção de código da cor -->
+			<p class="legenda-form">Tipo de código</p>
+			<div id="selecaoCod" class="configuracao">	
 				<label id="opcaoHEX" class="opcao" for="switch">HEX</label>
 				<label class="switch" for="switch">
 					<input type="checkbox" id="switch" name="switch">
@@ -70,26 +70,23 @@
 			</div>
 			
 			<!-- Seleção do modo de jogo (terão outros) -->
-			<p class="legenda-form">Escolha um modo de jogo:</p>
+			<p class="legenda-form">Modo de jogo</p>
 			<div id="selecaoModo" class="configuracao">
-				<!-- Essas coisas estão estranhas, em relação de label principalmente -->
-				<label id="opcao1">
-					<input type="radio" name="radioOptions" value="dificil">Até 25 tentativas
+				<label class="label-modo" for="opcao1">
+					<input id="opcao1" type="radio" name="opcaoRadio" value="dificil">Até 25 tentativas
 				</label><br>
-				<label id="opcao2">
-					<input type="radio" name="radioOptions" value="opacidade">Opacidade
+				<label class="label-modo" for="opcao2"><input id="opcao2" type="radio" name="opcaoRadio" value="opacidade">Opacidade
 				</label><br>
-				<label id="opcao3">
-					<input type="radio" name="radioOptions" value="degrade">Falta um no degradê
+				<label class="label-modo" for="opcao3">
+					<input id="opcao3" type="radio" name="opcaoRadio" value="degrade">Falta um no degradê
 				</label>
 			</div>
 			
 
 			<!-- Botão para confirmar, e em seguida, alterar o que foi configurado -->
-			<input id="botaoConfirmarConfig" class="botao" type="submit" value="CONFIRMAR CONFIGURAÇÃO">
+			<button id="botaoConfirmarConfig" class="botao" type="submit">CONFIRMAR CONFIGURAÇÃO</button>
 		</form>
 	</div>
-	<button id="teste" onclick="teste()">teste</button>
 	<script type="module" src="./arquivos/91r4nh4.js"></script>
 </body>
 </html>
