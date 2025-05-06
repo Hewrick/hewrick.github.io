@@ -11,14 +11,14 @@
 </head>
 <body>
 	<header >
-		<div id="titulo">COLORE</div>
-		<button id="teste" >teste</button>
+			<div id="titulo">COLORE</div>
+			<button id="teste" >teste</button>
 	</header>
-	
 	<div id="app">
+		
 
-		<!-- Container que separa componentes principais dos componentes do escopo de configuração -->
-		<container>
+		<!-- Section que separa componentes principais dos componentes do escopo de configuração -->
+		<section>
 		<!-- Escopo principal para as cores -->
 		<div class='escopoCores margin-bottom-15px'>
 			<button id="botaoGerarCor" class="margin-bottom-15px" type="button">NOVA COR</button>
@@ -50,7 +50,7 @@
 		
 		<!-- Sessão de tentativas -->
 		<ul id="escopoTentativas"></ul>
-		</container>
+	</section>
 		
 		<!-- Configuração de modo de jogo --> 
 		<!-- Pesquisar para entender: 
@@ -63,7 +63,7 @@
 			<div id="selecaoCod" class="configuracao">	
 				<label id="opcaoHEX" class="opcao" for="switch">HEX</label>
 				<label class="switch" for="switch">
-					<input type="checkbox" id="switch" name="switch">
+					<input type="checkbox" id="switch" name="switch" value="HEX">
 					<span class="slider"></span>
 				</label>
 				<label id="opcaoHEX" class="opcao" for="switch">RGB</label>

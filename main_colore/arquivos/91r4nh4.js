@@ -34,38 +34,42 @@ const opcaoHEX = document.getElementById("opcaoHEX");
 const opcaoRGB = document.getElementById("opcaoRGB");
 const entradaSwitch = document.getElementById("switch");
 
-let opcaoRadio = document.getElementsByName("opcaoRadio");
+const opcaoRadio = document.getElementsByName("opcaoRadio");
 
 
 
 // === Variáveis ===
 
+// 
+let configCod = if (entradaSwitch.checked) { configCod = "RGB"; }
+  else { configCod = "HEX"; };
+
+// Modo de jogo
+let configModo = opcaoRadio.value;
+
 // Valor da entrada de tentativa 
-let valorEntrada = entradaCor.value;
+let valorEntradaTentativa = entradaCor.value;
 // Tamanho do valor da entrada de tentativa
 let tamanhoEntrada = entradaCor.value.length;
-// Valor da seleção do tipo de código
-let valorSelecaoCod = entradaSwitch.value;
-// Valor da seleção do modo de jogo
-let valorSelecaoModo = opcaoRadio.value;
 
 
 
 // === Funções genéricas ===
 
-document.getElementById("teste").onclick  = function() {
+// import { teste } from "./modulos/25tentativas.js";
+document.getElementById("teste").onclick = function teste() {
   console.clear();
-  console.log("Tamanho de entradaCor: " + entradaCor.value.length);
-  console.log("Valor de entradaCor: " + entradaCor.value);
   
-  if (entradaSwitch.checked) { valorSelecaoCod = "RGB"; }
-  else { valorSelecaoCod = "HEX"; } 
-  console.log("\nTipo de código: " + valorSelecaoCod);
+  
+  console.log("\nTipo de código: " + configCod);
   
   console.log("\nOpções de modo de jogo: ");
   for (const radio of opcaoRadio) {
     console.log(radio.value +": "+ radio.checked);
   }
+
+  console.log("Tamanho de entradaCor: " + tamanhoEntrada);
+  console.log("Valor de entradaCor: " + valorEntradaTentativa);
 }
 
 // Função inútil, mas quero saber se vale a pena fazer funcionar

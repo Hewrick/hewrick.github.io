@@ -5,12 +5,23 @@ https://contexto.me/ ;
 https://term.ooo/
 ...
 
- === Tarefas ===
- - Layout beta (minimamente responsívo) - 1 a 2 dias;
- - Verificação de validade do input - Tempo indefinido;
- - Verificação de compatibilidade do input - Tempo indefinido;
- - Criação automática do objeto-tentativa (há subtarefas) - Tempo indefinidásso;
- - Design final (última tarefa) - Tempo indefinido.
+ === Tarefas (priorizando )===
+ - Layout beta (minimamente responsívo)
+ - Funcionalidades gerais
+   - Verificação de validade do input
+   - Verificação de compatibilidade do input
+   - Criação automática do objeto-tentativa
+   - Retorno da tentativa (resposta se está certo ou não)
+ - Aplicar modos de jogo
+   - 25 tentativas
+   - Opacidade
+   - Degradê
+ - Adicionar tutorial
+ - Design final (última tarefa)
+
+ - TALVEZ 
+  - Quadro de estatísticas
+  - Dicas
 
 
  === Conceitos essenciais ===
@@ -69,3 +80,6 @@ ou seja, todo planejamento é pouco antes de botar a mão na massa.
   
   [11/03/2025 - 16:57]
   Quase toda vez que eu vou mexer nesse código eu fico parado olhando pra tela e pensando no próximo passo ou tentando imaginar um fluxograma pra me ajudar a estruturar o código, em vez de fazer logo um fluxograma.
+
+  [05/05/2025 - 20:51]
+  É incomodante não saber a melhor técnica pra fazer algo que eu já sei como eu quero na minha mente, mas quando eu vejo um exemplo parecido com o que eu queria, eu penso que o que queria não tem um formato profissional por falta de conhecimento meu, falta de tentar e tentar de novo, falta de experiência... Mas tudo bem, vou continuar tentanto (mesmo com pouca frequência). É isso que eu quero e escolhi pra minha vida agora.
