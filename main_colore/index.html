@@ -60,20 +60,22 @@
 			
 			<!-- Seleção de código da cor -->
 			<p class="legenda-form">Tipo de código</p>
-			<div id="selecaoCod" class="configuracao">	
+			<ul id="selecaoCod" class="configuracao">	
 				<label id="opcaoHEX" class="opcao" for="switch">HEX</label>
 				<label class="switch" for="switch">
 					<input type="checkbox" id="switch" name="switch" value="HEX">
 					<span class="slider"></span>
 				</label>
 				<label id="opcaoHEX" class="opcao" for="switch">RGB</label>
-			</div>
+			</ul>
 			
 			<!-- Seleção do modo de jogo (terão outros) -->
 			<p class="legenda-form">Modo de jogo</p>
 			<div id="selecaoModo" class="configuracao">
+				<label class="label-modo" for="opcao0"><input id="opcao0" type="radio" name="opcaoRadio" value="Padrão">Padrão
+				</label><br>
 				<label class="label-modo" for="opcao1">
-					<input id="opcao1" type="radio" name="opcaoRadio" value="dificil">Até 25 tentativas
+					<input id="opcao1" type="radio" name="opcaoRadio" value="limite de tentativas">Até 25 tentativas
 				</label><br>
 				<label class="label-modo" for="opcao2"><input id="opcao2" type="radio" name="opcaoRadio" value="opacidade">Opacidade
 				</label><br>

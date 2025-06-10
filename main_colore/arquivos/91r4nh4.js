@@ -1,6 +1,6 @@
 /* 
 Ideias:
-- Faz com que a função  "compTentativa" identifique o padrão no texto (como um regex), onde está cada cor e quais informações estão no input. 
+- Faz com que a função  "compararTentativa" identifique o padrão no texto (como um regex), onde está cada cor e quais informações estão no input. 
   Solução: Usar "length" para saber a quantidade de caracteres e assim saber o padrão de cores que foi inserido, mas introduz isso na parte do "formTentarCor". Então seria chamada uma função, como "identificarCorTentativa()" (ou algo assim), logo nas primeiras linhas da função.
 - Usar SVG para substituir as imagens que aparecem como dicas para as tentativa
 */
@@ -20,35 +20,37 @@ Ideias:
 
 // === Tags para Objetos ===
 
+// Cor principal atual
 const botaoGerarCor = document.getElementById("botaoGerarCor");
 const cor = document.getElementById("cor");
 const entradaCor = document.getElementById("entradaCor");
 
+// Tentar Cor
 const formTentarCor = document.getElementById("formTentarCor");
 const botaoTentarCor = document.getElementById("botaoTentarCor");
 const escopoTentativas = document.getElementById("escopoTentativas");
 
+// Configuração
 const formConfig = document.getElementById("formConfig");
-
+// Tipo de Cor
 const opcaoHEX = document.getElementById("opcaoHEX");
 const opcaoRGB = document.getElementById("opcaoRGB");
 const entradaSwitch = document.getElementById("switch");
-
+// Modo de jogo
 const opcaoRadio = document.getElementsByName("opcaoRadio");
 
 
 
 // === Variáveis ===
 
-// 
-let configCod = if (entradaSwitch.checked) { configCod = "RGB"; }
-  else { configCod = "HEX"; };
+// Tipo de código de cor
+let configCod;
 
 // Modo de jogo
-let configModo = opcaoRadio.value;
+let configModo = opcaoRadio[0].value;
 
 // Valor da entrada de tentativa 
-let valorEntradaTentativa = entradaCor.value;
+let valorEntrada = entradaCor.value;
 // Tamanho do valor da entrada de tentativa
 let tamanhoEntrada = entradaCor.value.length;
 
@@ -57,19 +59,19 @@ let tamanhoEntrada = entradaCor.value.length;
 // === Funções genéricas ===
 
 // import { teste } from "./modulos/25tentativas.js";
-document.getElementById("teste").onclick = function teste() {
-  console.clear();
-  
-  
-  console.log("\nTipo de código: " + configCod);
-  
-  console.log("\nOpções de modo de jogo: ");
-  for (const radio of opcaoRadio) {
-    console.log(radio.value +": "+ radio.checked);
-  }
+document.getElementById("teste").onclick = function teste() {  
+  configCod = entradaSwitch.checked ? "RGB" : "HEX"; 
 
-  console.log("Tamanho de entradaCor: " + tamanhoEntrada);
-  console.log("Valor de entradaCor: " + valorEntradaTentativa);
+  for (const radio of opcaoRadio) {
+    radio.checked ? configModo = radio.value : configModo.default;
+  }
+  
+  let tabela = "Tipo de código: " + configCod.valueOf() +
+  "\nModo de jogo: " + configModo +
+  "\nValor de entrada: " + valorEntrada +
+  "\nTamanho de entrada: " + tamanhoEntrada;
+
+  escopoTentativas.innerHTML = tabela;
 }
 
 // Função inútil, mas quero saber se vale a pena fazer funcionar
@@ -90,23 +92,27 @@ com o background-color da cor certa (resposta). Por exemplo, em um if.
 
 // === Configuração ===
 
-//
-function alterarModo(modo) {
-
+// Função para alterar o código de cor (HEX ou RGB)
+// Essa função vai alterar o valor da variável "configCod" para o valor do código de cor que foi selecionado (HEX ou RGB)
+function alterarCod() {
+  console.log("Tipo de código: " + configCod);
 }
 
-
-// 
-function alterarCod(cod) {
-
+// Função para alterar o modo de jogo
+// Essa função vai alterar o valor da variável "configModo" para o valor do modo de jogo que foi selecionado 
+function alterarModo() {
+  for (const radio of opcaoRadio) {
+    radio.checked ? console.log("Modo de jogo: " + radio.value) : null;
+  }
 }
-
 
 // Sessão do que acontecer quando as configurações forem confirmadas
 formConfig.addEventListener("submit", function(e) {
   e.preventDefault();
-  alterarModo();
+  console.clear();
+  console.log("Configuração atual: ")
   alterarCod();
+  alterarModo();
 });
 
 
@@ -159,13 +165,12 @@ const objetoTentativa =
 "   <img id='setaTransparente' class='seta itemTentativa' style='display: none' src='./arquivos/imgs/seta.png'> " +
 " </li>";
 
-// Atribuição de objetos às tags (relacionadas ao escopo de tentativas)
+// Atribuição de elementos às tags (relacionadas ao escopo de tentativas)
 const corTentativa = document.getElementById("corTentativa");
 const setaVermelha = document.getElementById("setaVermelha");
 const setaVerde = document.getElementById("setaVerde");
 const setaAzul = document.getElementById("setaAzul");
 const setaTransparente = document.getElementById("setaTransparente");
-
 
 // Função para instanciar "objetoTentativa" com suas características já configuradas 
 function instanciarTentativa() {
@@ -180,9 +185,9 @@ function instanciarTentativa() {
  * Padrão inserido (aceito apenas 3, 4, 6 ou 8 caracteres)
  * Se os caracteres realmente estão entre os válidos (Hexadecimal: 1 à F; RGB: 0.0 à 255.0; HSL: ;)
  */
-function verTentativa() {
+function verificarTentativa() {
 
-  if(entradaCor.length != 3 || entradaCor.length != 4 || entradaCor.length != 6 || entradaCor.length != 8 || entradaCor.length == 0) {
+  if(entradaCor.value.length != 3 || entradaCor.value.length != 4 || entradaCor.value.length != 6 || entradaCor.value.length != 8 || entradaCor.value.length == 0) {
     console.log(entradaCor.length);
 
     escopoTentativas.innerHTML += 
@@ -199,9 +204,8 @@ function verTentativa() {
   }
 }
 
-
 //Função para comparar tentativa com resposta E ajustar o estado das dicas (que são as setas etc)
-function compTentativa() {
+function compararTentativa() {
 
   // Os módulos de cores são definidos
   if(chave == true) {
@@ -215,13 +219,15 @@ function compTentativa() {
   }
 }
 
-
 // Quando clicar em "TENTAR COR!"
 formTentarCor.addEventListener("submit", function(e) {
   // SEMPRE USE "preventDefault()" NA PRIMEIRA LINHA (acho que isso ajuda um bucado kk...)
   e.preventDefault();
 
-  //verTentativa();
+  console.log("Tamanho de entradaCor: " + tamanhoEntrada);
+  console.log("Valor de entradaCor: " + valorEntrada);
+
+  //verificarTentativa();
 
   // Atribui cor da tentativa ao escopo da tentativa
 });

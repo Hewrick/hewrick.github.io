@@ -1,3 +1,7 @@
+/* 
+- cor de fundo pra input e label: #8a8a8a4d
+ */
+
 *{box-sizing: border-box; appearance:none; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;  /* teste com borda aqui * border: solid 1px #0001; */ }
 body{margin:0; position: relative; background: #fff}
 /* body container {
@@ -73,7 +77,7 @@ header{
 	margin-bottom: 15px;
 }
 
-/* === Input com Switch === */
+/* === Seleção do tipo de código (Input com Switch) === */
 #selecaoCod {
 	display: flex;
 	flex-direction: row;
@@ -120,15 +124,23 @@ header{
 }
 
 
-/* === Input Radio === */
+/* === Seleção do modo de jogo (Input Radio) === */
 #selecaoModo {
+	display: flex;
+	flex-direction: column;	
+}
 
+/* É AQUI ONDE VOCÊ TA MEXENDO, APENAS AQUI. RESOLVA ISSO */
+/* Que tal meter um "clamp(minimum, preferred value, maximum)" aqui?? */
+.label-modo {
+	
 }
 
 #selecaoModo input[type="radio"] { display: none; }
 .label-modo {
-	margin-bottom: 100px;
-	border-radius: 5px;background-color: rgb(0,0,0,0.4);
+	border-radius: 5px;
+	border: solid 2px #000 ;
+	background-color: rgb(0,0,0,0.4);
 }
 
 #selecaoModo input[type="radio"]:checked + #selecaoModo label { 
@@ -207,14 +219,14 @@ header{
 	display: grid;
 }
 
-#formTentarCor  svg {
+#formTentarCor svg {
 	width: 20px; height: 20px;
 }
 
 #entradaCor {
 	height: 24px;
 	padding: 5px;
-	background: inherit;
+	background: #8a8a8a4d;
 	border: 1px #000;
 }
 #entradaCor:focus {
