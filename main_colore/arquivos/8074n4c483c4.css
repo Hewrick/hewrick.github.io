@@ -130,7 +130,7 @@ header{
 	flex-direction: column;	
 }
 
-/* É AQUI ONDE VOCÊ TA MEXENDO, APENAS AQUI. RESOLVA ISSO */
+/* É AQUI ONDE VOCÊ TA MEXENDO, APENAS AQUI. RESOLVA ISSO vvv */
 /* Que tal meter um "clamp(minimum, preferred value, maximum)" aqui?? */
 .label-modo {
 	
@@ -143,7 +143,7 @@ header{
 	background-color: rgb(0,0,0,0.4);
 }
 
-#selecaoModo input[type="radio"]:checked + #selecaoModo label { 
+#selecaoModo input[type="radio"]:checked + #cor { 
 	background-color: rgb(0,0,0,0.6);
 	font: white bold;
 	border: solid 2px rgb(0,0,0,0.8);

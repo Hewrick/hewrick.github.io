@@ -44,7 +44,7 @@ const opcaoRadio = document.getElementsByName("opcaoRadio");
 // === Variáveis ===
 
 // Tipo de código de cor
-let configCod;
+let configCod = entradaSwitch.checked ? "RGB" : "HEX";
 
 // Modo de jogo
 let configModo = opcaoRadio[0].value;
@@ -72,6 +72,9 @@ document.getElementById("teste").onclick = function teste() {
   "\nTamanho de entrada: " + tamanhoEntrada;
 
   escopoTentativas.innerHTML = tabela;
+
+  console.log(valorEntrada);
+  console.log(tamanhoEntrada);
 }
 
 // Função inútil, mas quero saber se vale a pena fazer funcionar
@@ -102,8 +105,9 @@ function alterarCod() {
 // Essa função vai alterar o valor da variável "configModo" para o valor do modo de jogo que foi selecionado 
 function alterarModo() {
   for (const radio of opcaoRadio) {
-    radio.checked ? console.log("Modo de jogo: " + radio.value) : null;
+    radio.checked ? configModo = radio.value : configModo.default;
   }
+  console.log("Modo de jogo: " + configModo)
 }
 
 // Sessão do que acontecer quando as configurações forem confirmadas
