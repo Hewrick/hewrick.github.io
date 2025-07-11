@@ -18,12 +18,16 @@ button {
 	border: solid 2px #0a8a1f;
 	*/
 	
-	border-radius: 5px; 
+	border-radius: 5px;
+	background-color: rgb(0,0,0,0.4);
+	cursor: pointer;
 }
 
 ul { padding-inline-start: 0; }
 
-label { cursor: pointer; }
+label { 
+	cursor: pointer; 
+}
 
 .legenda-form {
 	margin-block-start: 0;
@@ -52,13 +56,14 @@ header{
 #app{
 	display: flex;
 	flex-direction: row;
-	align-items: center;
+	align-items: top;
  	justify-content: center;
 	gap: clamp(100px, 10vw, 200px);
 	/* clamp(minimum, preferred value, maximum) */
 }
 
-#app container{
+/* Section que separa componentes principais dos componentes do escopo de configuração */
+#app section{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -131,10 +136,10 @@ header{
 }
 
 /* É AQUI ONDE VOCÊ TA MEXENDO, APENAS AQUI. RESOLVA ISSO vvv */
-/* Que tal meter um "clamp(minimum, preferred value, maximum)" aqui?? */
+/* Que tal meter um "clamp(minimum, preferred value, maximum)" aqui?? 
 .label-modo {
 	
-}
+}*/
 
 #selecaoModo input[type="radio"] { display: none; }
 .label-modo {
@@ -146,7 +151,7 @@ header{
 #selecaoModo input[type="radio"]:checked + #cor { 
 	background-color: rgb(0,0,0,0.6);
 	font: white bold;
-	border: solid 2px rgb(0,0,0,0.8);
+	border: solid 2px rgb(255,0,0,0.8);
 }
 
 
@@ -172,7 +177,7 @@ header{
 	"azul cor"
 	"preto cor"
 	"branco cor";
-	border: solid 1px #000;
+	border: solid 2px #000;
 	border-radius: 10px;
 }
 
