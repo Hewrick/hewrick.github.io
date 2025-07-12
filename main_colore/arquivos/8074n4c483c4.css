@@ -137,10 +137,17 @@ header{
 
 /* É AQUI ONDE VOCÊ TA MEXENDO, APENAS AQUI. RESOLVA ISSO vvv */
 /* Que tal meter um "clamp(minimum, preferred value, maximum)" aqui?? 
+*/
 .label-modo {
-	
-}*/
+	max-width: fit-content;
+	max-height: fit-content;
+	border-radius: 5px;
+	border: solid 2px #000 ;
+	background-color: rgb(0,0,0,0.4);
+	margin-bottom: 10px;
+}
 
+/*
 #selecaoModo input[type="radio"] { display: none; }
 .label-modo {
 	border-radius: 5px;
@@ -153,8 +160,7 @@ header{
 	font: white bold;
 	border: solid 2px rgb(255,0,0,0.8);
 }
-
-
+*/
 
 /* === Escopo Cores === */
 .escopoCores {
