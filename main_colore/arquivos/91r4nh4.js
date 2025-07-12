@@ -66,15 +66,12 @@ document.getElementById("teste").onclick = function teste() {
     radio.checked ? configModo = radio.value : configModo.default;
   }
   
-  let tabela = "Tipo de código: " + configCod.valueOf() +
-  "\nModo de jogo: " + configModo +
-  "\nValor de entrada: " + valorEntrada +
-  "\nTamanho de entrada: " + tamanhoEntrada;
+  let tabelaTeste = "Tipo de código: " + configCod.valueOf() +
+  "Modo de jogo: " + configModo +
+  "Valor de entrada: " + valorEntrada +
+  "Tamanho de entrada: " + tamanhoEntrada;
 
-  escopoTentativas.innerHTML = tabela;
-
-  console.log(valorEntrada);
-  console.log(tamanhoEntrada);
+  escopoTentativas.innerHTML = tabelaTeste;
 }
 
 // Função inútil, mas quero saber se vale a pena fazer funcionar
@@ -98,7 +95,7 @@ com o background-color da cor certa (resposta). Por exemplo, em um if.
 // Função para alterar o código de cor (HEX ou RGB)
 // Essa função vai alterar o valor da variável "configCod" para o valor do código de cor que foi selecionado (HEX ou RGB)
 function alterarCod() {
-  console.log("Tipo de código: " + configCod);
+  console.log("Tipo de código: " + configCod.valueOf());
 }
 
 // Função para alterar o modo de jogo
