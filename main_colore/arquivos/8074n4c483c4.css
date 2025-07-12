@@ -25,7 +25,8 @@ button {
 
 ul { padding-inline-start: 0; }
 
-label { 
+label {
+	border
 	cursor: pointer; 
 }
 
@@ -141,8 +142,7 @@ header{
 .label-modo {
 	max-width: fit-content;
 	max-height: fit-content;
-	border-radius: 5px;
-	border: solid 2px #000 ;
+	border: solid 2px #000;
 	background-color: rgb(0,0,0,0.4);
 	margin-bottom: 10px;
 }
