@@ -33,21 +33,19 @@ const escopoTentativas = document.getElementById("escopoTentativas");
 // Configuração
 const formConfig = document.getElementById("formConfig");
 // Tipo de Cor
-const opcaoHEX = document.getElementById("opcaoHEX");
-const opcaoRGB = document.getElementById("opcaoRGB");
-const entradaSwitch = document.getElementById("switch");
+const opcaoCod = document.getElementsByName("opcaoCod");
 // Modo de jogo
-const opcaoRadio = document.getElementsByName("opcaoRadio");
+const opcaoModo = document.getElementsByName("opcaoModo");
 
 
 
 // === Variáveis ===
 
 // Tipo de código de cor
-let configCod = entradaSwitch.checked ? "RGB" : "HEX";
+let configCod = opcaoCod[0].value;
 
 // Modo de jogo
-let configModo = opcaoRadio[0].value;
+let configModo = opcaoModo[0].value;
 
 // Valor da entrada de tentativa 
 let valorEntrada = entradaCor.value;
@@ -60,18 +58,24 @@ let tamanhoEntrada = entradaCor.value.length;
 
 // import { teste } from "./modulos/25tentativas.js";
 document.getElementById("teste").onclick = function teste() {  
-  configCod = entradaSwitch.checked ? "RGB" : "HEX"; 
-
-  for (const radio of opcaoRadio) {
+  for (const radio of opcaoCod) {
+    radio.checked ? configCod = radio.value : configCod.default;
+    console.log(radio.value);
+    console.log(radio.checked);
+  }
+  
+  for (const radio of opcaoModo) {
     radio.checked ? configModo = radio.value : configModo.default;
   }
   
-  let tabelaTeste = "Tipo de código: " + configCod.valueOf() +
+  let tabelaTeste = "Tipo de código: " + configCod +
   "Modo de jogo: " + configModo +
   "Valor de entrada: " + valorEntrada +
   "Tamanho de entrada: " + tamanhoEntrada;
 
   escopoTentativas.innerHTML = tabelaTeste;
+
+  
 }
 
 // Função inútil, mas quero saber se vale a pena fazer funcionar
