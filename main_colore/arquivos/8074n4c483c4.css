@@ -51,6 +51,10 @@ label:hover {
 	background-color: rgb(7, 209, 7);
 	color: #ffffff;
 }
+/*.configuracao input[type="radio"]:checked + label,
+.configuracao label:has(input[type="radio"]:checked) {
+    background-color: #07d107;
+}*/
 
 .legendaForm {
 	margin-block-start: 0;
