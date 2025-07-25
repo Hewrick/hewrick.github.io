@@ -99,13 +99,13 @@ com o background-color da cor certa (resposta). Por exemplo, em um if.
 // Função para alterar o código de cor (HEX ou RGB)
 // Essa função vai alterar o valor da variável "configCod" para o valor do código de cor que foi selecionado (HEX ou RGB)
 function alterarCod() {
-  console.log("Tipo de código: " + configCod.valueOf());
+  console.log("Tipo de código: " + configCod);
 }
 
 // Função para alterar o modo de jogo
 // Essa função vai alterar o valor da variável "configModo" para o valor do modo de jogo que foi selecionado 
 function alterarModo() {
-  for (const radio of opcaoRadio) {
+  for (const radio of opcaoModo) {
     radio.checked ? configModo = radio.value : configModo.default;
   }
   console.log("Modo de jogo: " + configModo)
