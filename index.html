@@ -38,7 +38,7 @@
 		</div>
 		
 		<!-- Sessão para tentar uma cor -->
-		<form id="formTentarCor" class="formulario margin-bottom-15px">
+		<form id="formTentarCor" class="margin-bottom-15px">
 			<input id="entradaCor" type="text" placeholder="FFFFFF" minlength="3" maxlength="6">
 			<svg viewBox="0 0 20 20"><use href="main_colore/arquivos/imgs/hashtag.svg"></use></svg>
 			</input>
@@ -48,32 +48,30 @@
 		
 		<!-- Sessão de tentativas -->
 		<ul id="escopoTentativas"></ul>
-	</section>
+		</section>
 		
-		<!-- Configuração de modo de jogo --> 
-		<!-- Pesquisar para entender: 
-    		 https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#form_enctype 
-		-->
-		<form id="formConfig" class="formulario">
+
+		<!-- Configuração de modo de jogo -->
+		<form id="formConfig">
 			
 			<!-- Seleção de código da cor -->
 			<p class="legenda-form">Tipo de código</p>
 			<ul id="selecaoCod" class="configuracao">	
-				<label class="opcao" for="opcaoCod">
-					<input id="opcao0" type="radio" name="opcaoCod" value="HEX">
+				<label class="opcao">
+					<input id="opcao0" type="radio" name="opcaoCod" value="HEX" checked>
 					HEX
 				</label>
-				<label class="opcao" for="opcaoCod">
+				<label class="opcao">
 					<input id="opcao1" type="radio" name="opcaoCod" value="RGB">
 					RGB
 				</label>
 			</ul>
 			
 			<!-- Seleção do modo de jogo (terão outros) -->
-			<p class="legendaForm">Modo de jogo</p>
+			<p class="legenda-form">Modo de jogo</p>
 			<ul id="selecaoModo" class="configuracao">
 				<label class="opcao">
-					<input id="opcao0" type="radio" name="opcaoModo" value="Padrão">
+					<input id="opcao0" type="radio" name="opcaoModo" value="Padrão" checked>
 					Padrão
 				</label>
 				<label class="opcao">
@@ -81,7 +79,7 @@
 					Limite de tentativas
 				</label>
 				<label class="opcao">
-					<input id="modo-opcao2" type="radio" name="opcaoModo" value="opacidade">
+					<input id="opcao2" type="radio" name="opcaoModo" value="opacidade">
 					Opacidade
 				</label>
 				<label class="opcao">
@@ -91,8 +89,8 @@
 			</ul>
 			
 
-			<!-- Botão para confirmar, e em seguida, alterar o que foi configurado -->
-			<button id="botaoConfirmarConfig" class="botao" type="submit">CONFIRMAR CONFIGURAÇÃO</button>
+			<!-- Botão que confirma alteração de configuração -->
+			<button id="botaoConfirmarConfig" type="submit">CONFIRMAR CONFIGURAÇÃO</button>
 		</form>
 	</div>
 	<script type="module" src="main_colore/arquivos/91r4nh4.js"></script>

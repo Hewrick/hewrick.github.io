@@ -1,6 +1,6 @@
-/* 
-- cor de fundo pra input e label: #8a8a8a4d
- */
+:root {
+	--cor-label-checked: #07d107;
+}
 
 *{box-sizing: border-box; appearance:none; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;  /* teste com borda aqui * border: solid 1px #0001; */ }
 body{margin:0; position: relative; background: #fff}
@@ -32,15 +32,13 @@ ul {
 
 form button { align-self: center; }
 
-.legendaForm {
+.legenda-form {
 	margin-block-start: 0;
 	margin-block-end: 0;
-	justify-content:inherit;
 }
 
 .margin-bottom-10px { margin-bottom: 10px;}
 .margin-bottom-15px { margin-bottom: 15px; }
-
 
 
 /* === Cabeçalho === */
@@ -54,24 +52,21 @@ header{
 #titulo { margin: 8px 0; }
 
 
-
 /* === Parte principal === */
 #app{
 	display: flex;
 	flex-direction: row;
 	align-items: top;
  	justify-content: center;
-	gap: clamp(100px, 10vw, 200px);
+	gap: clamp(100px, 9vw, 200px);
 	/* clamp(minimum, preferred value, maximum) */
 }
 
-/* Section que separa componentes principais dos componentes do escopo de configuração */
 #app section{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
-
 
 
 /* === Escopo Configuração === */
@@ -82,12 +77,11 @@ header{
 	align-items: left;
 }
 
-.legendaForm {
+.legenda-form {
 	margin-bottom: 5px;
 	font-weight: bold;
 }
 
-/* É AQUI ONDE VOCÊ TA MEXENDO, APENAS AQUI. RESOLVA ISSO vvv */
 .configuracao input[type="radio"] { display: none; }
 
 label {
@@ -99,20 +93,17 @@ label {
 	
 }
 label:hover {
-	border: solid 3px rgb(7, 209, 7);
+	border: solid 3px var(--cor-label-checked);
 	border-radius: 4px;
 	padding: 2px 3px;
 }
 
-.configuracao input[type="radio"]:checked + .configuracao .opcao:has(input[type="radio"]:checked) {
-	background-color: rgb(7, 209, 7);
+.configuracao input[type="radio"]:checked,
+.configuracao label:has(input[type="radio"]:checked) {
+    background-color: var(--cor-label-checked);
 	color: #ffffff;
 	border-radius: 4px;
 }
-/*.configuracao input[type="radio"]:checked + label,
-.configuracao label:has(input[type="radio"]:checked) {
-    background-color: #07d107;
-}*/
 
 /* === Seleção do tipo de código === */
 #selecaoCod {
@@ -129,7 +120,6 @@ label:hover {
 	flex-direction: row;
 	gap: 5px;
 }
-
 
 
 /* === Escopo Cores === */
@@ -193,7 +183,6 @@ label:hover {
 }
 
 
-
 /* === Escopo Entrada da Cor === */
 #formTentarCor {
 	display: grid;
@@ -219,7 +208,7 @@ label:hover {
 	border-bottom: solid 1px #000;
 }
 
-/* Configuração apenas para o input RGB */
+/* Configuração apenas do input RGB */
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
   -webkit-appearance: none;
@@ -231,7 +220,7 @@ input[type=number]::-webkit-outer-spin-button {
 #escopoTentativas {
 	display: flex;
 	width: 200px;
-	flex-direction: column-reverse;
+	/* Essa linha será apagada futuramente*/flex-direction: column-reverse;
 }
 
 /* Aviso de input invalido */
