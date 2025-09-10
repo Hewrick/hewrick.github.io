@@ -18,7 +18,7 @@ Ideias:
 
 
 
-// === Tags para Objetos ===
+// === Objetos para Tags ===
 
 // Cor principal atual
 const botaoGerarCor = document.getElementById("botaoGerarCor");
