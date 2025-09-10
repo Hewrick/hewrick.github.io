@@ -1,98 +1,56 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" href="./main_colore/arquivos/imgs/seta.png">
-    <link rel="stylesheet" href="./main_colore/arquivos/8074n4c483c4.css">
-    <title>COLORE</title>
-    <!-- referencias: https://colorable.jxnblk.com/ ; https://monkepo.online/custom ; https://contexto.me/ ; https://term.ooo/ ; https://angle.wtf/ -->
+  <meta charset="UTF-8">
+  <!-- Entender o que essa linha abaixo faz e o por quê de ter esse "charset=UTF-8"-->
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="styles/style.css"/>
+  <link rel="icon" href="imgs/hew1.png">
+  <title>Hewrick Land</title>
 </head>
 <body>
-	<header>
-			<div id="titulo">COLORE</div>
-			<button id="teste" >teste</button>
-	</header>
-	<div id="app">
-		
-		<!-- Section que separa componentes principais dos componentes do escopo de configuração -->
-		<section>
-		<!-- Escopo principal para as cores -->
-		<div class='escopoCores margin-bottom-15px'>
-			<button id="botaoGerarCor" class="margin-bottom-15px" type="button">NOVA COR</button>
-			
-			<div class="quadrado">
-				<div id="cor"></div>
+  <!-- 
+	Separar <section> como se fossem temas/categorias ou pastas de projetos dentro do site
+    É interessante fazer essas pastas com personalidade e fazer desse index uma LANDING PAGE grandona pra todos os meus projetos 
+  -->
+  <section>
+  <p id="titulo-pagina">Projetos</p>
+  <div id="categorias">
+	
+	<a href="pages/main_colore/index.html">
+	<div class="categoria">
+	  <p class="titulo">Colore</p>
+	  <p class="subtitulo">Jogo de adivinhar a cor ;)</p>
+	  <div class="exemplo"></div>
+	</div>	
+	</a>
 
-				<div id="vermelhoNoVetor" class="corNoVetor"></div>
-				
-				<div id="verdeNoVetor" class="corNoVetor"></div>
-				
-				<div id="azulNoVetor" class="corNoVetor"></div>
-				
-				<div id="pretoNoVetor" class="corNoVetor"></div>
-				
-				<div id="brancoNoVetor" class="corNoVetor"></div>
-			</div>
-		</div>
-		
-		<!-- Sessão para tentar uma cor -->
-		<form id="formTentarCor" class="margin-bottom-15px">
-			<input id="entradaCor" type="text" placeholder="FFFFFF" minlength="3" maxlength="6">
-			<svg viewBox="0 0 20 20"><use href="main_colore/arquivos/imgs/hashtag.svg"></use></svg>
-			</input>
+    <a href="pages/lista1.html">
+    <div class="categoria">
+      <p class="titulo">Lista que conta tarefas feitas e não feitas</p>
+      <p class="subtitulo">(lista marcados e não marcados)</p>
+      <div class="exemplo"></div>
+    </div>
+    </a>
+    
+    <a href="pages/lista2.html">
+    <div class="categoria">
+      <p class="titulo">Lista que exclui da contagem as tarefas feitas</p>
+      <p class="subtitulo">(exclui itens marcados)</p>
+      <div class="exemplo"></div>
+    </div>
+    </a>
+    
+    <a href="pages/lista3.html">
+    <div class="categoria">
+      <p class="titulo">Lista que separa tarefas feitas das não feitas</p>
+      <p class="subtitulo">(cria uma segunda lista)</p>
+      <div class="exemplo"></div>
+    </div>
+    </a>
 
-			<button id="botaoTentarCor" type="submit">TENTAR COR!</button>
-		</form>
-		
-		<!-- Sessão de tentativas -->
-		<ul id="escopoTentativas"></ul>
-		</section>
-		
-
-		<!-- Configuração de modo de jogo -->
-		<form id="formConfig">
-			
-			<!-- Seleção de código da cor -->
-			<p class="legenda-form">Tipo de código</p>
-			<ul id="selecaoCod" class="configuracao">	
-				<label class="opcao">
-					<input id="opcao0" type="radio" name="opcaoCod" value="HEX" checked>
-					HEX
-				</label>
-				<label class="opcao">
-					<input id="opcao1" type="radio" name="opcaoCod" value="RGB">
-					RGB
-				</label>
-			</ul>
-			
-			<!-- Seleção do modo de jogo (terão outros) -->
-			<p class="legenda-form">Modo de jogo</p>
-			<ul id="selecaoModo" class="configuracao">
-				<label class="opcao">
-					<input id="opcao0" type="radio" name="opcaoModo" value="Padrão" checked>
-					Padrão
-				</label>
-				<label class="opcao">
-					<input id="opcao1" type="radio" name="opcaoModo" value="limite de tentativas">
-					Limite de tentativas
-				</label>
-				<label class="opcao">
-					<input id="opcao2" type="radio" name="opcaoModo" value="opacidade">
-					Opacidade
-				</label>
-				<label class="opcao">
-					<input id="opcao3" type="radio" name="opcaoModo" value="degrade">
-					Falta um no degradê
-				</label>
-			</ul>
-			
-
-			<!-- Botão que confirma alteração de configuração -->
-			<button id="botaoConfirmarConfig" type="submit">CONFIRMAR CONFIGURAÇÃO</button>
-		</form>
-	</div>
-	<script type="module" src="main_colore/arquivos/91r4nh4.js"></script>
+  </div>
+  </section>
 </body>
 </html>
