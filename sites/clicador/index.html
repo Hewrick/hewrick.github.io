@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>Clicador</title>
+</head>
+<style>
+*{appearence: none; box-sizing: border-box; border: solid 1px #ddd;}
+body, html {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+#main {
+  width: 95vw;
+  padding: 20px;
+  margin: 15px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#escopoImgClique {
+  height: 100px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 15px 0 20px;
+}
+#imgClique {
+  position: absolute;
+  height: 100px;
+  max-width: 300px;
+  min-width: 100px;
+  border-radius: 3px;
+}
+
+#escopoPontos {
+  height: 20px;
+  max-width: 90px;
+  margin-bottom: 0px;
+}
+
+#melhorias {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+.melhoria {
+  background-color: black;
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+}
+
+</style>
+
+
+<body>
+  <div id="main">
+    <div id="escopoPontos"></div>
+    <div id="escopoImgClique"><img id="imgClique" src="arquivos/gato-trompete.jpg"></div>
+    <div id="escopomelhorias"></div>
+  </div>
+  
+  <button id="teste">TESTE 1</button>
+  <button id="teste1">TESTE 2</button>
+</body>
+
+
+<script language="javascript">
+// == Tags ==
+const imgClique = document.getElementById("imgClique");
+const escopoPontos = document.getElementById("escopoPontos");
+const escopoMelhorias = document.getElementById("escopoMelhorias");
+
+// == Variáveis ==
+let pontos = 0;
+let aumento = 1;
+const nivelM = [10, 20, 30, 40, 50, 60, 70]
+let proxNivel = 0;
+
+// == Lista de sons ==(fazer a lista com tags <audio>)
+let trompete0 = new Audio("arquivos/trompete0.mp3");
+
+// "Object.assign()" mescla o alvo com os parâmetros seguintes. Então é interessante fazer uma função ou método que escolhe um "case" (conforme índice ou coisa parecida) e retorna "assign()" do novo (instanciado na função) com o original
+
+// == Funções ==
+function apareceMelhoria() {
+  function criaMelhoria(id, className, bonus) {
+    this.className = className;
+    this.
+  }
+  let melhoria = document.createElement("div");
+  melhoria.setAttribute("class", "melhoria");
+  
+  switch(proxNivel) {
+    case 0:
+      
+      console.log(`melhoria ${proxNivel} \nid da melhoria: ${melhoria.id}`);
+      break;
+    
+    case 1:
+      console.log(`melhoria ${proxNivel} \nid da melhoria: ${melhoria.id}`);
+      break;
+    
+    case 2:
+      console.log(`melhoria ${proxNivel} \nid da melhoria: ${melhoria.id}`);
+      break;
+    
+    case 3:
+      console.log(`melhoria ${proxNivel} \nid da melhoria: ${melhoria.id}`);
+      break;
+    
+    case 4:
+      console.log(`melhoria ${proxNivel} \nid da melhoria: ${melhoria.id}`);
+      break;
+    
+    case 5:
+      console.log(`melhoria ${proxNivel} \nid da melhoria: ${melhoria.id}`);
+      break;
+    
+    case 6:
+      console.log(`melhoria ${proxNivel} \nid da melhoria: ${melhoria.id}`);
+      break;
+  }
+  console.log(`melhoria ${proxNivel} \nid da melhoria: ${melhoria.id}`);
+  escopoMelhorias.appendChild(melhoria);
+}
+
+
+// == Interações ==
+document.getElementById("teste").onclick = () => {
+  trompete0.pause();
+  trompete0.currentTime = 0;
+  trompete0.play();
+}
+document.getElementById("teste1").onclick = () => {
+  trompete0.pause();
+  trompete0.currentTime = 0;
+}
+
+imgClique.onclick = function clique() {
+  // Se quiser que adicione 8px, use toString()
+  let height1 = imgClique.style.height;
+  imgClique.style.height = "108px";
+  setTimeout(() => imgClique.style.height = height1, 30);
+  
+  pontos += aumento;
+  escopoPontos.innerHTML = (Math.trunc(pontos * 100) / 100);
+  
+  if (pontos >= nivelM[proxNivel]) {
+    apareceMelhoria(proxNivel);
+    proxNivel++;
+    
+    //console.log(nivelM[proximoNivel]);
+    //console.log(proximoNivel)
+  }
+}
+
+document.getElementsByClassName("melhoria").onclick = () => {
+  someMelhoria();
+  // vvvvvvvvvvvvvvv ADICIONAAAAAAAAAR
+  //melhoria.bonus();
+}
+
+
+/*
+Ainda decidindo fazer 
+os upgrades ser uma galeria de foto de gatos com ou sel gacha, 
+ou serem músicas com trompete para adicionar à uma playlist, e ainda mais, 
+pegar imagem de outros gatos pra representar estilos de música (como um segundo gatinho mexendo em uma mesa de DJ pra representar um cliquer pra ganhar músicas de um pacote de músicas eletrônicas/house mix
+*/
+</script>
+</html>

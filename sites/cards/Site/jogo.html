@@ -1,0 +1,508 @@
+<!doctype html>
+<html language="pt-BR">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="mods_jogo.css">
+		<link rel="shortcut icon" href="acervo/camargo-bite.ico">
+		<title>Jogo de Cards :)</title>
+	</head>
+	<script>
+		function revelarEsconder() {
+			let conti = document.getElementById('continentes');
+			let revel = document.getElementById('revel');
+			if (conti.style.display === 'none') {
+				conti.style.display = 'block';
+				revel.innerHTML = 'ESCONDER CONTINENTES';
+			}else{
+				conti.style.display = 'none';
+				revel.innerHTML = 'REVELAR CONTINENTES'
+			}
+		}
+	</script>
+	<body>
+		<div id="container-geral">
+			<!-- botão para voltar ao topo -->
+			<a id="voltar-topo" href="#introducao"><span>TOP</span></a>
+
+			<!-- INTRODUÇÃO -->
+			<div id="introducao">
+			<div class="borda-introducao">		
+				<h3 id="titulo-introducao">
+					<span style="color: #F2E6A7;">Trabalho:</span> Jogo de cards com personagens históricos.<br>
+					<span style="color: #F2E6A7;">Feito por:</span> Davi, Felipe e Pedro Ribeiro. 
+				</h3>
+				
+				<div class="conteudo-introducao">
+					<div class="sobre texto-introducao">
+						<h2 style="color: #F2E6A7;">O conceito do jogo</h2>
+						<p>
+							<font style="padding-left:20px">Defenda</font> seu continente com personagens da história da antropologia e tecnologia!
+							Personagens mais famosos dos 5 continentes: África, América do Norte, América do Sul, Ásia e Europa.<br>
+							<font style="padding-left:20px">Em</font> uma batalha de 1x1, monte seu deck de cards, escolha sabiamente suas personagens para essa jornada épica!!
+						</p>
+					</div>
+
+					<div class="regras texto-introducao">
+						
+						<h2 class="titulo-sobre texto-sobre" style="color: #F2E6A7; text-align: center;">Regras</h2>
+						<p>
+							<font>Antes</font> de iniciar a conquista, você deve escolher um continente para defender. 
+							No inicio da rodada, há 5 cards para escolher e recolher ao seu deck 
+							e colocar em campo 1 card de cada vezpara batalhar. 
+							Depois é só escolher um continente para atacar.<br> 
+							<font>O jogo</font> acaba quando você não tiver mais área pra defender ou quando 
+							a conquista de todas as áres estiver completa.<br>
+							<font>Nas</font> primeiras 3 rodadas existe a chance de aparecer cards Comuns (70%), Incomuns (20%) e Raros (10%).<br>
+							<font>Na</font> primeira rodada é obrigadtório um card suporte, depois disso os cards suporte aparecem de forma aleatória.<br>
+							<font>A partir</font> da quarta rodada podem aparecer Épicos (10%) (logo comum 20%, incomum 40% e raro 30%).<br>
+							<font>Logo</font> em seguida, na quinta rodada você pode escolher uma carta Lendária (20%) (com comum 15%, incomum 15%, raro 30% e épico 30%)<br>
+							<font>A Capacidade</font> máxima de cartas para o deck são 5 cards.<br>
+							<font>Os únicos</font> locais que podem ser escolhidos para batalha são os do seu 
+							território que estão sendo atacados ou algum território que não seja do jogador.<br>
+							<font>Só se</font> pode iniciar um round entre cards quando o seu card de personagem for escolhido.<br>
+							<font>Após</font> ganhar uma batalha contra um continente, o jogador recebe 3 cards.<br>
+							<font>Os 3</font> cards são de personagem e se o deck estiver cheio, o resto de cards para receber são de suporte.<br>
+							<font>Caso</font> perca o seu continente original, o jogador perde 3 cards aleatóriamente.
+						</p>
+						<br>
+						<h2 class="titulo-sobre texto-sobre" style="color: #F2E6A7; text-align: center;">Sistema de batalha:</h2>
+						<p>
+							• Um card contra um card;<br>
+							• Os cards se chocam e se nenhum acabar nocauteado, eles se enfrentam novamente;<br>
+							• Apenas defesa e ataque para cada personagem;<br>
+							• Quando seu card for nocauteada, é preciso escolher outro para a batalha;<br>
+							• Cada luta individual de cartas é automática;<br>
+							• O card suporte é ativada na hora de escolher o próximo card personagem para batalhar;<br>
+							• É possível escolher mandar seu card sozinho ou com um card suporte;<br>
+							• A desistencia é válida à qualquer momento da batalha, mas você perde todo o progresso;<br>
+							• Caso o jogador tenha todos os cards nocauteados, o progresso na da conquista, 
+							naquele continente, é perdido.
+						</p>
+						<a href="#continentes"><button id="revelar-esconder" onclick="revelarEsconder()">
+							<span id="revel" style="color:red; font-size: 20px;">REVELAR CONTINENTES</span>
+						</button></a>
+					</div>
+				</div>
+			</div>
+			</div>
+
+			
+			<!-- CONTINENTES -->
+			<div id="continentes">
+				<div id="escolher-conti">
+					<h1 id="titulo-continente" class="titulo-conti">Escolha um continente para<br> ver suas características</h1>
+					
+					<div class="fileira">
+						<a href="#africa-carac">
+						<div class="escopo-conti">
+							<img id="africa" class="conti-img" src="acervo/continentes/africa.png" alt="Imagem minimalista da Africa" title="clique em mim :3">
+							<h2 class="conti-nome">África</h2>
+						</div></a>
+						<a href="#america-norte-carac">
+						<div class="escopo-conti">
+							<img id="america-do-norte" class="conti-img" src="acervo/continentes/america do norte.png" alt="Imagem minimalista da América do Norte" title="clique em mim :3">
+							<h2 class="conti-nome">América do Norte</h2>
+						</div></a>
+						<a href="#america-sul-carac">
+						<div class="escopo-conti">
+							<img id="america-do-sul" class="conti-img" src="acervo/continentes/america do sul.png" alt="Imagem minimalista da América do Sul" title="clique em mim :3">
+							<h2 class="conti-nome">América do Sul</h2>
+						</div></a>
+					</div>
+
+					<div class="fileira">
+						<a href="#asia-carac">
+						<div class="escopo-conti">
+							<img id="asia" class="conti-img" src="acervo/continentes/asia.png" alt="Imagem minimalista da Ásia" title="clique em mim :3">
+							<h2 class="conti-nome">Ásia</h2>
+						</div></a>
+						<a href="#europa-carac">
+						<div class="escopo-conti">
+							<img id="europa" class="conti-img" src="acervo/continentes/europa.png" alt="Imagem minimalista da Europa" title="clique em mim :3">
+							<h2 class="conti-nome">Europa</h2>
+						</div></a>
+						<a href="#suportes">
+						<div class="escopo-conti">
+							<img id="sup" class="sup-img" src="acervo/suportes/cards.png" alt="Imagem de cards suporte" title="clique em mim :3">
+							<h2 class="conti-nome">SUPORTES</h2>
+						</div></a>
+						<!-- Não tankou o bostil e foi de comes e bebes a OCEANIA
+						<a href="#oceania-carac" onclick="caracOceania()">
+						<div class="escopo-conti">
+							<img id="oceania" class="conti-img" src="acervo/continentes/oceania.png" alt="Imagem minimalista da Oceania" title="clique em mim :3">
+							<h2 class="conti-nome">Oceania</h2>
+						</div></a>-->
+					</div>
+				</div> 
+				
+				<!--CARACTERISTICAS -->
+				<div id="caracs">
+					<section id="africa-carac" class="carac">
+						<!--
+							Cleópatra, Moisés, Nelson Mandela, Shaka Zulu,
+						-->
+						
+						<h2 class="titulo-carac">África</h2>
+						<div class="conteudo-carac">
+							<div class="cards">
+								<div class="item">
+									<img class="card" src="acervo/personagens/Nelson Mandela.png" alt="Card de Nelson Mandela">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/personagens/Cleópatra.png" alt="Card de Cléopatra">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/personagens/Shaka Zulu.png" alt="Card de Shaka Zulu">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/personagens/Moisés.png" alt="Card de Moisés">
+								</div>
+							</div>
+
+							<div class="info-conti">
+									<img class="img-info" src="acervo/continentes/africa-info.png" alt="Imagem representativa da África">
+									<p class="conteudo-info">
+										África é o terceiro maior continente do mundo e um dos mais populosos. 
+										O continente africano, apesar de rico em biodiversidade e multicultural, 
+										sofre com a extrema pobreza. África é o continente localizado ao sul da 
+										Europa e sudoeste da Ásia, banhado pelo Oceano Atlântico.
+									</p>
+							</div>
+						</div>
+
+						<div class="voltar-avancar">
+							<a href="#escolher-conti" class="voltar setas">voltar</a>
+							<a href="#america-norte-carac" class="avancar setas">avançar</a>
+						</div>
+					</section>
+
+					<section id="america-norte-carac" class="carac">
+						<!--
+							Abrahan, Bill Gates, Trump, Elon Musk, Grace Hopper, 
+							Jorge Washington, Mark Zuc, Martin Luther King, 
+							Steve Jobs, Tupac, 
+						-->
+						
+						<h2 class="titulo-carac">América do Norte</h2>
+						<div class="conteudo-carac">
+							<div class="cards">
+								<div class="item">
+									<img class="card" src="acervo/personagens/Bill Gates.png" alt="Card de Bill Gates">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/personagens/Donald Trump.png" alt="Card de Donald Trump">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/personagens/Ellon Musk.png" alt="Card de Ellon Musk">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/personagens/Tupac.png" alt="Card de Tupac">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/personagens/Martin Luther King.png" alt="Card de Martin Luther King">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/personagens/Abrahan Lincoln.png" alt="Card de Abrahan Lincoln">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/personagens/Jorge Washinton.png" alt="Card de Jorge Washington">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/personagens/Steve Jobes.png" alt="Card de Steve Jobs">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/personagens/Mark Zuchenberg.png" alt="Card de Mark Zuchenberg">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/personagens/Grace Hopper.png" alt="Card de Grace Hopper">
+								</div>
+							</div>
+						
+							<div class="info-conti">
+									<img class="img-info" src="acervo/continentes/america do norte-info.png" alt="Imagem representativa da América do Norte">
+									<p class="conteudo-info">
+										A América do Norte corresponde à parte norte do continente americano, 
+										é formada por três países, Estados Unidos, Canadá e México, que 
+										ocupam juntos uma área de 23,6 milhões de quilômetros quadrados.
+									</p>
+							</div>
+						</div>
+							
+						<div class="voltar-avancar">
+							<a href="#africa-carac" class="voltar setas">voltar</a>
+							<a href="#america-sul-carac" class="avancar setas">avançar</a>
+						</div>
+					</section>
+
+					<section id="america-sul-carac" class="carac">						
+						<!--
+							Bolsonaro, Dandara, Getulio Vargas, Lula, Papa Francisco, 
+							Zumbi dos Palmares.
+						-->
+						
+						<h2 class="titulo-carac">América do Sul</h2>
+						<div class="conteudo-carac">
+							<div class="cards">
+								<div class="item">
+									<img class="card" src="acervo/personagens/Zumbi dos Palmares.png" alt="Card de Lula">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/personagens/Dandara.png" alt="Card de Bolsonaro">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/personagens/Lula.png" alt="Card de Dandara">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/personagens/Bolsonaro.png" alt="Card de Zumbi dos Palmares">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/personagens/Getulio-Vargas.png" alt="Card de Getulio Vargas">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/personagens/Papa Francisco.png" alt="Card de Papa Francisco">
+								</div>
+							</div>
+							
+							<div class="info-conti">
+									<img class="img-info" src="acervo/continentes/america do sul-info.png" alt="Imagem representativa da América do Sul">
+									<p class="conteudo-info">
+										A América do Sul é um subcontinente que envolve a parcela meridional 
+										da América (continente americano). Com extensão de 17 819 100 km2, 
+										possui pouco menos de 12% da superfície terrestre e 6% da população mundial.
+										Quatro quintos do continente ficam abaixo da Linha do Equador, sendo que a 
+										América do Sul é banhada pelo mar do Caribe, oceano Atlântico e oceano Pacífico.
+									</p>
+							</div>
+						</div>
+
+						<div class="voltar-avancar">
+							<a href="#america-norte-carac" class="voltar setas">voltar</a>
+							<a href="#asia-carac" class="avancar setas">avançar</a>
+						</div>				
+					</section>
+
+					<section id="asia-carac" class="carac">
+						<!--
+							Jesus, Kim Joung Un, Gandhi, Maomé, Putin, 
+							Sidarta Gautama.
+						-->
+						
+						<h2 class="titulo-carac">Ásia</h2>
+						<div class="conteudo-carac">
+							<div class="cards">
+								<div class="item">
+									<img class="card" src="acervo/personagens/Kim Joung Un.png" alt="Card de Kim Jong Un">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/personagens/Mahatma Gandhi.png" alt="Card de Mahatma Gandhi">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/personagens/Maomé.png" alt="Card de Maomé">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/personagens/Jesus.png" alt="Card de Jesus">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/personagens/Sidarta Gautama.png" alt="Card de Sidarta Gautama">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/personagens/Putin.png" alt="Card de Putin">
+								</div>
+							</div>
+							
+							<div class="info-conti">
+									<img class="img-info" src="acervo/continentes/asia-info.png" alt="Imagem representativa da Ásia">
+									<p class="conteudo-info">
+										A Ásia é o maior continente em área terrestre do mundo, 
+										estando boa parte do continente localizado no Hemisfério Norte. 
+										Além de ser o mais extenso, é também o mais populoso, 
+										habitando nele cerca de três quintos da população mundial. 
+										A Ásia é multicultural, abrigando diversas culturas, etnias, religiões e tradições.
+									</p>
+							</div>
+						</div>
+
+						<div class="voltar-avancar">
+							<a href="#america-sul-carac" class="voltar setas">voltar</a>
+							<a href="#europa-carac" class="avancar setas">avançar</a>
+						</div>
+					</section>
+
+					<section id="europa-carac" class="carac">
+						<!--
+							Ada Lovelace, Alan Turing, Eistein, Aristóteles,
+							Alexandre o grande, Carlos Magno, Charles Babbage, 
+							Charles Darwin, Cistóvão Colombo, Dom Pedro I, 
+							Galileu Galilei, Hitler, Joana D'arc, Jonh Locke, 
+							Leonardo da Vince, Michelangelo, Napoleão Bonaparte, 
+							Nicolau Maquiavel, Nikola Tesla, Platão, Rainha Elizabeth, 
+							Sócatres, Stalin, Vasco da Gama.
+						-->						
+						
+						<h2 class="titulo-carac">Europa</h2>
+						<div class="conteudo-carac">
+							<div class="cards">
+								<div class="item">
+									<img class="card" src="acervo/personagens/Rainha Elizabeth 2º.png" alt="Card de Rainha Elizabeth 2º">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/personagens/Alan turing.png" alt="Card de Alan Turing" title="Pai da putcomputação X3">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/personagens/Ada Lovelance.png" alt="Card de Ada Lovelace">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/personagens/Joana D_arc.png" alt="Card de Joana D'arc">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/personagens/Albert Einstein.png" alt="Card de Albert Eistein">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/personagens/Aristóteles.png" alt="Card de Aristóteles">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/personagens/Alexandre o Grande.png" alt="Card de Alexandre, O Grande">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/personagens/Carlos Magno.png" alt="Card de Carlos Magno">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/personagens/Charles Babagge.png" alt="Card de Charles Babbage">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/personagens/Charles Darwin.png" alt="Card de Charles Darwin">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/personagens/Cristovão Colombo.png" alt="Card de Cristovão Colombo">
+								</div>
+								
+								<div class="item">
+									<img class="card" src="acervo/personagens/Dom Pedro 1º.png" alt="Card de Dom Pedro 1º">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/personagens/Galileu Galilei.png" alt="Card de Galileu Galilei">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/personagens/Hitler.png" alt="Card de Hitler">
+								</div>
+								
+								<div class="item">
+									<img class="card" src="acervo/personagens/John Locke.png" alt="Card de Jonh Locke">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/personagens/Leonardo da Vinci.png" alt="Card de Leonardo da Vinci">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/personagens/Michelangelo.png" alt="Card de Michelangelo">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/personagens/Napoleão Bonaparte.png" alt="Card de Napoleão Bonaparte">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/personagens/Nicolau Maquiavel.png" alt="Card de Nicolau Maquiavel">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/personagens/Nikola Tesla.png" alt="Card de Nikola Tesla">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/personagens/Platão.png" alt="Card de Platão">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/personagens/Sócrates.png" alt="Card de Sócatres">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/personagens/Stalin.png" alt="Card de Stalin">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/personagens/Vasco da Gama.png" alt="Card de Vasco da Gama">
+								</div>
+							</div>
+							
+							<div class="info-conti">
+									<img class="img-info" src="acervo/continentes/europa-info.png" alt="Imagem representativa da Europa">
+									<p class="conteudo-info">
+										A Europa é o segundo menor continente do mundo e possui 50 países. 
+										Europa é um dos seis continentes do mundo, sendo em extensão territorial 
+										o segundo menor. O continente é banhado, ao norte, pelo Mar Ártico; 
+										ao sul, pelo Mar Mediterrâneo e o Mar Negro; a oeste, pelo Oceano Atlântico; 
+										e, a leste, pelo Mar Cáspio.
+									</p>
+							</div>
+						</div>
+
+						<div class="voltar-avancar">
+							<a href="#asia-carac" class="voltar setas">voltar</a>
+							<a href="#suportes" class="avancar setas">avançar</a>
+						</div>
+					</section>
+
+					<section id="suportes" class="carac">
+						<!--
+							Cleópatra, Moisés, Nelson Mandela, Shaka Zulu,
+						-->
+						
+						<h2 class="titulo-carac">SUPORTES</h2>
+						<div class="conteudo-suporte">
+							<div class="cards suportes">
+								<div class="item">
+									<img class="card" src="acervo/suportes/Africa.png" alt="Card suporte">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/suportes/América.png" alt="Card suporte">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/suportes/Asia.png" alt="Card suporte">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/suportes/Benção Divina.png" alt="Card suporte">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/suportes/Coroa da Verdade.png" alt="Card suporte">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/suportes/Cruz.png" alt="Card suporte">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/suportes/Dedo Mindinho.png" alt="Card suporte">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/suportes/Erva da Sorte.png" alt="Card suporte">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/suportes/Europa.png" alt="Card suporte">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/suportes/Facebook.png" alt="Card suporte">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/suportes/Paz Interior.png" alt="Card suporte">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/suportes/Pedra Científica.png" alt="Card suporte">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/suportes/Pedra Filosofal.png" alt="Card suporte">
+								</div>
+								<div class="item">
+									<img class="card" src="acervo/suportes/Tecnologia.png" alt="Card suporte">
+								</div>
+							</div>
+						</div>
+
+						<div class="voltar-avancar">
+							<a href="#europa-carac" class="voltar setas">voltar</a>
+							<a href="#escolher-conti" class="avancar setas">avançar</a>
+						</div>
+					</section>
+
+					<!-- OCEANIA soltou o famigerado peido mestre
+					<div id="oceania-carac">
+						
+					</div>
+					-->
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

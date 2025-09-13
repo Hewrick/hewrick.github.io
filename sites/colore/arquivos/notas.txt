@@ -1,0 +1,94 @@
+ === Referencias ===
+https://colorable.jxnblk.com/ ; 
+https://monkepo.online/custom ; 
+https://contexto.me/ ; 
+https://term.ooo/
+...
+
+ === Tarefas (priorizando )===
+ - Layout beta (minimamente responsívo)
+ - Funcionalidades gerais
+   - Verificação de validade do input
+   - Verificação de compatibilidade do input
+   - Criação automática do objeto-tentativa
+   - Retorno da tentativa (resposta se está certo ou não)
+ - Aplicar modos de jogo
+   - 25 tentativas
+   - Opacidade
+   - Degradê
+ - Adicionar tutorial (botão)
+ - Design final (última tarefa)
+
+
+
+ === Conceitos essenciais ===
+
+  • Um pouco de explicação para colocar no manual (?):
+  Ambos os códigos de cores são separados em 3 partes obrigatoriamente (RGB - vermelho, verde e azul), 
+mas pode ter uma quarta parte para opacidade (transparência). 
+
+  Em Javascript, para adicionar opacidade (transparência) no padrão RBG, um quarto parâmetro é configurado dentro dos parâmetros.
+Exemplo: "rgb(255, 0, 255)"; "rgb(255, 0, 255, 147) ".
+
+  O código hexadecimal varia entre 0 1 2 3 4 5 6 7 8 9 A B C D E F.
+Cada parte do código de cores em hexadecimal pode ser interpretado em 1 ou 2 caracteres, normalmente 2.
+  # (1ª parte) 0F (Vermelho) | (2ª parte) 0F (Verde) | (3ª parte) 0F (Azul) | (Última parte (opicional)) 0F (Opacidade)
+  Então o valor do código vai de 0 (mais escuro) até F (mais claro). 
+A opacidade aumenta conforme o valor cresce e diminui conforme o valor desce. 
+Exemplos: "#f0f5"; "#ff00ff5E"; "#0ABFF0".
+
+  Componentes do código HSL 
+- Matiz: Representa a cor básica e é medida em graus (0° a 360°) no círculo cromático. Por exemplo, 0° é vermelho, 120° é verde, 240° é azul.
+- Saturação: Mede a pureza da cor, variando de 0% (cinza, sem cor) a 100% (cor totalmente vibrante).
+- Luminosidade: Também é uma porcentagem; 0% é preto, 100% é branco.
+Exemplo: "hsl(279, 88.20%, 50.00%)".
+
+
+  • Filtragem da entrada de dados (tentativas):
+- Verificar o tipo de código e o modo de jogo;
+- Verificar se o valor da tentativa está dentro do padrão;
+- Verificar compatibilidade da tentativa com a resposta
+...
+
+
+
+ === Outros modos === 
+- Limite de 25 tentativas; 
+- Opacidade entre 40% à 100%; 
+- Identificar a cor que falta em um degradê; 
+- Modos secundários talvez
+  - Sequência análoga; 
+  - Complementar; 
+  - Sequência tríade; 
+  - Sequência quadrado 
+... 
+
+
+
+ === Ideias ===
+- É interessante trocar o "objetoTentativa" para algo como "const objetoTentativa = () => escopoTentativas += '...'"
+- Alterar o display de configuração pra ser mais parecido com o do jogo Monkepo, ou fazer com que o escopo de configuração apareça vindo de um dos lados da tela (e pare no meio (o que não seria tão diferente do Monkepo) ou pare no lado mesmo, como um menu)
+- Modos de jogo
+  - Quadro de estatísticas
+  - Dicas
+...
+
+
+
+ === Notas mentais ===
+  Ter que ficar reavaliando o objetivo final do projeto, e os meios para alcança-lo, atrapalha muito no desenvolvimento. 
+  Ou seja, todo planejamento é pouco antes de botar a mão na massa.
+  E eu estou falando de parar para reescrever o texto de "Conceitos essenciais" enquanto estou escrevendo código. 
+  
+  [11/03/2025 - 16:57] 
+  Quase toda vez que eu vou mexer nesse código eu fico parado olhando pra tela e pensando no próximo passo ou tentando imaginar um fluxograma pra me ajudar a estruturar o código, em vez de fazer logo um fluxograma. 
+
+  [05/05/2025 - 20:51] 
+  É incomodante não saber a melhor técnica pra fazer algo que eu já sei como eu quero na minha mente, mas quando eu vejo um exemplo parecido com o que eu queria, eu penso que o que queria não tem um formato profissional por falta de conhecimento meu, falta de tentar e tentar de novo, falta de experiência... 
+  Mas tudo bem, vou continuar tentanto (mesmo com pouca frequência). É isso que eu quero e escolhi pra minha vida agora. 
+
+  [29/05/2025]
+  A partir de hoje estarei focando em usar o app Obsidian para anotações gerais.
+  Então vou passar essas anotações pra lá, aprimorar e tudo mais, 
+  mas também vou manter essas anotações aqui, acho interessante para quem quiser dar uma olhada no projeto.
+  Tchau, até. 

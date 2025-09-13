@@ -9,5 +9,17 @@ Eu frequentemente tenho ideias de projetos, coisas simples para praticar ou te e
 ### Colore
 Jogo de adivinhação de cor a partir de códigos hexadecimais e RGB :)
 
-### Listas
-Apenas praticando uma ideia para organizar melhor minhas lista de tarefas
+<!--
+### Clicador
+
+### Japonês em braile
+
+### Agenda semanal
+
+### Cards
+ -->
+
+### Ordenando listas
+Apenas praticando uma ideia para organizar melhor minhas lista de tarefas.
+
+

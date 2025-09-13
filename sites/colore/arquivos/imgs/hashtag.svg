@@ -1,0 +1,12 @@
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g stroke="black" stroke-width="2" stroke-linecap="round">
+    <!-- First diagonal line (italic effect) -->
+    <line x1="6" y1="3" x2="4" y2="17" transform="skewX(-20)" />
+    <!-- Second diagonal line (italic effect) -->
+    <line x1="14" y1="3" x2="12" y2="17" transform="skewX(-20)" />
+    <!-- First horizontal line (italic effect) -->
+    <line x1="3" y1="8" x2="17" y2="8" transform="skewX(-20)" />
+    <!-- Second horizontal line (italic effect) -->
+    <line x1="2" y1="13" x2="16" y2="13" transform="skewX(-20)" />
+  </g>
+</svg>

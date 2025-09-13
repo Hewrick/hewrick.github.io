@@ -1,0 +1,41 @@
+  -= Agenda Semanal =-
+
+• Requisitos funcionais
+1. Manter tarefas
+2. Cadastrar infprmações básicas do usuário (básico para futuro acesso)
+3. Logar usuário
+4. Mostrar progresso semanal
+5. Mostrar tarefas em destaque da próxima semana
+6. Favoritar tarefas (para que ela permaneça toda semana)
+
+• Requisitos não funcionais
+Disponibilidade: 24/7
+Portabilidade: Praticamente todos, menos android
+Manutenibilidade: Ambiente de produção e desenvolvimento
+até 7
+
+• Regras de negócio (restrições e permissões, pelo menos uma para qualquer componente do sofware)
+1. Somente um usuário com conta cadastrada poderá manter suas tarefas
+2. As tarefas podem ser marcadas como concluídas ou não concluídas
+3. O progresso semanal
+4.
+5.
+6.
+
+• Relações
+RN: 1 > RF: 2; 3
+ __
+RN: 2 > RF: 
+ __
+RN: 3 > RF: 
+ __
+RN: 4 > RF: 
+ __
+RN: 5 > RF: 
+ __
+RN: 6 > RF: 
+ __
+
+• Coisas a mais
+Cor: tijolo claro
+

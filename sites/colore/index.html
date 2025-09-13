@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="./arquivos/imgs/seta.png">
+    <link rel="stylesheet" href="./arquivos/8074n4c483c4.css">
+    <title>COLORE</title>
+    <!-- referencias: https://colorable.jxnblk.com/ ; https://monkepo.online/custom ; https://contexto.me/ ; https://term.ooo/ ; https://angle.wtf/ -->
+</head>
+<body>
+	<header>
+			<div id="titulo">COLORE</div>
+			<button id="teste" >teste</button>
+	</header>
+	<div id="app">
+		
+		<!-- Section que separa componentes principais dos componentes do escopo de configuração -->
+		<section>
+		<!-- Escopo principal para as cores -->
+		<div class='escopoCores margin-bottom-15px'>
+			<button id="botaoGerarCor" class="margin-bottom-15px" type="button">NOVA COR</button>
+			
+			<div class="quadrado">
+				<div id="cor"></div>
+
+				<div id="vermelhoNoVetor" class="corNoVetor"></div>
+				
+				<div id="verdeNoVetor" class="corNoVetor"></div>
+				
+				<div id="azulNoVetor" class="corNoVetor"></div>
+				
+				<div id="pretoNoVetor" class="corNoVetor"></div>
+				
+				<div id="brancoNoVetor" class="corNoVetor"></div>
+			</div>
+		</div>
+		
+		<!-- Sessão para tentar uma cor -->
+		<form id="formTentarCor" class="margin-bottom-15px">
+			<input id="entradaCor" type="text" placeholder="FFFFFF" minlength="3" maxlength="6">
+			<svg viewBox="0 0 20 20"><use href="arquivos/imgs/hashtag.svg"></use></svg>
+			</input>
+
+			<button id="botaoTentarCor" type="submit">TENTAR COR!</button>
+		</form>
+		
+		<!-- Sessão de tentativas -->
+		<ul id="escopoTentativas"></ul>
+		</section>
+		
+
+		<!-- Configuração de modo de jogo -->
+		<form id="formConfig">
+			
+			<!-- Seleção de código da cor -->
+			<p class="legenda-form">Tipo de código</p>
+			<ul id="selecaoCod" class="configuracao">	
+				<label class="opcao">
+					<input id="opcao0" type="radio" name="opcaoCod" value="HEX" checked>
+					HEX
+				</label>
+				<label class="opcao">
+					<input id="opcao1" type="radio" name="opcaoCod" value="RGB">
+					RGB
+				</label>
+			</ul>
+			
+			<!-- Seleção do modo de jogo (terão outros) -->
+			<p class="legenda-form">Modo de jogo</p>
+			<ul id="selecaoModo" class="configuracao">
+				<label class="opcao">
+					<input id="opcao0" type="radio" name="opcaoModo" value="Padrão" checked>
+					Padrão
+				</label>
+				<label class="opcao">
+					<input id="opcao1" type="radio" name="opcaoModo" value="limite de tentativas">
+					Limite de tentativas
+				</label>
+				<label class="opcao">
+					<input id="opcao2" type="radio" name="opcaoModo" value="opacidade">
+					Opacidade
+				</label>
+				<label class="opcao">
+					<input id="opcao3" type="radio" name="opcaoModo" value="degrade">
+					Falta um no degradê
+				</label>
+			</ul>
+			
+
+			<!-- Botão que confirma alteração de configuração -->
+			<button id="botaoConfirmarConfig" type="submit">CONFIRMAR CONFIGURAÇÃO</button>
+		</form>
+	</div>
+	<script type="module" src="arquivos/91r4nh4.js"></script>
+</body>
+</html>
