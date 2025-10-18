@@ -9,6 +9,11 @@ Eu frequentemente tenho ideias de projetos, coisas simples para praticar ou te e
 ### Colore
 Jogo de adivinhação de cor a partir de códigos hexadecimais e RGB :)
 
+### Clicador
+Jogo do estilo Idle.
+
+O objetivo é simplesmente ver os pontos aumentando hahaha.
+
 <!--
 ### Clicador
 
