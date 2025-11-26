@@ -1,46 +1,30 @@
-/* 
-Ideias:
-- Faz com que a função  "compararTentativa" identifique o padrão no texto (como um regex), onde está cada cor e quais informações estão no input. 
-  Solução: Usar "length" para saber a quantidade de caracteres e assim saber o padrão de cores que foi inserido, mas introduz isso na parte do "formTentarCor". Então seria chamada uma função, como "identificarCorTentativa()" (ou algo assim), logo nas primeiras linhas da função.
-- Usar SVG para substituir as imagens que aparecem como dicas para as tentativa
-*/
-
 // === Arquivos Importados ===
 /* Como importar:
  * const { objetoTentativa } = require("./91r4nh4");
  * No outro arquivo, onde está o componente, basta um "export" (nesse caso) antes do componente "objetoTentativa". 
  * Agora você sabe o que fazer, bonitão
 */ 
-
 //import gerarTentativa from "./modulos/tentativas.js";
 //import gerarHex from "./fmodulos/codigoHEX.js";
 //import gerarRGB from "./modulos/codigoRGB.js";
 
-
-
 // === Objetos para Tags ===
-
-// Cor principal atual
+// Cor desafio (que deve ser adivinhada)
 const botaoGerarCor = document.getElementById("botaoGerarCor");
 const cor = document.getElementById("cor");
 const entradaCor = document.getElementById("entradaCor");
-
 // Tentar Cor
-const formTentarCor = document.getElementById("formTentarCor");
+const form_tentar_cor = document.getElementById("form-tentar-cor");
 const botaoTentarCor = document.getElementById("botaoTentarCor");
 const escopoTentativas = document.getElementById("escopoTentativas");
-
 // Configuração
-const formConfig = document.getElementById("formConfig");
+const escopo_config = document.getElementById("escopo-config");
 // Tipo de Cor
 const opcaoCod = document.getElementsByName("opcaoCod");
 // Modo de jogo
 const opcaoModo = document.getElementsByName("opcaoModo");
 
-
-
 // === Variáveis ===
-
 // Tipo de código de cor
 let configCod = opcaoCod[0].value;
 
@@ -96,6 +80,13 @@ com o background-color da cor certa (resposta). Por exemplo, em um if.
 
 // === Configuração ===
 
+// Função para abrir menu
+document.getElementById("bt-abrirMenu").onclick = function abrirMenu() {
+  let x = document.getElementById("menu");
+  if (x.style.display === "block") { x.style.display = "none"; } 
+  else { x.style.display = "block"; }
+}
+
 // Função para alterar o código de cor (HEX ou RGB)
 // Essa função vai alterar o valor da variável "configCod" para o valor do código de cor que foi selecionado (HEX ou RGB)
 function alterarCod() {
@@ -112,8 +103,7 @@ function alterarModo() {
 }
 
 // Sessão do que acontecer quando as configurações forem confirmadas
-formConfig.addEventListener("submit", function(e) {
-  e.preventDefault();
+escopo_config.addEventListener("click", function() {
   console.clear();
   console.log("Configuração atual: ")
   alterarCod();
@@ -225,7 +215,7 @@ function compararTentativa() {
 }
 
 // Quando clicar em "TENTAR COR!"
-formTentarCor.addEventListener("submit", function(e) {
+form_tentar_cor.addEventListener("submit", function(e) {
   // SEMPRE USE "preventDefault()" NA PRIMEIRA LINHA (acho que isso ajuda um bucado kk...)
   e.preventDefault();
 
