@@ -1,8 +1,10 @@
+/* TUDO QUE TIVER ":hover" DUPLICA E FAZ COM ":focus"*/
+
 :root {
-	--cor-label-checked: #07d107;
+	--cor-label-checked: #48ee48;
 }
 
-*{box-sizing: border-box; appearance:none; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;  /* teste com borda aqui * border: solid 1px #0001; */ }
+*{box-sizing: border-box; appearance:none; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; /* border: solid 1px #0001; */ }
 body{margin:0; position: relative; background: #fff}
 /* body container {
 	display: flex;
@@ -11,13 +13,12 @@ body{margin:0; position: relative; background: #fff}
 
 
 /* === Designs Gerais (antes tava escrito só "Gerias"...) === */
+a{
+	text-decoration: none;
+	color: inherit;
+}
+
 button { 
-	/* Vou deixar sem design por enquanto
-	background-color: #188b1886;
-	color: #ffffff;
-	border: solid 2px #0a8a1f;
-	*/
-	
 	width: fit-content;
 	align-self: center;
 	border-radius: 5px;
@@ -25,15 +26,8 @@ button {
 	cursor: pointer;
 }
 
-ul {
-	padding-inline-start: 0px;
-	margin-block-start: 0px;
-	margin-block-end: 15px;
-}
-
-.legenda-form {
-	margin-block-start: 0;
-	margin-block-end: 0;
+p{
+	margin: 0;
 }
 
 .margin-bottom-10px { margin-bottom: 10px;}
@@ -54,46 +48,81 @@ header{
 /* === Menu === */
 #menu {
 	position: fixed;
-	top: 0; left: -200px;
-	width: 200px; height: 100%;
-	background-color: rgb(0,0,0,0.4);
-	display: none;
+	top: 0; left: -250px;
+	width: 250px; height: 100%;
+	background-color: rgba(118, 146, 207, 0.9);
+	display: flex;
 	flex-direction: column;
-	align-items: center;
-	padding-top: 100px;
-	gap: 20px;
+	align-items: left;
+	padding: 20px 20px;
+	gap: 8px;
 	z-index: 1;
+	transition: 0.3s;
 }
 
-#menu .im {
-	width: 150px; height: 40px;
-	background-color: #ffffff;
-	border: solid 1px #000;
-	border-radius: 5px;
+.im {
+	width: 100%;
+	height: fit-content;
+	border-bottom: inset 1px #000;
+	padding-left: 10px;
 	cursor: pointer;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	justify-content: left;
+	transition: 0.1s;
 }
+.im:hover {	border-bottom: inset 3px #000; }
+
+.im2 { padding-left: 10px; }
 
 #btn-abrir-menu {
 	position: fixed;
-	top: 100px; left: 0;
-	width: 40px; height: 40px;
+	top: 100px; 
+	width: 60px; height: 40px;
 	background-color: rgb(0,0,0,0.4);
-	border-radius: 5px;
+	border-radius: 0 5px 5px 0;
 	padding: 5px;
+	padding-left: 25px;
 	cursor: pointer;
 	z-index: 1;
+	transition: 0.3s;
 }
 #btn-abrir-menu img { width: 100%; height: 100%; }
+
+/* === Escopo Configuração === */
+label {
+	width: 100%;
+	height: fit-content;
+	border-bottom: solid 1px #000;
+	cursor: pointer;
+	transition: 0.1s;
+}
+label:hover {
+	border: solid 3px var(--cor-label-checked);
+	border-radius: 4px;
+	padding: 2px 3px;
+}
+.selecao input[type="radio"]:checked,
+.selecao label:has(input[type="radio"]:checked) {
+    background-color: var(--cor-label-checked);
+	color: #ffffff;
+	border-radius: 4px;
+}
+.selecao {
+	display: flex;
+	background-color: rgb(0,0,0, 0.2);
+	border-radius: 5px;
+	padding: 5px;
+	flex-direction: column;
+	align-items: left;
+	gap: 5px;
+	height: min-content;
+}
 
 
 /* === Parte principal === */
 #app{
-	display: flex;
-	flex-direction: row;
-	align-items: top;
+	display: none; /* depois voltar pra display: flex */
+	flex-direction: column;
+	align-items: center;
  	justify-content: center;
 	gap: clamp(100px, 9vw, 200px);
 	/* clamp(minimum, preferred value, maximum) */
@@ -106,68 +135,11 @@ header{
 }
 
 
-/* === Escopo Configuração === */
-#escopo-config {
-	width: clamp(350px, 30vw, 500px);
-	display: flex;
-	flex-direction: column;
-	align-items: left;
-}
-
-/* im = item do menu */
-.im {
-	margin-bottom: 5px;
-	font-weight: bold;
-}
-
-.configuracao input[type="radio"] { display: none; }
-
-label {
-	width: fit-content;
-	height: fit-content;
-	border-bottom: solid 1px #000000;
-	cursor: pointer;
-	transition: 0.1s;
-	
-}
-label:hover {
-	border: solid 3px var(--cor-label-checked);
-	border-radius: 4px;
-	padding: 2px 3px;
-}
-
-.configuracao input[type="radio"]:checked,
-.configuracao label:has(input[type="radio"]:checked) {
-    background-color: var(--cor-label-checked);
-	color: #ffffff;
-	border-radius: 4px;
-}
-/* === Seleção do tipo de código === */
-#selecaoCod {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	gap: 5px;
-	height: min-content;
-}
-/* === Seleção do modo de jogo === */
-#selecaoModo {
-	display: flex;
-	flex-direction: row;
-	gap: 5px;
-}
-
-
 /* === Escopo Cores === */
 .escopoCores {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-}
-
-#teste {
-	margin-left: 20px;
-	height: min-content;
 }
 
 #quadrado {

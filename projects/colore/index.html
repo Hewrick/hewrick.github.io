@@ -13,18 +13,18 @@
 	<header>
 		<div id="titulo">COLORE</div>
 	</header>
-	
+	<!-- CONTINUAR DAQUI -->
 	<!-- Menu Geral -->
 	<div id="btn-abrir-menu"><img src="./arquivos/imgs/seta-menu.png"></div>
 	<div id="menu">
-		<div id="teste" class="im"></div>
-		<div id="home" class="im">Voltar à página principal</div>
-		<div id="configurações" class="im"></div>		
+		<div id="teste" class="im">TESTE</div>
+		<div class="im"><a href="../../index.html">Voltar à página principal</a></div>
+		<div class="im2 configuracao">Configurações</div>		
 	
 		<!-- Configuração de modo de jogo -->
 		<!-- Seleção de código da cor -->
-		<p class="im">Tipo de código</p>
-		<ul id="selecaoCod" class="configuracao">	
+		<div class="selecao">
+			<p class="im2">Tipo de código</p>
 			<label class="opcao">
 				<input id="opcao0" type="radio" name="opcaoCod" value="HEX" checked>
 				HEX
@@ -33,10 +33,10 @@
 				<input id="opcao1" type="radio" name="opcaoCod" value="RGB">
 				RGB
 			</label>
-		</ul>
+		</div>
 		<!-- Seleção do modo de jogo (terão outros) -->
-		<p class="legenda-form">Modo de jogo</p>
-		<ul id="selecaoModo" class="configuracao">
+		<div class="selecao">
+			<p class="im2">Modo de jogo</p>
 			<label class="opcao">
 				<input id="opcao0" type="radio" name="opcaoModo" value="Padrão" checked>
 				Padrão
@@ -53,13 +53,13 @@
 				<input id="opcao3" type="radio" name="opcaoModo" value="degrade">
 				Falta um no degradê
 			</label>
-		</ul>
+		</div>
 		<!-- Botão que confirma alteração de configuração -->
-		<button id="botaoConfirmarConfig" type="submit">CONFIRMAR CONFIGURAÇÃO</button>
+		<button id="confirma-config">CONFIRMAR CONFIGURAÇÃO</button>
 	</div>
 	<!-- Escopo principal para as cores -->
 	<div id="app">
-		<div class='escopoCores margin-bottom-15px'>
+		<div class="escopoCores margin-bottom-15px">
 			<button id="botaoGerarCor" class="margin-bottom-15px" type="button">NOVA COR</button>
 			<div id="quadrado">
 				<div id="cor"></div>

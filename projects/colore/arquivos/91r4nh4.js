@@ -5,10 +5,12 @@
  * Agora você sabe o que fazer, bonitão
 */ 
 //import gerarTentativa from "./modulos/tentativas.js";
-//import gerarHex from "./fmodulos/codigoHEX.js";
+//import gerarHex from "./modulos/codigoHEX.js";
 //import gerarRGB from "./modulos/codigoRGB.js";
 
 // === Objetos para Tags ===
+// Root
+const root = document.documentElement;
 // Cor desafio (que deve ser adivinhada)
 const botaoGerarCor = document.getElementById("botaoGerarCor");
 const cor = document.getElementById("cor");
@@ -17,17 +19,20 @@ const entradaCor = document.getElementById("entradaCor");
 const form_tentar_cor = document.getElementById("form-tentar-cor");
 const botaoTentarCor = document.getElementById("botaoTentarCor");
 const escopoTentativas = document.getElementById("escopoTentativas");
-// Configuração
-const escopo_config = document.getElementById("escopo-config");
-// Tipo de Cor
+// Menu
+const menu = document.getElementById("menu");
+// Botão para abrir/fechar menu
+const btnAbrirMenu = document.getElementById("btn-abrir-menu");
+// Botão para confirmar configuração
+const confirma_config = document.getElementById("confirma-config");
+// Input para selecionar o tipo de código do jogo
 const opcaoCod = document.getElementsByName("opcaoCod");
-// Modo de jogo
+// Input para selecionar o modo de jogo
 const opcaoModo = document.getElementsByName("opcaoModo");
 
 // === Variáveis ===
 // Tipo de código de cor
 let configCod = opcaoCod[0].value;
-
 // Modo de jogo
 let configModo = opcaoModo[0].value;
 
@@ -36,79 +41,54 @@ let valorEntrada = entradaCor.value;
 // Tamanho do valor da entrada de tentativa
 let tamanhoEntrada = entradaCor.value.length;
 
+// Largura do menu (algo bem específico)
+// const largura_menu = getComputeStyle(root).getPropertyValue('--largura-menu').trim();
 
 
-// === Funções genéricas ===
-
-// import { teste } from "./modulos/25tentativas.js";
-document.getElementById("teste").onclick = function teste() {  
+// === Função Teste ===
+document.getElementById("teste").onclick = function teste() {
+  console.clear();
   for (const radio of opcaoCod) {
     radio.checked ? configCod = radio.value : configCod.default;
-    console.log(radio.value);
-    console.log(radio.checked);
   }
   
   for (const radio of opcaoModo) {
     radio.checked ? configModo = radio.value : configModo.default;
   }
-  
-  let tabelaTeste = "Tipo de código: " + configCod +
-  "Modo de jogo: " + configModo +
-  "Valor de entrada: " + valorEntrada +
-  "Tamanho de entrada: " + tamanhoEntrada;
-
-  escopoTentativas.innerHTML = tabelaTeste;
-
-  
+  console.log(configCod);
+  console.log(configModo);
 }
 
-// Função inútil, mas quero saber se vale a pena fazer funcionar
-// Função para prevenir ação padrão
-function prevPadrao(e) {
-  e.preventDefault();
-}
 
-/* 
-Pensei em fazer uma função teste que vai substituir 
-tudo dentro do "submit" do botão "TENTAR COR!" e vai 
-comparar o texto da tentativa (depois de passar pelo 
-processamento de ficar dentro do padrão) diretamente 
-com o background-color da cor certa (resposta). Por exemplo, em um if.
-*/
+// === Menu ===
 
-
-
-// === Configuração ===
-
-// Função para abrir menu
-document.getElementById("bt-abrirMenu").onclick = function abrirMenu() {
-  let x = document.getElementById("menu");
-  if (x.style.display === "block") { x.style.display = "none"; } 
-  else { x.style.display = "block"; }
-}
-
-// Função para alterar o código de cor (HEX ou RGB)
-// Essa função vai alterar o valor da variável "configCod" para o valor do código de cor que foi selecionado (HEX ou RGB)
-function alterarCod() {
-  console.log("Tipo de código: " + configCod);
-}
-
-// Função para alterar o modo de jogo
-// Essa função vai alterar o valor da variável "configModo" para o valor do modo de jogo que foi selecionado 
-function alterarModo() {
-  for (const radio of opcaoModo) {
-    radio.checked ? configModo = radio.value : configModo.default;
+// Abrir/fechar menu
+btnAbrirMenu.onclick = () => {
+  if (menu.style.left != "0px") {
+    menu.style.left = "0px";
+    btnAbrirMenu.style.left = "250px";
+  } else {
+    menu.style.left = "-250px";
+    btnAbrirMenu.style.left = "0px";
   }
-  console.log("Modo de jogo: " + configModo)
 }
 
-// Sessão do que acontecer quando as configurações forem confirmadas
-escopo_config.addEventListener("click", function() {
+// Função para atualizar o valor de qual input radio está selecionado
+function atualizarSelecaoRadio(opcao, selecao) {
+  for (const radio of opcao) {
+    radio.checked ? selecao = radio.value : selecao.default;
+  }
+}
+
+// 
+confirma_config.onclick = function() {
   console.clear();
   console.log("Configuração atual: ")
-  alterarCod();
-  alterarModo();
-});
+  atualizarSelecaoRadio(opcaoCod, configCod);
+  atualizarSelecaoRadio(opcaoModo, configModo);
+  console.log("Tipo de código :"+configCod);
+  console.log("Modo de jogo :"+configModo);
+};
 
 
 
