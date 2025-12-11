@@ -2,7 +2,7 @@
 Minha ___Landing Page___.
 
 
-Eu frequentemente tenho ideias de projetos, coisas simples para praticar ou te entreter. Então aqui estão elas, em processo de desenvolvimento ou não... aqui estão elas haha
+Eu frequentemente tenho ideias de projetos, coisas simples para praticar ou entreter. Então aqui estão elas, em processo de desenvolvimento ou não... aqui estão elas haha.
 
 ## Projetos
 
@@ -20,6 +20,6 @@ Jogo de adivinhação de cor a partir de códigos hexadecimais e RGB :)
  -->
 
 ### Ordenando listas
-Apenas praticando uma ideia para organizar melhor minhas lista de tarefas.
+Apenas praticando uma ideia para organizar melhor minhas listas de tarefas.
 
 
