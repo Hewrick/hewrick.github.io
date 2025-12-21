@@ -57,29 +57,26 @@
 		<!-- Botão que confirma alteração de configuração -->
 		<button id="confirma-config">CONFIRMAR CONFIGURAÇÃO</button>
 	</div>
-	<!-- Escopo principal para as cores -->
+	<!-- Escopo principal -->
 	<div id="app">
-		<div class="escopoCores margin-bottom-15px">
-			<button id="botaoGerarCor" class="margin-bottom-15px" type="button">NOVA COR</button>
-			<div id="quadrado">
-				<div id="cor"></div>
-				<div id="vermelhoNoVetor" class="corNoVetor"></div>
-				<div id="verdeNoVetor" class="corNoVetor"></div>
-				<div id="azulNoVetor" class="corNoVetor"></div>
-				<div id="pretoNoVetor" class="corNoVetor"></div>
-				<div id="brancoNoVetor" class="corNoVetor"></div>
-			</div>
+		
+		<button id="botaoGerarCor" type="button">NOVA COR</button>
+		<!-- Quadrado que mostra a cor -->
+		<div id="quadrado">
+			<div id="cor"></div>
+			<div id="vermelhoNoVetor" class="corNoVetor"></div>
+			<div id="verdeNoVetor" class="corNoVetor"></div>
+			<div id="azulNoVetor" class="corNoVetor"></div>
+			<div id="pretoNoVetor" class="corNoVetor"></div>
+			<div id="brancoNoVetor" class="corNoVetor"></div>
 		</div>
 		<!-- Sessão para tentar uma cor -->
-		<div id="form-tentar-cor" class="margin-bottom-15px">
-			<input id="entradaCor" type="text" placeholder="FFFFFF" minlength="3" maxlength="6">
-			<svg viewBox="0 0 20 20"><use href="arquivos/imgs/hashtag.svg"></use></svg>
-			</input>
-
-			<button id="botaoTentarCor" type="submit">TENTAR COR!</button>
-		</div>
+		<input id="entrada-cor" type="text" placeholder="FFFFFF" minlength="3" maxlength="8">
+		<!--<svg><use href="arquivos/imgs/hashtag.svg"></use></svg>
+		</input>-->
+		<button id="botaoTentarCor" type="submit">TENTAR COR!</button>	
 		<!-- Sessão de tentativas -->
-		<ul id="escopo-tentativas"></ul>
+		<div id="escopo-tentativas"></div>
 	</div>
 	<script type="module" src="arquivos/91r4nh4.js"></script>
 </body>

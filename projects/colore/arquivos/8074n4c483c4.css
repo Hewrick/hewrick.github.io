@@ -30,9 +30,6 @@ p{
 	margin: 0;
 }
 
-.margin-bottom-10px { margin-bottom: 10px;}
-.margin-bottom-15px { margin-bottom: 15px; }
-
 
 /* === Cabeçalho === */
 header{
@@ -120,11 +117,11 @@ label:hover {
 
 /* === Parte principal === */
 #app{
-	display: none; /* depois voltar pra display: flex */
+	display: flex;
 	flex-direction: column;
 	align-items: center;
  	justify-content: center;
-	gap: clamp(100px, 9vw, 200px);
+	gap: 10px;
 	/* clamp(minimum, preferred value, maximum) */
 }
 
@@ -192,24 +189,25 @@ label:hover {
 
 
 /* === Escopo Entrada da Cor === */
-#formTentarCor {
-	display: grid;
+#form-tentar-cor {
+	display: flex;
+	flex-direction: column;
 }
 
-#formTentarCor svg {
+#form-tentar-cor svg {
 	position: absolute;
 	width: 20px;
 	height: 20px;
 	padding: 5px 0 0 5px; 
 }
 
-#entradaCor {
+#entrada-cor {
 	height: 24px;
 	padding: 5px 5px 5px 25px;
 	background: #8a8a8a4d;
 	border: 1px #000;
 }
-#entradaCor:focus {
+#entrada-cor:focus {
 	border: 30px;
 	background: #8a8a8a4d;
 	border: 1px #000;
@@ -225,14 +223,14 @@ input[type=number]::-webkit-outer-spin-button {
 
 
 /* === Escopo Tentativas === */
-#escopoTentativas {
+#escopo-tentativas {
 	display: flex;
 	width: 200px;
 	/* Essa linha será apagada futuramente*/flex-direction: column-reverse;
 }
 
 /* Aviso de input invalido */
-#escopoTentativa span {
+#escopo-tentativa span {
 	color: #f00;
 }
 

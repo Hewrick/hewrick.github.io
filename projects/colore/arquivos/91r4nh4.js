@@ -14,7 +14,7 @@ const root = document.documentElement;
 // Cor desafio (que deve ser adivinhada)
 const botaoGerarCor = document.getElementById("botaoGerarCor");
 const cor = document.getElementById("cor");
-const entradaCor = document.getElementById("entradaCor");
+const entradaCor = document.getElementById("entrada-cor");
 // Tentar Cor
 const form_tentar_cor = document.getElementById("form-tentar-cor");
 const botaoTentarCor = document.getElementById("botaoTentarCor");
@@ -40,9 +40,6 @@ let configModo = opcaoModo[0].value;
 let valorEntrada = entradaCor.value;
 // Tamanho do valor da entrada de tentativa
 let tamanhoEntrada = entradaCor.value.length;
-
-// Largura do menu (algo bem específico)
-// const largura_menu = getComputeStyle(root).getPropertyValue('--largura-menu').trim();
 
 
 // === Função Teste ===
@@ -74,22 +71,22 @@ btnAbrirMenu.onclick = () => {
 }
 
 // Função para atualizar o valor de qual input radio está selecionado
-function atualizarSelecaoRadio(opcao, selecao) {
+function atualizarSelecaoRadio(selecao, opcao) {
   for (const radio of opcao) {
-    radio.checked ? selecao = radio.value : selecao.default;
+    radio.checked ? selecao = radio.value : null;
   }
+  return selecao;
 }
 
-// 
+// O que acontece quando clica o botão de confirmar configuração
 confirma_config.onclick = function() {
   console.clear();
   console.log("Configuração atual: ")
-  atualizarSelecaoRadio(opcaoCod, configCod);
-  atualizarSelecaoRadio(opcaoModo, configModo);
-  console.log("Tipo de código :"+configCod);
-  console.log("Modo de jogo :"+configModo);
+  configCod = atualizarSelecaoRadio(configCod, opcaoCod);
+  configModo = atualizarSelecaoRadio(configModo, opcaoModo);
+  console.log("Tipo de código: "+configCod);
+  console.log("Modo de jogo: "+configModo);
 };
-
 
 
 // === Escopo Cores ===
@@ -97,7 +94,6 @@ confirma_config.onclick = function() {
 // === HEX ===
 
 const hexCaracs = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F']; 
-
 
 // Função que gera uma cor aleatória com o código hexadecimal 
 botaoGerarCor.onclick = function gerarHEX() {
@@ -147,62 +143,4 @@ const setaVerde = document.getElementById("setaVerde");
 const setaAzul = document.getElementById("setaAzul");
 const setaTransparente = document.getElementById("setaTransparente");
 
-// Função para instanciar "objetoTentativa" com suas características já configuradas 
-function instanciarTentativa() {
-  corTentativa.style.backgroundColor = "#" + entradaCor.value; 
-  escopoTentativas.innerHTML = objetoTentativa;
-}
-
-// Função para fazer uma verificação geral de cada tentativa 
-// É interessante usar esta função para verificar ambos os tipos de código)
-// Será que eu faço um função para cada tipo de verificação?
-/* Verificar :
- * Padrão inserido (aceito apenas 3, 4, 6 ou 8 caracteres)
- * Se os caracteres realmente estão entre os válidos (Hexadecimal: 1 à F; RGB: 0.0 à 255.0; HSL: ;)
- */
-function verificarTentativa() {
-
-  if(entradaCor.value.length != 3 || entradaCor.value.length != 4 || entradaCor.value.length != 6 || entradaCor.value.length != 8 || entradaCor.value.length == 0) {
-    console.log(entradaCor.length);
-
-    escopoTentativas.innerHTML += 
-    "<span>Padrão de código inválido!</span>";
-    
-    delay(5000);
-    escopoTentativas.removeChild(span);
-  }
-  else { 
-
-    instanciarTentativa();
-    // Talvez mudar um desses dois fatores por uma só variável (ou constante)
-    
-  }
-}
-
-//Função para comparar tentativa com resposta E ajustar o estado das dicas (que são as setas etc)
-function compararTentativa() {
-
-  // Os módulos de cores são definidos
-  if(chave == true) {
-    let mVermelho;
-    let mVerde;
-    let mAzul;
-  } else {
-    let mVermelho;
-    let mVerde;
-    let mAzul;
-  }
-}
-
-// Quando clicar em "TENTAR COR!"
-form_tentar_cor.addEventListener("submit", function(e) {
-  // SEMPRE USE "preventDefault()" NA PRIMEIRA LINHA (acho que isso ajuda um bucado kk...)
-  e.preventDefault();
-
-  console.log("Tamanho de entradaCor: " + tamanhoEntrada);
-  console.log("Valor de entradaCor: " + valorEntrada);
-
-  //verificarTentativa();
-
-  // Atribui cor da tentativa ao escopo da tentativa
-});
+//pesquisar: module.exports = { objetoTentativa, instanciarTentativa };
