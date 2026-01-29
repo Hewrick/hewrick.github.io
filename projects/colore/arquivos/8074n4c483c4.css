@@ -79,7 +79,7 @@ header{
 	padding: 5px;
 	padding-left: 25px;
 	cursor: pointer;
-	z-index: 1;
+	z-index: 2;
 	transition: 0.3s;
 }
 #btn-abrir-menu img { width: 100%; height: 100%; }
@@ -142,7 +142,7 @@ label:hover {
 #quadrado {
 	display: grid;
 	grid-template-areas: 
-	"vermelho cor"
+	"verme cor"
 	"verde cor"
 	"azul cor"
 	"preto cor"
@@ -150,42 +150,28 @@ label:hover {
 	border: solid 2px #000;
 	border-radius: 10px;
 }
-
 #cor {
 	grid-area: cor;
 	height: 200px; width: 220px;
 	background-color: #fff;
 	border-radius: 0 10px 10px 0;
 }
-
 .corNoVetor {
 	z-index: 1;
 	left: 0px;
 	width: 40px;
 }
-
-#vermelhoNoVetor {
-	grid-area: vermelho;
-	background-color: #f00;
+#vermelhoNoVetor {grid-area: verme; background-color: #f00;
 	border-radius: 10px 0 0 0;
 }
-#verdeNoVetor {
-	grid-area: verde;
-	background-color: #0f0;
+#verdeNoVetor {grid-area: verde; background-color: #0f0;
 }
-#azulNoVetor {
-	grid-area: azul;
-	background-color: #00f;
+#azulNoVetor {grid-area: azul; background-color: #00f;
 }
-#pretoNoVetor {
-	grid-area: preto;
-	background-color: #000;
+#pretoNoVetor {grid-area: preto; background-color: #000;
 }
-#brancoNoVetor {
-	grid-area: branco;
-	background-color: #fff;
-	border-radius: 0 0 0 10px;
-}
+#brancoNoVetor {grid-area: branco; background-color: #fff;
+	border-radius: 0 0 0 10px;}
 
 
 /* === Escopo Entrada da Cor === */

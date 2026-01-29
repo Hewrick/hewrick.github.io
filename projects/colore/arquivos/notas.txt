@@ -7,6 +7,7 @@ https://term.ooo/
 
  === Tarefas (priorizando hexadecimal) ===
  - Funcionalidades gerais:
+  - Gerar e manter cor
   - Verificar tentativa (fazer como método, é aquele com "return")
     - Verificar validade do input (se está dentro dos padrões de hexadecimal)
     - Ler código da tentativa
