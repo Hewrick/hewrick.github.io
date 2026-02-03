@@ -11,87 +11,72 @@
 </head>
 <body>
 	<header>
-			<div id="titulo">COLORE</div>
-			<button id="teste" >teste</button>
+		<div id="titulo">COLORE</div>
 	</header>
+	<!-- CONTINUAR DAQUI -->
+	<!-- Menu Geral -->
+	<div id="btn-abrir-menu"><img src="./arquivos/imgs/seta-menu.png"></div>
+	<div id="menu">
+		<div id="teste" class="im">TESTE</div>
+		<div class="im"><a href="../../index.html">Voltar à página principal</a></div>
+		<div class="im2 configuracao">Configurações</div>		
+	
+		<!-- Configuração de modo de jogo -->
+		<!-- Seleção de código da cor -->
+		<div class="selecao">
+			<p class="im2">Tipo de código</p>
+			<label class="opcao">
+				<input id="opcao0" type="radio" name="opcaoCod" value="HEX" checked>
+				HEX
+			</label>
+			<label class="opcao">
+				<input id="opcao1" type="radio" name="opcaoCod" value="RGB">
+				RGB
+			</label>
+		</div>
+		<!-- Seleção do modo de jogo (terão outros) -->
+		<div class="selecao">
+			<p class="im2">Modo de jogo</p>
+			<label class="opcao">
+				<input id="opcao0" type="radio" name="opcaoModo" value="Padrão" checked>
+				Padrão
+			</label>
+			<label class="opcao">
+				<input id="opcao1" type="radio" name="opcaoModo" value="limite de tentativas">
+				Limite de tentativas
+			</label>
+			<label class="opcao">
+				<input id="opcao2" type="radio" name="opcaoModo" value="opacidade">
+				Opacidade
+			</label>
+			<label class="opcao">
+				<input id="opcao3" type="radio" name="opcaoModo" value="degrade">
+				Falta um no degradê
+			</label>
+		</div>
+		<!-- Botão que confirma alteração de configuração -->
+		<button id="confirma-config">CONFIRMAR CONFIGURAÇÃO</button>
+	</div>
+	<!-- Escopo principal -->
 	<div id="app">
 		
-		<!-- Section que separa componentes principais dos componentes do escopo de configuração -->
-		<section>
-		<!-- Escopo principal para as cores -->
-		<div class='escopoCores margin-bottom-15px'>
-			<button id="botaoGerarCor" class="margin-bottom-15px" type="button">NOVA COR</button>
-			
-			<div class="quadrado">
-				<div id="cor"></div>
-
-				<div id="vermelhoNoVetor" class="corNoVetor"></div>
-				
-				<div id="verdeNoVetor" class="corNoVetor"></div>
-				
-				<div id="azulNoVetor" class="corNoVetor"></div>
-				
-				<div id="pretoNoVetor" class="corNoVetor"></div>
-				
-				<div id="brancoNoVetor" class="corNoVetor"></div>
-			</div>
+		<button id="botaoGerarCor" type="button">NOVA COR</button>
+		<!-- Quadrado que mostra a cor -->
+		<div id="quadrado">
+			<div id="cor"></div>
+			<div id="vermelhoNoVetor" class="corNoVetor"></div>
+			<div id="verdeNoVetor" class="corNoVetor"></div>
+			<div id="azulNoVetor" class="corNoVetor"></div>
+			<div id="pretoNoVetor" class="corNoVetor"></div>
+			<div id="brancoNoVetor" class="corNoVetor"></div>
 		</div>
-		
 		<!-- Sessão para tentar uma cor -->
-		<form id="formTentarCor" class="margin-bottom-15px">
-			<input id="entradaCor" type="text" placeholder="FFFFFF" minlength="3" maxlength="6">
-			<svg viewBox="0 0 20 20"><use href="arquivos/imgs/hashtag.svg"></use></svg>
-			</input>
-
-			<button id="botaoTentarCor" type="submit">TENTAR COR!</button>
-		</form>
-		
+		<input id="entrada-cor" type="text" placeholder="FFFFFF" minlength="3" maxlength="8">
+		<!--<svg><use href="arquivos/imgs/hashtag.svg"></use></svg>
+		</input>-->
+		<button id="botaoTentarCor" type="submit">TENTAR COR!</button>	
 		<!-- Sessão de tentativas -->
-		<ul id="escopoTentativas"></ul>
-		</section>
-		
-
-		<!-- Configuração de modo de jogo -->
-		<form id="formConfig">
-			
-			<!-- Seleção de código da cor -->
-			<p class="legenda-form">Tipo de código</p>
-			<ul id="selecaoCod" class="configuracao">	
-				<label class="opcao">
-					<input id="opcao0" type="radio" name="opcaoCod" value="HEX" checked>
-					HEX
-				</label>
-				<label class="opcao">
-					<input id="opcao1" type="radio" name="opcaoCod" value="RGB">
-					RGB
-				</label>
-			</ul>
-			
-			<!-- Seleção do modo de jogo (terão outros) -->
-			<p class="legenda-form">Modo de jogo</p>
-			<ul id="selecaoModo" class="configuracao">
-				<label class="opcao">
-					<input id="opcao0" type="radio" name="opcaoModo" value="Padrão" checked>
-					Padrão
-				</label>
-				<label class="opcao">
-					<input id="opcao1" type="radio" name="opcaoModo" value="limite de tentativas">
-					Limite de tentativas
-				</label>
-				<label class="opcao">
-					<input id="opcao2" type="radio" name="opcaoModo" value="opacidade">
-					Opacidade
-				</label>
-				<label class="opcao">
-					<input id="opcao3" type="radio" name="opcaoModo" value="degrade">
-					Falta um no degradê
-				</label>
-			</ul>
-			
-
-			<!-- Botão que confirma alteração de configuração -->
-			<button id="botaoConfirmarConfig" type="submit">CONFIRMAR CONFIGURAÇÃO</button>
-		</form>
+		<div id="escopo-tentativas"></div>
 	</div>
 	<script type="module" src="arquivos/91r4nh4.js"></script>
 </body>

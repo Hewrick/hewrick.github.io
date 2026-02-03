@@ -5,20 +5,31 @@ https://contexto.me/ ;
 https://term.ooo/
 ...
 
- === Tarefas (priorizando )===
- - Layout beta (minimamente responsívo)
- - Funcionalidades gerais
-   - Verificação de validade do input
-   - Verificação de compatibilidade do input
-   - Criação automática do objeto-tentativa
-   - Retorno da tentativa (resposta se está certo ou não)
- - Aplicar modos de jogo
-   - 25 tentativas
-   - Opacidade
-   - Degradê
- - Adicionar tutorial (botão)
- - Design final (última tarefa)
+ === Tarefas (priorizando hexadecimal) ===
+ - Funcionalidades gerais:
+  - Gerar e manter cor
+  - Verificar tentativa (fazer como método, é aquele com "return")
+    - Verificar validade do input (se está dentro dos padrões de hexadecimal)
+    - Ler código da tentativa
+    - Separar o código em secções de um código hexadecimal
+    - Converter (em uma função) todas as secções para decimal
+    - Verificar compatibilidade com o código da "cor-desafio"
+      - Testar no console
+  - Gerar "objeto-tentativa" com o retorno se a tentativa está correta
+ - Design final do protótipo
 
+ - Adicionar tutorial (no menu)
+ - Aplicar modos de jogo
+  - 25 tentativas
+  - Opacidade
+  - Degradê
+
+
+ === Estratégias ===
+ Considerar partes do código como:
+ - Visual
+ - Regras de negócio (como o software deve funcionar e até onde deve ir)
+ - Interação e aquisição de dados
 
 
  === Conceitos essenciais ===
@@ -43,13 +54,11 @@ Exemplos: "#f0f5"; "#ff00ff5E"; "#0ABFF0".
 - Luminosidade: Também é uma porcentagem; 0% é preto, 100% é branco.
 Exemplo: "hsl(279, 88.20%, 50.00%)".
 
-
   • Filtragem da entrada de dados (tentativas):
 - Verificar o tipo de código e o modo de jogo;
 - Verificar se o valor da tentativa está dentro do padrão;
 - Verificar compatibilidade da tentativa com a resposta
 ...
-
 
 
  === Outros modos === 
@@ -64,15 +73,15 @@ Exemplo: "hsl(279, 88.20%, 50.00%)".
 ... 
 
 
-
  === Ideias ===
-- É interessante trocar o "objetoTentativa" para algo como "const objetoTentativa = () => escopoTentativas += '...'"
-- Alterar o display de configuração pra ser mais parecido com o do jogo Monkepo, ou fazer com que o escopo de configuração apareça vindo de um dos lados da tela (e pare no meio (o que não seria tão diferente do Monkepo) ou pare no lado mesmo, como um menu)
-- Modos de jogo
+- É interessante trocar o "objeto-tentativa" para algo como "const objeto_tentativa = () => escopoTentativas += '...'". Ou fazer com que seja invocado com um "... = new objeto_tentativa"
+- Recursos:
   - Quadro de estatísticas
   - Dicas
+- Faz com que a função  "compararTentativa" identifique o padrão no texto (como um regex), onde está cada cor e quais informações estão no input. 
+  Solução: Usar "length" para saber a quantidade de caracteres e assim saber o padrão de cores que foi inserido, mas introduz isso na parte do "form-tentar-cor". Então seria chamada uma função, como "identificarCorTentativa()" (ou algo assim), logo nas primeiras linhas da função.
+- Usar SVG para substituir as imagens que aparecem como dicas para as tentativa
 ...
-
 
 
  === Notas mentais ===
