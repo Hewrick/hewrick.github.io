@@ -1,9 +1,9 @@
 /* TUDO QUE TIVER ":hover" DUPLICA E FAZ COM ":focus"*/
-
+/*
 :root {
-	--cor-label-checked: #48ee48;
+	 --cor-label-checked: #48ee48; 
 }
-
+*/
 *{box-sizing: border-box; appearance:none; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; /* border: solid 1px #0001; */ }
 body{margin:0; position: relative; background: #fff}
 /* body container {
@@ -13,10 +13,8 @@ body{margin:0; position: relative; background: #fff}
 
 
 /* === Designs Gerais (antes tava escrito só "Gerias"...) === */
-a{
-	text-decoration: none;
-	color: inherit;
-}
+a{  text-decoration: none;
+	color: inherit;}
 
 button { 
 	width: fit-content;
@@ -26,9 +24,7 @@ button {
 	cursor: pointer;
 }
 
-p{
-	margin: 0;
-}
+p{margin: 0;}
 
 
 /* === Cabeçalho === */
@@ -56,7 +52,7 @@ header{
 	z-index: 1;
 	transition: 0.3s;
 }
-
+/* Item do menu - Estilo 1 */
 .im {
 	width: 100%;
 	height: fit-content;
@@ -67,10 +63,10 @@ header{
 	transition: 0.1s;
 }
 .im:hover {	border-bottom: inset 3px #000; }
-
+/* Item do menu - Estilo 2 */
 .im2 { padding-left: 10px; }
 
-#btn-abrir-menu {
+#btnAbrirMenu{
 	position: fixed;
 	top: 100px; 
 	width: 60px; height: 40px;
@@ -82,7 +78,7 @@ header{
 	z-index: 2;
 	transition: 0.3s;
 }
-#btn-abrir-menu img { width: 100%; height: 100%; }
+#btnAbrirMenu img { width: 100%; height: 100%; }
 
 /* === Escopo Configuração === */
 label {
@@ -150,7 +146,7 @@ label:hover {
 	border: solid 2px #000;
 	border-radius: 10px;
 }
-#cor {
+#corDesafio {
 	grid-area: cor;
 	height: 200px; width: 220px;
 	background-color: #fff;
@@ -175,25 +171,13 @@ label:hover {
 
 
 /* === Escopo Entrada da Cor === */
-#form-tentar-cor {
-	display: flex;
-	flex-direction: column;
-}
-
-#form-tentar-cor svg {
-	position: absolute;
-	width: 20px;
-	height: 20px;
-	padding: 5px 0 0 5px; 
-}
-
-#entrada-cor {
+#entradaCor {
 	height: 24px;
 	padding: 5px 5px 5px 25px;
 	background: #8a8a8a4d;
 	border: 1px #000;
 }
-#entrada-cor:focus {
+#entradaCor:focus {
 	border: 30px;
 	background: #8a8a8a4d;
 	border: 1px #000;
@@ -209,18 +193,18 @@ input[type=number]::-webkit-outer-spin-button {
 
 
 /* === Escopo Tentativas === */
-#escopo-tentativas {
+#escopoTentativas {
 	display: flex;
 	width: 200px;
 	/* Essa linha será apagada futuramente*/flex-direction: column-reverse;
 }
 
 /* Aviso de input invalido */
-#escopo-tentativa span {
+#escopoTentativas span {
 	color: #f00;
 }
 
-/* === Objeto de cada tentativa === */
+/* === Objeto de cada tentativa === *
 #objetoTentativa {
 	display: flex;
 	height: 70px;
@@ -243,20 +227,17 @@ input[type=number]::-webkit-outer-spin-button {
 	margin: none;
 	border-radius: 50px;
 }
-
 .seta {
 	margin-top: 10px;
 	width: 30px; height: 30px;
 }
-
 .seta #setaVermelha {
 	fill: #f00;
 }
-
 .seta #setaVerde {
 	fill: #0f0;
 }
-
 .seta #setaAzul {
 	fill: #00f;
 }
+*/
