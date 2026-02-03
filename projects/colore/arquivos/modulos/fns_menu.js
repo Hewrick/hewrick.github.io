@@ -3,7 +3,7 @@ function interruptorMenu() {
   // Menu
   const menu = document.getElementById("menu");
   // Botão para abrir/fechar menu
-  const btnAbrirMenu = document.getElementById("btn-abrir-menu");
+  const btnAbrirMenu = document.getElementById("btnAbrirMenu");
 
   if (menu.style.left != "0px") {
     menu.style.left = "0px";
