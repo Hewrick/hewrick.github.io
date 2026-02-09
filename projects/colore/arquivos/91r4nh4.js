@@ -1,5 +1,6 @@
 // === Importações === 
-import * as menuc from "./modulos/fns_menu.js";
+import * as fns_menu from "./modulos/fns_menu.js";
+import * as fns_corDesafio from "./modulos/fns_corDesafio.js";
 
 // === Objetos para Tags e Instâncias Relacionadas ===
 // Root
@@ -7,7 +8,7 @@ const root = document.documentElement;
 
 // == Escopo da Cor Desafio ==
 // Botão para gerar cor desafio
-const botaoGerarCor = document.getElementById("botaoGerarCor");
+const btnGerarCor = document.getElementById("btnGerarCor");
 // Cor desafio (que deve ser adivinhada)
 const corDesafio = document.getElementById("corDesafio");
 
@@ -41,16 +42,19 @@ let configModo = opcaoModo[0].value;
 
 // === Teste ===
 document.getElementById("teste").onclick = function teste() {
-  
+  console.log(corDesafio.style.backgroundColor);
 }
 
 // === Abrir Menu ===
-btnAbrirMenu.onclick = menuc.interruptorMenu;
+btnAbrirMenu.addEventListener('click', fns_menu.interruptorMenu);
 // === Confirmar Configurações no Menu ===
-confirmaConfig.onclick = menuc.confirmConfig;
+confirmaConfig.addEventListener('click', fns_menu.confirmConfig);
 
-// Gerar nova cor desafio
-
+// Botaõ de gerar nova cor desafio e reiniciar partida
+btnGerarCor.addEventListener('click', () => {
+  fns_corDesafio.gerarCod(corDesafio);
+  //fns_partidas.reiniciar(padrao);
+});
 
 // === Tentativas ===
 
@@ -63,5 +67,3 @@ const objetoTentativa =
 "   <img id='setaAzul' class='seta itemTentativa' src='./arquivos/imgs/seta.png'> " +
 "   <img id='setaTransparente' class='seta itemTentativa' style='display: none' src='./arquivos/imgs/seta.png'> " +
 " </li>";
-
-
