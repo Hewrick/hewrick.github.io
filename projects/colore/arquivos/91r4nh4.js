@@ -50,11 +50,14 @@ btnAbrirMenu.addEventListener('click', fns_menu.interruptorMenu);
 // === Confirmar Configurações no Menu ===
 confirmaConfig.addEventListener('click', fns_menu.confirmConfig);
 
-// Botaõ de gerar nova cor desafio e reiniciar partida
+// === Gerar nova cor desafio ===
 btnGerarCor.addEventListener('click', () => {
   fns_corDesafio.gerarCod(corDesafio);
   //fns_partidas.reiniciar(padrao);
 });
+
+// ===  ===
+
 
 // === Tentativas ===
 
