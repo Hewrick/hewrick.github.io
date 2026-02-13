@@ -6,18 +6,19 @@ https://term.ooo/
 ...
 
 
+valores de estado para as configs (para verificação)
+
 tenho modos: 
-hex - padrão, 
-rgb - padrão, 
-limite de tentativa - não depende de nada, cria sua própria regra sozinho, 
-opacidade - muda apenas a quantidade de caracteres da verificação (hex e rgb), 
-degrade - identifica duas cores, então muda o design 
+- hex (padrão) - inputHEX e resposta padrão, 
+- rgb (padrão) - inputRGB e resposta padrão, 
+- limite de tentativa - apenas adição de regra ao padrão, 
+- opacidade - muda a entrada e resposta (outra função de criação de resposta, if só no chamado da função), 
+- degrade - muda a entrada e saída (outra função de criação de resposta, if só no chamado da função) 
 
 export3-2-1 de hex e rgb & import opcaoModo para processar,
 export2-1 tentativas, import1 91r4nh4
   OU
 deixar duas funções de processamento, uma para cada tipo de código no mesmo arquivo dos modos. Assim fica tudo no contexto de processar tentativas
-
 
 mudar design de entradaCor com confirmaConfig.onclick( if(className) )
 
@@ -25,7 +26,7 @@ mudar design de entradaCor com confirmaConfig.onclick( if(className) )
  === Tarefas (prioridade: hexadecimal -> RGB) ===
  - Funcionalidades gerais:
   - Gerar e manter cor desafio ✓
-  - Verificar tentativa (se tiver return, sera chamando a outra função de criação do objetivo de tentativa)
+  - Verificar tentativa (se tiver return, sera chamando a outra função de criação da resposta de tentativa)
     - Verificar validade do input (se está dentro dos padrões de hexadecimal)
     - Ler código da tentativa
     - Separar o código em secções de um código hexadecimal

@@ -40,27 +40,38 @@ let configCod = opcaoCod[0].value;
 let configModo = opcaoModo[0].value;
 
 
-// === Teste ===
+// === Teste e Debug===
 document.getElementById("teste").onclick = function teste() {
   console.log(corDesafio.style.backgroundColor);
 }
+
 
 // === Abrir Menu ===
 btnAbrirMenu.addEventListener('click', fns_menu.interruptorMenu);
 // === Confirmar Configurações no Menu ===
 confirmaConfig.addEventListener('click', fns_menu.confirmConfig);
 
+
 // === Gerar nova cor desafio ===
+
 btnGerarCor.addEventListener('click', () => {
+  for(let i=0; i<1000; i++){
+  const inicio = performance.now();
   fns_corDesafio.gerarCod(corDesafio);
   //fns_partidas.reiniciar(padrao);
+  const fim = performance.now();
+  let demora;
+  demora = fim - inicio;
+  }
+
 });
+
 
 // ===  ===
 
 
-// === Tentativas ===
 
+// === Tentativas ===
 // Código de cada tentativa, passado para HTML
 const objetoTentativa =
 " <li id='objetoTentativa'> " +
