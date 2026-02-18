@@ -54,6 +54,10 @@ confirmaConfig.addEventListener('click', fns_menu.confirmConfig);
 btnGerarCor.addEventListener('click', () => {
   fns_corDesafio.gerarCod(corDesafio);
   //fns_partidas.reiniciar(padrao);
+  /* talvez mudar esse "fns_corDesafio" para "fns_partidas"
+   * e assim adicionar importar os modos e funções básicas 
+   * (como a de gerar nova cor desafio) para lá
+   */
 });
 
 // === Tentativas ===
