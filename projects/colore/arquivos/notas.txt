@@ -5,11 +5,30 @@ https://contexto.me/ ;
 https://term.ooo/
 ...
 
- === Tarefas (priorizando hexadecimal) ===
+
+valores de estado para as configs (para verificação)
+
+tenho modos: 
+- hex (padrão) - inputHEX e resposta padrão, 
+- rgb (padrão) - inputRGB e resposta padrão, 
+- limite de tentativa - apenas adição de regra ao padrão, 
+- opacidade - muda a entrada e resposta (outra função de criação de resposta, if só no chamado da função), 
+- degrade - muda a entrada e saída (outra função de criação de resposta, if só no chamado da função) 
+
+tudo fica em um module,
+padronizar alterações de cada modo:
+  - limite de tentativa: conta o número de tentativas;
+  - opacidade: if dentro para caso seja hex ou rgb;
+  - degrade: apenas recebe duas tentativas; 
+
+mudar design de entradaCor com confirmaConfig.onclick( if(className) )
+
+
+ === Tarefas (prioridade: hexadecimal -> RGB) ===
  - Funcionalidades gerais:
-  - Gerar e manter cor desafio
-  - Verificar tentativa (fazer como método, é aquele com "return")
-    - Verificar validade do input (se está dentro dos padrões de hexadecimal)
+  - Gerar e manter cor desafio ✓
+  - Verificar tentativa (se tiver return, sera chamando a outra função de criação da resposta de tentativa)
+    - Verificar validade do input (hexadecimal = 0-9 e A-F)
     - Ler código da tentativa
     - Separar o código em secções de um código hexadecimal
     - Converter (em uma função) todas as secções para decimal

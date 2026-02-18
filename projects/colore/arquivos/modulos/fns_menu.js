@@ -30,15 +30,18 @@ function confirmConfig() {
     for (const radio of opcao) {
       radio.checked ? selecao = radio.value : selecao.default;
     }
+    console.log(selecao);
     return selecao;
   }
   
+  configCod = atualizarSelecaoRadio(configCod, opcaoCod);
+  configModo = atualizarSelecaoRadio(configModo, opcaoModo);
+  
+  /* debug
   console.clear();
   console.log("Configuração atual: ");
-  configCod = atualizarSelecaoRadio(configCod, opcaoCod);
-  configModo = atualizarSelecaoRadio(configModo, opcaoModo); 
   console.log("Tipo de código: "+configCod);
-  console.log("Modo de jogo: "+configModo);
+  console.log("Modo de jogo: "+configModo);*/
 };
 
 

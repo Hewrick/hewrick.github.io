@@ -2,7 +2,9 @@
 import * as fns_menu from "./modulos/fns_menu.js";
 import * as fns_corDesafio from "./modulos/fns_corDesafio.js";
 
+
 // === Objetos para Tags e Instâncias Relacionadas ===
+
 // Root
 const root = document.documentElement;
 
@@ -15,12 +17,12 @@ const corDesafio = document.getElementById("corDesafio");
 // == Tentar Cor ==
 // Campo para tentar o código da cor desafio
 const entradaCor = document.getElementById("entradaCor");
-// Botão para confirmar tentativa
-const botaoTentarCor = document.getElementById("botaoTentarCor");
 // Valor da entrada de tentativa 
 let valorEntrada = entradaCor.value;
 // Tamanho do valor da entrada de tentativa
 let tamanhoEntrada = entradaCor.value.length;
+// Botão para confirmar tentativa
+const btnTentarCor = document.getElementById("btnTentarCor");
 // Campo de histórico de tentativas
 const escopoTentativas = document.getElementById("escopoTentativas");
 
@@ -40,28 +42,34 @@ let configCod = opcaoCod[0].value;
 let configModo = opcaoModo[0].value;
 
 
-// === Teste ===
+// === Teste e Debug===
 document.getElementById("teste").onclick = function teste() {
   console.log(corDesafio.style.backgroundColor);
 }
+
 
 // === Abrir Menu ===
 btnAbrirMenu.addEventListener('click', fns_menu.interruptorMenu);
 // === Confirmar Configurações no Menu ===
 confirmaConfig.addEventListener('click', fns_menu.confirmConfig);
 
-// Botaõ de gerar nova cor desafio e reiniciar partida
-btnGerarCor.addEventListener('click', () => {
-  fns_corDesafio.gerarCod(corDesafio);
-  //fns_partidas.reiniciar(padrao);
-  /* talvez mudar esse "fns_corDesafio" para "fns_partidas"
-   * e assim adicionar importar os modos e funções básicas 
-   * (como a de gerar nova cor desafio) para lá
-   */
+
+// === Gerar nova cor desafio ===
+const alfabetoHEX = [1]
+
+btnGerarCor.addEventListener('click', () => fns_corDesafio.gerarCod(corDesafio));
+
+
+// === Configuração de Modo e Tipo de Código ===
+btnTentarCor.addEventListener('click', 
+function lerEntrada() {
+  
+  console.log(valorEntrada);
 });
 
-// === Tentativas ===
 
+
+// === Tentativas ===
 // Código de cada tentativa, passado para HTML
 const objetoTentativa =
 " <li id='objetoTentativa'> " +

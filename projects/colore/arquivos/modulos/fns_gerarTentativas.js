@@ -1,8 +1,8 @@
-// === Tentativas ===
-
 // Função para criar histórico de tentativa depois de enviar uma tentativa de cor
 
 export function gerarTentativa() {
+  const escopoTentativas = document.getElementById("escopoTentativas");
+
   // Criação dos objetos para as tentativas
   const objetoTentativa = document.createElement("li");
   const corTentativa = document.createElement("div");
