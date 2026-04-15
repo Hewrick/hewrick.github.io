@@ -5,12 +5,10 @@ function interruptorMenu() {
   // Botão para abrir/fechar menu
   const btnAbrirMenu = document.getElementById("btnAbrirMenu");
 
-  if (menu.style.left != "0px") {
+  if (menu.style.left != "0px") {       // se desativado então
     menu.style.left = "0px";
-    btnAbrirMenu.style.left = "250px";
-  } else {
+  } else {                              // se ativado então
     menu.style.left = "-250px";
-    btnAbrirMenu.style.left = "0px";
   }
 }
 

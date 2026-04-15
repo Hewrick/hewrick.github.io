@@ -42,10 +42,12 @@ let configCod = opcaoCod[0].value;
 let configModo = opcaoModo[0].value;
 
 
-// === Teste e Debug===
-document.getElementById("teste").onclick = function teste() {
-  console.log(corDesafio.style.backgroundColor);
-}
+// === Teste e Debug ===
+document.getElementById("teste").addEventListener('click', fns_menu.interruptorMenu, 
+  function teste() {
+    console.log(corDesafio.style.backgroundColor);
+  }
+)
 
 
 // === Abrir Menu ===
@@ -55,7 +57,7 @@ confirmaConfig.addEventListener('click', fns_menu.confirmConfig);
 
 
 // === Gerar nova cor desafio ===
-const alfabetoHEX = [1]
+const alfabetoHEX = [1] // <-- ...melhore
 
 btnGerarCor.addEventListener('click', () => fns_corDesafio.gerarCod(corDesafio));
 
