@@ -1,0 +1,49 @@
+* {border: solid 1px rgb(0,0,0,0.0);}
+
+html {margin: 0; padding: 0;}
+body {margin: 2vw 3vw 0; padding: 0;}
+poliestireno {
+  display: inline-block;
+  margin: 0 10px;
+  padding: 18px 20px 28px;
+  border-radius: 20px;
+  background: rgb(0,0,0,0.08);
+  text-align: left;
+  text-indent: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font: 13pt bold;
+}
+
+
+main{
+  
+}
+
+#opcao-campoMinado, #opcao-incremental {
+  display: inline-block;
+  margin: 15px;
+  padding: 10px;
+  border: 0px solid black;
+  background: rgb(0,0,0,0.1);
+  font: 20pt rgb(0,0,0,0.5);
+  cursor: pointer;
+  transition: 0.2s
+}
+
+#opcao-campoMinado::hover, #opcao-incremental::hover {
+  border: 2px solid black;
+  font: bold rgb(0,0,0,0.7);
+}
+
+
+/* Campo minado */
+canvas {
+  display: block;
+  background: rgb(0,0,0,0.2);
+  width: 400px;
+  height: 400px;
+}
+
+
+/* Incremental */
